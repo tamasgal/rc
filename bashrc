@@ -3,6 +3,10 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then                            
+  . $(brew --prefix)/etc/bash_completion                                        
+fi 
+
 source_dir()
 {
     local dir="$1"
