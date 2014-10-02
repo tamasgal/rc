@@ -17,6 +17,12 @@ set scrolloff=2
 " show the cursor position all the time
 set ruler
 
+" Indented fold
+set foldmethod=indent
+
+" Cursor highlight
+set cursorcolumn
+
 " Always display the status line, even if only one window is displayed
 set laststatus=2
 set statusline=%F%m%r%h%w\ [\%03.3b/\%02.2B]\ [%04l,%03v][%02p%%,%L] 
@@ -120,6 +126,20 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1 
 nnoremap <silent> <F9> :TMiniBufExplorer<CR>
 
+nnoremap <F10> :call HexMe()<CR>
+
+let $in_hex=0
+function HexMe()
+    set binary
+    set noeol
+    if $in_hex>0
+        :%!xxd -r
+        let $in_hex=0
+    else
+        :%!xxd
+        let $in_hex=1
+    endif
+endfunction
 
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 100 previously edited files
@@ -145,7 +165,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-surround'
 Bundle 'chrisbra/Replay'
 Bundle "myusuf3/numbers.vim"
@@ -180,6 +200,9 @@ augroup END
 
 :let mapleader = ","
 
+" Close buffer without closing the window
+nnoremap <C-c> :bp\|bd #<CR>
+
 " ,ack to search the word under the cursor
 silent noremap <Leader>ack :exec 'Ack '.expand("<cword>")<CR>
 
@@ -189,6 +212,9 @@ nmap  <C-Tab>  :tags<CR>
 " Ctrl+p to write and run current file via pyton
 map <C-p>   :w<CR>:!python %<CR>
 imap <C-p>   <Esc>:w<CR>:!python %<CR>
+
+" Toggle NERDTree with F3
+nmap <silent> <F3> :NERDTreeToggle<CR>
 
 syntax on
 
