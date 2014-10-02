@@ -141,6 +141,18 @@ function HexMe()
     endif
 endfunction
 
+" Binary editing
+augroup Binary
+    au!
+    au BufReadPre *.bin let &bin=1
+    au BufReadPost *.bin if &bin | %!xxd
+    au BufReadPost *.bin set ft=xxd | endif
+    au BufWritePre *.bin if &bin | %!xxd -r
+    au BufWritePre *.bin endif
+    au BufWritePost *.bin if &bin | %!xxd
+    au BufWritePost *.bin set nomod | endif
+augroup END
+
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 100 previously edited files
 "  "100 :  will save up to 150 lines for each register
