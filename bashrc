@@ -3,6 +3,10 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Dev
+source /usr/bin/virtualenvwrapper.sh
+
 if [ -f $(brew --prefix)/etc/bash_completion ]; then                            
   . $(brew --prefix)/etc/bash_completion                                        
 fi 
