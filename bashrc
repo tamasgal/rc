@@ -1,11 +1,14 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Dev
-source /usr/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then                            
   . $(brew --prefix)/etc/bash_completion                                        
