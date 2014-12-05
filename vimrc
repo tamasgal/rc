@@ -172,11 +172,11 @@ au Syntax * RainbowParenthesesLoadBraces
 " Bundle settings
 set nocompatible            " be iMproved
 filetype off                " required for vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-surround'
 Bundle 'chrisbra/Replay'
