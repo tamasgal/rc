@@ -1,0 +1,11 @@
+[user]
+	name = Tamas Gal
+	email = himself@tamasgal.com
+[push]
+	default = simple
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[alias]
+	lol = log --oneline --decorate --graph --all
