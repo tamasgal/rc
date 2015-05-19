@@ -18,7 +18,7 @@ set scrolloff=2
 set ruler
 
 " Indented fold
-set foldmethod=indent
+"set foldmethod=indent
 
 " Cursor highlight
 set cursorcolumn
@@ -28,17 +28,21 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [\%03.3b/\%02.2B]\ [%04l,%03v][%02p%%,%L] 
 
 " Color scheme
-"syntax enable
+syntax enable
 "set background=dark
 "colorscheme solarized
+"let g:molokai_original = 1
+"colorscheme molokai
 "------------------------------------------------------------------
 " Solarized Colorscheme Config
 " ------------------------------------------------------------------
 if has ('gui_running')
     syntax enable
-    set background=light
-    colorscheme solarized
+    "set background=light
+    "colorscheme solarized
+    colorscheme hemisu
 endif
+colorscheme hemisu
 " ------------------------------------------------------------------
 "
 "  " The following items are available options, but do not need to be
@@ -177,13 +181,15 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/Vundle.vim'
+" My Bundles (original repos on github)
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-surround'
 Bundle 'chrisbra/Replay'
 Bundle "myusuf3/numbers.vim"
 Bundle "scrooloose/nerdtree"
+Bundle "tomasr/molokai"
+Bundle "flazz/vim-colorschemes"
 
-" My Bundles (original repos on github)
 
 filetype plugin indent on     " required!
 "
