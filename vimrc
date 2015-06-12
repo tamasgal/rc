@@ -14,6 +14,7 @@ set showmatch
 set smartcase
 set scrolloff=2
 
+
 " show the cursor position all the time
 set ruler
 
@@ -78,6 +79,7 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4 " Backspace goes back 4 spaces
 set backspace=indent,eol,start
+set mouse=a
 autocmd FileType make setlocal noexpandtab " no fake tabs in makefiles
 
 set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace

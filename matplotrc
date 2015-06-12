@@ -216,7 +216,7 @@ font.serif           : Utopia, New Century Schoolbook, Bitstream Vera Serif, Cen
 # http://matplotlib.org/api/axes_api.html#module-matplotlib.axes
 #axes.hold           : True    # whether to clear the axes by default on
 #axes.facecolor      : white   # axes background color
-axes.edgecolor      : 999999   # axes edge color
+axes.edgecolor      : black #999999   # axes edge color
 #axes.linewidth      : 1.0     # edge linewidth
 axes.grid           : True   # display grid or not
 #axes.titlesize      : large   # fontsize of the axes title

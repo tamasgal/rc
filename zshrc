@@ -100,3 +100,6 @@ export PYTHONPATH=$PYTHONPATH:$AADIR
 export PATH=$PATH:$AADIR
 
 # Alias
+
+# added by travis gem
+[ -f /Users/tamasgal/.travis/travis.sh ] && source /Users/tamasgal/.travis/travis.sh

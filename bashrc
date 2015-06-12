@@ -33,3 +33,12 @@ source_dir()
 source_dir ~/.bash.d/local/before
 source_dir ~/.bash.d
 source_dir ~/.bash.d/local/after
+
+. $(brew --prefix root)/libexec/thisroot.sh
+export PYTHONPATH=.:${PYTHONPATH}
+export PATH=/usr/local/sbin:$PATH
+
+export PATH="$PATH:/Applications/DevDesktop/drush"
+
+# added by travis gem
+[ -f /Users/tamasgal/.travis/travis.sh ] && source /Users/tamasgal/.travis/travis.sh
