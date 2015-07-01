@@ -46,7 +46,7 @@ ZSH_THEME="septi"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git git-extras git-flow git-remote-branch svn cabal)
 
 # User configuration
 
@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Dev
 source /usr/local/bin/virtualenvwrapper.sh
-pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
+#pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
 
 # VI mode
 bindkey -v
@@ -102,4 +102,4 @@ export PATH=$PATH:$AADIR
 # Alias
 
 # added by travis gem
-[ -f /Users/tamasgal/.travis/travis.sh ] && source /Users/tamasgal/.travis/travis.sh
+#[ -f /Users/tamasgal/.travis/travis.sh ] && source /Users/tamasgal/.travis/travis.sh
