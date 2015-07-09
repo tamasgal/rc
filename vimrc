@@ -1,4 +1,4 @@
-" File: .vimrc             
+" File: .vimrc
 " Version: 1
 " Author: Tamas Gal
 " Created: 21 Jan 2003 9:40:01
@@ -8,11 +8,13 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on
+let mapleader = ","
 
 set encoding=utf8
 set term=xterm-256color
 
 set shiftwidth=4 softtabstop=4
+set expandtab
 set number
 set relativenumber
 set showmatch
@@ -31,6 +33,10 @@ set hlsearch
 " highlight OverLength ctermbg=red ctermfg=white guibg=red
 " match OverLength /\%81v.\+/
 set colorcolumn=80
+
+" Trailing whitespace
+match ErrorMsg '\s\+$'
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -86,7 +92,7 @@ let g:syntastic_check_on_wq = 0
 "    endif
 "endif
 
-" Color scheme
+" Color schemt
 colo hemisu
 
 " Airline
