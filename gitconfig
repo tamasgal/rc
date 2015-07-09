@@ -9,3 +9,5 @@
 	required = true
 [alias]
 	lol = log --oneline --decorate --graph --all
+[core]
+	editor = vim
