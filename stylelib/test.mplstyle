@@ -1,0 +1,38 @@
+lines.linewidth: 4
+lines.solid_capstyle: butt
+
+legend.fancybox: true
+
+axes.color_cycle: 30a2da, fc4f30, e5ae38, 6d904f, 8b8b8b
+axes.facecolor: ffffff
+axes.labelsize: large
+axes.axisbelow: true
+axes.grid: true
+axes.edgecolor: 000000
+axes.linewidth: 3.0
+axes.titlesize: x-large
+
+patch.edgecolor: 000000 
+patch.linewidth: 0.5
+patch.antialiased: True
+
+svg.fonttype: path
+
+#grid.linestyle: . 
+grid.linewidth: 1.0
+grid.color: 696969
+
+xtick.major.size: 10
+xtick.minor.size: 5
+ytick.major.size: 10
+ytick.minor.size: 5
+
+font.size:14.0
+
+savefig.edgecolor: f0f0f0
+savefig.facecolor: f0f0f0
+
+figure.subplot.left: 0.08
+figure.subplot.right: 0.95 
+figure.subplot.bottom: 0.07
+figure.facecolor: f0f0f0
