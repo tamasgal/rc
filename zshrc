@@ -50,7 +50,7 @@ plugins=(git git-extras git-flow git-remote-branch svn cabal)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/usr/local/Cellar/root/5.34.22/bin:/Applications/DevDesktop/drush"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/usr/local/Cellar/root/5.34.22/bin:/Applications/DevDesktop/drush"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
