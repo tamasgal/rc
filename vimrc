@@ -57,7 +57,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes.git'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/vimproc'
-"Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/ghcmod-vim'
 "Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
@@ -69,10 +69,17 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+map <silent> <Leader>e :Errors<CR>
+map <Leader>s :SyntasticToggleMode<CR>
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" GHC-mod
+map <Leader>t :GhcModType<CR>
+map <Leader>c :GhcModCheck<CR>
 
 " Solarized
 "set background=light
