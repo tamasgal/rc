@@ -77,6 +77,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
+
 " GHC-mod
 map <Leader>t :GhcModType<CR>
 map <Leader>c :GhcModCheck<CR>
