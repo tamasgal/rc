@@ -90,29 +90,6 @@ nnoremap <Leader>u :! py.test -l<CR>
 map <Leader>t :GhcModType<CR>
 map <Leader>c :GhcModCheck<CR>
 
-" Solarized
-"set background=light
-"colorscheme solarized
-"let g:solarized_termcolors=   256
-"let g:solarized_termtrans =   0
-"let g:solarized_degrade   =   0
-"let g:solarized_bold      =   1
-"let g:solarized_underline =   1
-"let g:solarized_italic    =   1
-"let g:solarized_contrast  =   "high"
-"let g:solarized_visibility=   "normal"
-"if !has('gui_running')
-"    " Compatibility for Terminal
-"    let g:solarized_termtrans=1
-"
-"    if (&t_Co >= 256 || $TERM == 'xterm-256color')
-"        " Do nothing, it handles itself.
-"    else
-"        " Make Solarized use 16 colors for Terminal support
-"        let g:solarized_termcolors=16
-"    endif
-"endif
-
 " Color schemt
 colo hemisu
 
