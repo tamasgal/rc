@@ -58,6 +58,9 @@ Plugin 'flazz/vim-colorschemes.git'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/vimproc'
 Plugin 'eagletmt/ghcmod-vim'
+Plugin 'luochen1990/rainbow'
+Plugin 'pangloss/vim-javascript'
+let g:rainbow_active = 0
 "Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
@@ -78,6 +81,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
+
+" Unit test (python)
+"map <Leader>r :! py.test -l %<CR>
+nnoremap <Leader>u :! py.test -l<CR>
 
 " GHC-mod
 map <Leader>t :GhcModType<CR>
@@ -115,3 +122,14 @@ let g:airline_theme="powerlineish"
 let g:airline_powerline_fonts = 1
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+
+" JavaScript
+let g:javascript_conceal_function   = "ƒ"
+let g:javascript_conceal_null       = "ø"
+let g:javascript_conceal_this       = "@"
+let g:javascript_conceal_return     = "⇚"
+let g:javascript_conceal_undefined  = "¿"
+let g:javascript_conceal_NaN        = "ℕ"
+let g:javascript_conceal_prototype  = "¶"
+let g:javascript_conceal_static     = "•"
+let g:javascript_conceal_super      = "Ω"
