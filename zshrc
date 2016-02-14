@@ -46,12 +46,12 @@ ZSH_THEME="septi"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow git-remote-branch svn cabal)
+plugins=(vi-mode git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/usr/local/Cellar/root/5.34.22/bin:/Applications/DevDesktop/drush"
-export PYTHONPATH=.:$PYTHONPATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/usr/local/Cellar/root/5.34.22/bin:/Applications/DevDesktop/drush:/usr/local/texlive/2015/bin/x86_64-darwin"
+#export PYTHONPATH=.:$PYTHONPATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -85,20 +85,19 @@ source $ZSH/oh-my-zsh.sh
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Dev
 source /usr/local/bin/virtualenvwrapper.sh
-#pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
 
 # VI mode
 bindkey -v
 export KEYTIMEOUT=1
 
-export LC_ALL=en_US.UTF-8  
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
 # CERN ROOT
-#pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
-pushd $(brew --prefix root6) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
+pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
+#pushd $(brew --prefix root6) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
 
 # AAnet
 export AADIR=$HOME/Xapps/aanet
@@ -106,12 +105,14 @@ export PYTHONPATH=$PYTHONPATH:$AADIR
 export PATH=$PATH:$AADIR
 
 # Alias
-
 alias vless="/usr/share/vim/vim73/macros/less.sh"
 
 # added by travis gem
 #[ -f /Users/tamasgal/.travis/travis.sh ] && source /Users/tamasgal/.travis/travis.sh
 #
 
-
 remember() { echo "$@" >> remember.log && $@ }
+
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+
