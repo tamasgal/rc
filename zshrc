@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/tamasgal/.oh-my-zsh
+export ZSH=${HOME}/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -50,20 +50,8 @@ plugins=(tmux autojump vi-mode git git-extras git-flow git-remote-branch svn cab
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/Applications/DevDesktop/drush:/usr/local/texlive/2015/bin/x86_64-darwin"
-#export PYTHONPATH=.:$PYTHONPATH
-
-# Core and Find Utils on Mac OS X
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+source $HOME/.zshrc_local
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -72,24 +60,8 @@ else
   export EDITOR='mvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Dev
-source /usr/local/bin/virtualenvwrapper.sh
 
 # VI mode
 bindkey -v
@@ -100,25 +72,7 @@ export LANG=en_US.UTF-8
 
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
-# CERN ROOT
-#pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
-#pushd $(brew --prefix root6) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
-#source /usr/local/opt/root/libexec/thisroot.sh
-
-# AAnet
-export AADIR=$HOME/Xapps/aanet
-export PYTHONPATH=$PYTHONPATH:$AADIR
-export PATH=$PATH:$AADIR
-
-# Alias
-alias vless="/usr/share/vim/vim73/macros/less.sh"
-
-# added by travis gem
-#[ -f /Users/tamasgal/.travis/travis.sh ] && source /Users/tamasgal/.travis/travis.sh
-#
-
 remember() { echo "$@" >> remember.log && $@ }
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
-
