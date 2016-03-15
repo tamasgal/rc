@@ -46,13 +46,18 @@ ZSH_THEME="septi"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
+plugins=(tmux autojump vi-mode git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/usr/local/Cellar/root/5.34.22/bin:/Applications/DevDesktop/drush:/usr/local/texlive/2015/bin/x86_64-darwin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/Applications/DevDesktop/drush:/usr/local/texlive/2015/bin/x86_64-darwin"
 #export PYTHONPATH=.:$PYTHONPATH
 
+# Core and Find Utils on Mac OS X
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -96,8 +101,9 @@ export LANG=en_US.UTF-8
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
 # CERN ROOT
-pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
+#pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
 #pushd $(brew --prefix root6) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
+#source /usr/local/opt/root/libexec/thisroot.sh
 
 # AAnet
 export AADIR=$HOME/Xapps/aanet

@@ -60,12 +60,37 @@ Plugin 'Shougo/vimproc'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'pangloss/vim-javascript'
+Plugin 'vimwiki/vimwiki'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ctrlpvim/ctrlp.vim'
 let g:rainbow_active = 0
 "Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Use tab to jump between blocks
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Nerdtree
+map <C-n> :NERDTreeToggle<CR>
+" open with nerdtree if nothing else specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Syntastic
 set statusline+=%#warningmsg#
