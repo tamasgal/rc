@@ -51,7 +51,7 @@ plugins=(tmux autojump vi-mode git git-extras git-flow git-remote-branch svn cab
 # User configuration
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.local
+source $HOME/.zshrc_local
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
