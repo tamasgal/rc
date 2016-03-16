@@ -12,6 +12,9 @@ let mapleader = ","
 
 set encoding=utf8
 set term=xterm-256color
+if exists('$TMUX')
+  set term=screen-256color
+endif
 
 set shiftwidth=4 softtabstop=4
 set expandtab
@@ -55,7 +58,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes.git'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/vimproc'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'luochen1990/rainbow'
