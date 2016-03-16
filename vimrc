@@ -37,6 +37,9 @@ set hlsearch
 " match OverLength /\%81v.\+/
 set colorcolumn=80
 
+" Frequently used stuff
+nnoremap <Leader>w :wq!<CR>
+nnoremap <Leader>q :q!<CR>
 " Trailing whitespace
 match ErrorMsg '\s\+$'
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
@@ -121,6 +124,7 @@ map <Leader>c :GhcModCheck<CR>
 
 " Color schemt
 colo hemisu
+"colo sierra
 
 " Airline
 set laststatus=2
