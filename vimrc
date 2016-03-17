@@ -84,8 +84,8 @@ vnoremap <tab> %
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 " open with nerdtree if nothing else specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
