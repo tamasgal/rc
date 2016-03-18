@@ -46,7 +46,7 @@ ZSH_THEME="septi"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux autojump vi-mode git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
+plugins=(tmux autojump vi-mode osx git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
 
 # User configuration
 
