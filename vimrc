@@ -59,6 +59,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes.git'
 Plugin 'vim-airline/vim-airline'
