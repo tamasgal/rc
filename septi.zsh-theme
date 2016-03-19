@@ -74,7 +74,7 @@ if [[ $EUID -eq 0 ]]; then
   _USERNAME="%{$fg_bold[red]%}%n"
   _LIBERTY="%{$fg[red]%}#"
 else
-  _USERNAME="%{$fg_bold[black]%}%n"
+  _USERNAME="%{$fg_bold[green]%}%n"
   _LIBERTY="%{$fg[green]%}$"
 fi
 _USERNAME="$_USERNAME%{$reset_color%}@%m"
@@ -84,10 +84,10 @@ _LIBERTY="$_LIBERTY%{$reset_color%}"
 get_space () {
   local STR=$1$2
   local zero='%([BSUbfksu]|([FB]|){*})'
-  local LENGTH=${#${(S%%)STR//$~zero/}} 
+  local LENGTH=${#${(S%%)STR//$~zero/}}
   local SPACES=""
   (( LENGTH = ${COLUMNS} - $LENGTH - 1))
-  
+
   for i in {0..$LENGTH}
     do
       SPACES="$SPACES "
@@ -101,7 +101,7 @@ _1RIGHT="[%*] "
 
 bureau_precmd () {
   _1SPACES=`get_space $_1LEFT $_1RIGHT`
-  print 
+  print
   print -rP "$_1LEFT$_1SPACES$_1RIGHT"
 }
 
