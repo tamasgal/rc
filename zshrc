@@ -19,7 +19,7 @@ ZSH_THEME="septi"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
-export LS_COLORS="di=31:ln=36:so=32:pi=33:ex=32:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
+export LS_COLORS="di=1;31:ln=36:so=32:pi=33:ex=32:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -51,8 +51,8 @@ plugins=(tmux autojump vi-mode osx git git-extras git-flow git-remote-branch svn
 
 # User configuration
 
-source $ZSH/oh-my-zsh.sh
 source $HOME/.zshrc_local
+source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 #if [[ -n $SSH_CONNECTION ]]; then
