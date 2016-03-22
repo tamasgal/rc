@@ -124,12 +124,13 @@ map <Leader>t :GhcModType<CR>
 map <Leader>c :GhcModCheck<CR>
 
 " Color schemt
-colo hemisu
-"colo sierra
+"colo hemisu
+colo sierra
 
 " Airline
 set laststatus=2
-let g:airline_theme="powerlineish"
+"let g:airline_theme="powerlineish"
+let g:airline_theme="ubaryd"
 let g:airline_powerline_fonts = 1
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
