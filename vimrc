@@ -25,7 +25,6 @@ set smartcase
 set scrolloff=2
 
 set ruler
-set cursorcolumn
 
 " Search options
 set ignorecase
@@ -145,3 +144,6 @@ let g:javascript_conceal_NaN        = "ℕ"
 let g:javascript_conceal_prototype  = "¶"
 let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
+
+"hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=darkred guifg=white
+"set cursorcolumn
