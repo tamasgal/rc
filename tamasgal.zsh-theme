@@ -1,57 +1,68 @@
-function my_git_prompt() {
-  tester=$(git rev-parse --git-dir 2> /dev/null) || return
+NEWLINE=$'\n'
 
-  INDEX=$(git status --porcelain -b 2> /dev/null)
-  STATUS=""
+### Git [±master ▾●]
 
-  # is branch ahead?
-  if $(echo "$(git log origin/$(git_current_branch)..HEAD 2> /dev/null)" | grep '^commit' &> /dev/null); then
-    STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_AHEAD"
-  fi
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[white]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 
-  if $(echo "$INDEX" | grep '^## .*behind' &> /dev/null); then
-    STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_BEHIND"
-  fi
-
-  # is anything staged?
-  if $(echo "$INDEX" | command grep -E -e '^(D[ M]|[MARC][ MD]) ' &> /dev/null); then
-    STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_STAGED"
-  fi
-
-  # is anything unstaged?
-  if $(echo "$INDEX" | command grep -E -e '^[ MARC][MD] ' &> /dev/null); then
-    STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_UNSTAGED"
-  fi
-
-  # is anything untracked?
-  if $(echo "$INDEX" | grep '^?? ' &> /dev/null); then
-    STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED"
-  fi
-
-  # is anything unmerged?
-  if $(echo "$INDEX" | command grep -E -e '^(A[AU]|D[DU]|U[ADU]) ' &> /dev/null); then
-    STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_UNMERGED"
-  fi
-
-  if [[ -n $STATUS ]]; then
-    STATUS=" $STATUS"
-  fi
-
-  echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(my_current_branch)$STATUS$ZSH_THEME_GIT_PROMPT_SUFFIX"
+tamasgal_git_branch () {
+  ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+  echo "${ref#refs/heads/}"
 }
 
-function my_current_branch() {
-  echo $(git_current_branch || echo "(no branch)")
+tamasgal_git_status () {
+  _INDEX=$(command git status --porcelain -b 2> /dev/null)
+  _STATUS=""
+  if $(echo "$_INDEX" | grep '^[AMRD]. ' &> /dev/null); then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STAGED"
+  fi
+  if $(echo "$_INDEX" | grep '^.[MTD] ' &> /dev/null); then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNSTAGED"
+  fi
+  if $(echo "$_INDEX" | command grep -E '^\?\? ' &> /dev/null); then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED"
+  fi
+  if $(echo "$_INDEX" | grep '^UU ' &> /dev/null); then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNMERGED"
+  fi
+  if $(command git rev-parse --verify refs/stash >/dev/null 2>&1); then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STASHED"
+  fi
+  if $(echo "$_INDEX" | grep '^## .*ahead' &> /dev/null); then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_AHEAD"
+  fi
+  if $(echo "$_INDEX" | grep '^## .*behind' &> /dev/null); then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_BEHIND"
+  fi
+  if $(echo "$_INDEX" | grep '^## .*diverged' &> /dev/null); then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_DIVERGED"
+  fi
+
+  echo $_STATUS
 }
 
-PROMPT=$'%{$fg_bold[green]%}%n@%m:%{$reset_color%}%~\n%T$(my_git_prompt) %# '
+tamasgal_git_prompt () {
+  local _branch=$(tamasgal_git_branch)
+  local _status=$(tamasgal_git_status)
+  local _result=""
+  if [[ "${_branch}x" != "x" ]]; then
+    _result="$ZSH_THEME_GIT_PROMPT_PREFIX$_branch"
+    if [[ "${_status}x" != "x" ]]; then
+      _result="$_result $_status"
+    fi
+    _result="$_result$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  fi
+  echo $_result
+}
 
-ZSH_THEME_PROMPT_RETURNCODE_PREFIX="%{$fg_bold[red]%}"
-ZSH_THEME_GIT_PROMPT_PREFIX=" $fg[white]‹ %{$fg_bold[reset_color]%}"
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[cyan]%}↑"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg_bold[magenta]%}▾"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●"
-ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[red]%}●"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[white]%}●"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[red]%}✕"
-ZSH_THEME_GIT_PROMPT_SUFFIX=" $fg_bold[white]›%{$reset_color%}"
+
+PROMPT=$'%{$fg_bold[green]%}%n@%m:%{$reset_color%}%~${NEWLINE}%T$(tamasgal_git_prompt) %# '
+
+
