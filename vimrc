@@ -77,9 +77,9 @@ let g:rainbow_active = 0
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Use tab to jump between blocks
-nnoremap <tab> %
-vnoremap <tab> %
+" Use tab to jump between tabs
+nnoremap <tab> :tabn<CR>
+"vnoremap <tab> %
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
