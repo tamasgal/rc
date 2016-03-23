@@ -63,6 +63,6 @@ tamasgal_git_prompt () {
 }
 
 
-PROMPT=$'%{$fg_bold[green]%}%n@%m:%{$reset_color%}%~${NEWLINE}%T$(tamasgal_git_prompt) %# '
+PROMPT=$'%{$fg_bold[green]%}%n%{$reset_color%}% @%{$fg[green]%}%m:%{$reset_color%}%~${NEWLINE}%T$(tamasgal_git_prompt) %{$fg[red]%}>%{$reset_color%} '
 
 
