@@ -81,6 +81,10 @@ filetype plugin indent on    " required
 nnoremap <tab> :tabn<CR>
 "vnoremap <tab> %
 
+" Split naturally
+set splitbelow
+set splitright
+
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 " open with nerdtree if nothing else specified
