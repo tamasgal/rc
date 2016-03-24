@@ -149,5 +149,7 @@ let g:javascript_conceal_prototype  = "¶"
 let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 
+" Highlights
 "hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=darkred guifg=white
 "set cursorcolumn
+hi Search cterm=NONE ctermfg=white ctermbg=darkred
