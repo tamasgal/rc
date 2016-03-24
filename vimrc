@@ -21,6 +21,7 @@ set expandtab
 set number
 set relativenumber
 set showmatch
+set showcmd
 set smartcase
 set scrolloff=2
 
@@ -71,6 +72,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'davidhalter/jedi-vim'
 let g:rainbow_active = 0
 "Plugin 'altercation/vim-colors-solarized'
 
@@ -95,6 +97,9 @@ map <C-n> :NERDTreeToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+
+" Jedi VIM (for Python)
+let g:jedi#popup_on_dot = 0
 
 
 " Quicker window movement
@@ -150,6 +155,6 @@ let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 
 " Highlights
-"hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=darkred guifg=white
-"set cursorcolumn
+hi CursorColumn cterm=NONE ctermbg=237
+set cursorcolumn
 hi Search cterm=NONE ctermfg=white ctermbg=darkred
