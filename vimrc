@@ -73,7 +73,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'davidhalter/jedi-vim'
 let g:rainbow_active = 0
 "Plugin 'altercation/vim-colors-solarized'
 
@@ -98,10 +97,6 @@ map <C-n> :NERDTreeToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-
-" Jedi VIM (for Python)
-let g:jedi#popup_on_dot = 0
-
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -139,7 +134,7 @@ colo sierra
 " Airline
 set laststatus=2
 "let g:airline_theme="powerlineish"
-let g:airline_theme="ubaryd"
+let g:airline_theme="murmur"
 let g:airline_powerline_fonts = 1
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
