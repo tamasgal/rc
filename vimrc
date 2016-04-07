@@ -114,7 +114,7 @@ map <Leader>s :SyntasticToggleMode<CR>
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
@@ -134,7 +134,7 @@ colo sierra
 " Airline
 set laststatus=2
 "let g:airline_theme="powerlineish"
-let g:airline_theme="murmur"
+let g:airline_theme="papercolor"
 let g:airline_powerline_fonts = 1
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
