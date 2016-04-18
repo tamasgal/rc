@@ -130,15 +130,15 @@ map <Leader>t :GhcModType<CR>
 map <Leader>c :GhcModCheck<CR>
 
 " Color schemt
-"colo hemisu
+colo hemisu
 "colo sierra
-colo solarized
+"colo solarized
 
 " Airline
 set laststatus=2
 "let g:airline_theme="powerlineish"
-"let g:airline_theme="papercolor"
-let g:airline_theme="solarized"
+let g:airline_theme="papercolor"
+"let g:airline_theme="solarized"
 let g:airline_powerline_fonts = 1
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
@@ -158,6 +158,7 @@ let g:javascript_conceal_super      = "Ω"
 :let g:notes_directories = ['~/Documents/Notes']
 
 " Highlights
-hi CursorColumn cterm=NONE ctermbg=223
+"hi CursorColumn cterm=NONE ctermbg=223
+hi CursorColumn cterm=NONE ctermbg=254
 set cursorcolumn
 "hi Search cterm=NONE ctermfg=white ctermbg=darkcyan
