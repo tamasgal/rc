@@ -73,6 +73,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 let g:rainbow_active = 0
 "Plugin 'altercation/vim-colors-solarized'
 
@@ -150,7 +152,10 @@ let g:javascript_conceal_prototype  = "¶"
 let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 
+" Notes
+:let g:notes_directories = ['~/Documents/Notes']
+
 " Highlights
 hi CursorColumn cterm=NONE ctermbg=237
 set cursorcolumn
-hi Search cterm=NONE ctermfg=white ctermbg=darkred
+hi Search cterm=NONE ctermfg=white ctermbg=darkcyan
