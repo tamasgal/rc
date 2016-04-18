@@ -23,7 +23,7 @@ ZSH_THEME="tamasgal"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
-export LS_COLORS="di=1;31:ln=36:so=32:pi=33:ex=32:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
+#export LS_COLORS="di=1;31:ln=36:so=32:pi=33:ex=32:bd=34;46:cd=34:su=0:sg=0:tw=0:ow=0:"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -82,6 +82,9 @@ export LANG=en_US.UTF-8
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
 remember() { echo "$@" >> remember.log && $@ }
+
+# dircolors
+eval `dircolors $HOME/.dircolors`
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
