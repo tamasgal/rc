@@ -161,4 +161,5 @@ let g:javascript_conceal_super      = "Ω"
 "hi CursorColumn cterm=NONE ctermbg=223
 hi CursorColumn cterm=NONE ctermbg=254
 set cursorcolumn
+set cursorline
 "hi Search cterm=NONE ctermfg=white ctermbg=darkcyan
