@@ -94,6 +94,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'Valloric/YouCompleteMe'
 let g:rainbow_active = 0
 "Plugin 'altercation/vim-colors-solarized'
@@ -108,6 +109,9 @@ nnoremap <tab> :tabn<CR>
 " Split naturally
 set splitbelow
 set splitright
+
+" AutoFormat
+noremap <F3> :Autoformat<CR>
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
