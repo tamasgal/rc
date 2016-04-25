@@ -24,8 +24,12 @@ set showmatch
 set showcmd
 set smartcase
 set scrolloff=2
-
 set ruler
+set backspace=indent,eol,start
+
+" for html/rb files, 2 spaces
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
 " Search options
 set ignorecase
@@ -106,6 +110,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Typescript
+
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -159,7 +165,8 @@ let g:javascript_conceal_super      = "Ω"
 
 " Highlights
 "hi CursorColumn cterm=NONE ctermbg=223
-hi CursorColumn cterm=NONE ctermbg=254
+hi CursorLine cterm=NONE ctermbg=255
+hi CursorColumn cterm=NONE ctermbg=255
 set cursorcolumn
 set cursorline
 "hi Search cterm=NONE ctermfg=white ctermbg=darkcyan
