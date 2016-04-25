@@ -31,6 +31,13 @@ set backspace=indent,eol,start
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
+" TypeScript
+autocmd BufNewFile,BufRead *.ts setfiletype typescript syntax=typescript
+autocmd BufNewFile,BufRead *.tsx setfiletype typescript syntax=typescript
+autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+autocmd BufNewFile,BufRead *.es6 setfiletype javascript syntax=javascript
+autocmd BufNewFile,BufRead *.es7 setfiletype javascript syntax=javascript
+
 " Search options
 set ignorecase
 set smartcase
@@ -72,6 +79,7 @@ Plugin 'Shougo/vimproc'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -79,6 +87,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'Valloric/YouCompleteMe'
 let g:rainbow_active = 0
 "Plugin 'altercation/vim-colors-solarized'
 
@@ -109,8 +118,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-" Typescript
 
 " Syntastic
 set statusline+=%#warningmsg#
