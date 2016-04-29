@@ -95,7 +95,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'klen/python-mode'
+" Plugin 'Valloric/YouCompleteMe'
 let g:rainbow_active = 0
 "Plugin 'altercation/vim-colors-solarized'
 
@@ -123,6 +124,9 @@ map <C-n> :NERDTreeToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+
+" pymode
+set nofoldenable
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
