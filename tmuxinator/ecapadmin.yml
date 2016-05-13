@@ -1,0 +1,108 @@
+# ~/.tmuxinator/ecapadmin.yml
+
+name: ecapadmin
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t ecapadmin
+
+windows:
+  - Deb-3C:
+      panes:
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.226
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.227
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.231
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.232
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.233
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.234
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.235
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.237
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.239
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.240
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.220 "vzctl enter 1221"
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.220 "vzctl enter 1222"
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.220 "vzctl enter 1223"
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.220 "vzctl enter 1224"
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.220 "vzctl enter 1229"
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.220 "vzctl enter 1230"
+  - Deb-3X:
+      panes:
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.202
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.203
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.205
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.210
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.213
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.214
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.215
+  - SL-3C:
+      panes:
+          - foo:
+            - ssh ecapmac
+            - ssh root@131.188.161.241

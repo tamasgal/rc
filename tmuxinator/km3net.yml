@@ -1,0 +1,61 @@
+# ~/.tmuxinator/km3net.yml
+
+name: km3net
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+#post: tmux -CC attach -t km3net
+
+windows:
+  - lyon:
+      layout: main-horizontal
+      panes:
+        - ssh ccage
+        - ssh ccage
+        - ssh ccage
+  - local:
+      layout: main-horizontal
+      panes:
+        - workon km3net
+        - workon km3net
+        - workon km3net
+  - ecapmac:
+      layout: main-horizontal
+      panes:
+        - ssh ecapmac
+        - ssh ecapmac
+        - ssh ecapmac
+  - maroff1:
+      layout: main-horizontal
+      panes:
+        - ssh maroff1
+        - ssh maroff1
+        - ssh maroff1
+  - km3pipe:
+      layout: 7f45,181x48,0,0[181x34,0,0{90x34,0,0,19,90x34,91,0,22},181x13,0,35{90x13,0,35,20,90x13,91,35,21}]
+      panes:
+        - workon km3pipe && vim
+        - workon km3pipe
+        - workon km3pipe && py.test -f
+        - workon km3pipe ipython
