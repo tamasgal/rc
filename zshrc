@@ -90,5 +90,8 @@ remember() { echo "$@" >> remember.log && $@ }
 # dircolors
 eval `dircolors $HOME/.dircolors`
 
+# Disable auto cd
+unsetopt AUTO_CD
+
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
