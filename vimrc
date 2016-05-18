@@ -127,6 +127,8 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " pymode
 set nofoldenable
+let g:pymode_rope_completion = 0
+let g:pymode_rope_complete_on_dot = 0
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
