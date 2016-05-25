@@ -101,10 +101,11 @@ bindkey -s "^[Ow" "7"
 bindkey -s "^[Ox" "8"
 bindkey -s "^[Oy" "9"
 # + -  * /
-bindkey -s "^[Ol" "+"
+bindkey -s "^[Ok" "+"
 bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
+bindkey -s "^[OX" "="
 
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
