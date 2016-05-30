@@ -5,8 +5,9 @@
 "
 " Last-modified: 24 June 2015 22:24:23
 
+" Syntax and Semantics
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype off
 syntax on
 let mapleader = ","
 
@@ -45,6 +46,7 @@ autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 autocmd BufNewFile,BufRead *.es6 setfiletype javascript syntax=javascript
 autocmd BufNewFile,BufRead *.es7 setfiletype javascript syntax=javascript
 
+
 " Search options
 set ignorecase
 set smartcase
@@ -67,15 +69,13 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" set the runtime path to include Vundle and initialize
+
+" Vundle and Plug-in
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
+call vundle#rc()
 Plugin 'gmarik/Vundle.vim'
-
+Plugin 'JuliaLang/julia-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
@@ -95,13 +95,34 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'klen/python-mode'
-" Plugin 'Valloric/YouCompleteMe'
-let g:rainbow_active = 0
-"Plugin 'altercation/vim-colors-solarized'
+call vundle#end()
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on
+
+
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\   'guifgs': ['lightblue', 'green', 'red', 'magenta'],
+\   'ctermfgs': ['lightblue', 'green', 'red', 'magenta'],
+\   'operators': '_,_',
+\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\   'separately': {
+\       '*': {},
+\       'tex': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+\       },
+\       'lisp': {
+\           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\       },
+\       'vim': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\       },
+\       'html': {
+\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\       },
+\       'css': 0,
+\   }
+\}
 
 " Use tab to jump between tabs
 nnoremap <tab> :tabn<CR>
@@ -194,3 +215,4 @@ hi CursorColumn cterm=NONE ctermbg=255
 set cursorcolumn
 set cursorline
 "hi Search cterm=NONE ctermfg=white ctermbg=darkcyan
+
