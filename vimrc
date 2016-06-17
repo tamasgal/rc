@@ -35,6 +35,10 @@ set scrolloff=2
 set ruler
 set backspace=indent,eol,start
 
+"set cpoptions+=$            " dollar sign while changing
+set pumheight=7            " limit popup menu height
+set t_ut=                   " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
+
 " for html/rb files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
@@ -95,12 +99,16 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
+"Plugin 'marijnh/tern_for_vim'
 call vundle#end()
 
 filetype plugin indent on
 
 
-let g:rainbow_active = 1
+let g:rainbow_active = 0
 let g:rainbow_conf = {
 \   'guifgs': ['lightblue', 'green', 'red', 'magenta'],
 \   'ctermfgs': ['lightblue', 'green', 'red', 'magenta'],
@@ -131,6 +139,8 @@ nnoremap <tab> :tabn<CR>
 " Split naturally
 set splitbelow
 set splitright
+map <Leader>- :vsp<CR>
+map <Leader>_ :sp<CR>
 
 " AutoFormat
 noremap <F3> :Autoformat<CR>
@@ -145,6 +155,10 @@ map <C-n> :NERDTreeToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+
+" Tern settings
+let g:tern_show_argument_hints='on_hold'
+let g:tern_map_keys = 1
 
 " pymode
 set nofoldenable
@@ -169,8 +183,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = '¬'
+let g:syntastic_loc_list_height=3
 
 " Unit test (python)
 "map <Leader>r :! py.test -l %<CR>
