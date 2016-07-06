@@ -59,3 +59,9 @@ windows:
         - workon km3pipe
         - workon km3pipe && py.test -f
         - workon km3pipe ipython
+  - rba:
+      layout: main-horizontal
+      panes:
+        - workon rainbowalga2
+        - workon rainbowalga2
+        - workon rainbowalga2
