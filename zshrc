@@ -112,7 +112,11 @@ source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 remember() { echo "$@" >> remember.log && $@ }
 
 # dircolors
-eval `dircolors $HOME/.dircolors`
+if [[ $OSTYPE == darwin* ]]; then
+    eval `gdircolors $HOME/.dircolors`
+else
+    eval `dircolors $HOME/.dircolors`
+fi
 
 # Disable auto cd
 unsetopt AUTO_CD
