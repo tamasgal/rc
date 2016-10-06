@@ -57,7 +57,7 @@ windows:
       panes:
         - workon km3pipe && vim
         - workon km3pipe
-        - workon km3pipe && py.test -f
+        - workon km3pipe && ./test_loop.sh
         - workon km3pipe ipython
   - rba:
       layout: main-horizontal
