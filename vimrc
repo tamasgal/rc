@@ -65,6 +65,10 @@ set colorcolumn=80
 nnoremap <Leader>w :wq!<CR>
 nnoremap <Leader>q :q!<CR>
 
+" vimrc
+:nnoremap <leader>ev :split $MYVIMRC<cr>
+:nnoremap <leader>sv :source $MYVIMRC<cr>
+
 
 " Trailing whitespace
 match ErrorMsg '\s\+$'
@@ -177,6 +181,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" Line movement
+nnoremap H 0
+nnoremap L $
+
+" Quick escape
+:inoremap jk <esc>
 
 " Syntastic
 set statusline+=%#warningmsg#
