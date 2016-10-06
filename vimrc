@@ -64,6 +64,8 @@ set colorcolumn=80
 " Frequently used stuff
 nnoremap <Leader>w :wq!<CR>
 nnoremap <Leader>q :q!<CR>
+
+
 " Trailing whitespace
 match ErrorMsg '\s\+$'
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
@@ -101,7 +103,7 @@ Plugin 'xolox/vim-notes'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'junegunn/vim-easy-align'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 "Plugin 'marijnh/tern_for_vim'
 call vundle#end()
 
@@ -142,11 +144,16 @@ set splitright
 map <Leader>- :vsp<CR>
 map <Leader>_ :sp<CR>
 
+" Move lines with _ and -
+nnoremap - ddkP
+nnoremap _ ddp
+
 " AutoFormat
 noremap <F3> :Autoformat<CR>
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <space> :NERDTreeToggle<CR>
 " open with nerdtree if nothing else specified
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
