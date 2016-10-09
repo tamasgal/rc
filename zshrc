@@ -77,6 +77,9 @@ export VISUAL=$EDITOR
 vim_ver="`/usr/bin/vim --version | grep "Vi IMproved" | awk '{print $5}' | sed -e 's/\.//g'`"
 alias vless="/usr/share/vim/vim$vim_ver/macros/less.sh"
 
+# IPython
+alias kpython="workon km3net && ipython --profile=km3net"
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
