@@ -2,7 +2,7 @@ NEWLINE=$'\n'
 
 ### Git [±master ▾●]
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[243]%}@"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[178]%}@"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✓%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
@@ -21,7 +21,7 @@ tamasgal_virtualenv () {
   if test -z "$VIRTUAL_ENV" ; then
     echo -n ""
   else
-    echo " %{$fg[red]%}$(basename $VIRTUAL_ENV)%{$reset_color%}"
+    echo " %{$FG[110]%}$(basename $VIRTUAL_ENV)%{$reset_color%}"
   fi
 }
 
