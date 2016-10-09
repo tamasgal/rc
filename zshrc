@@ -10,6 +10,7 @@ export ZSH=${HOME}/.oh-my-zsh
 #ZSH_THEME="minimal"
 #ZSH_THEME="mortalscumbag"
 ZSH_THEME="tamasgal"
+#ZSH_THEME="mh"
 #ZSH_THEME="septi"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -51,12 +52,15 @@ ZSH_THEME="tamasgal"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux tmuxinator autojump vi-mode osx git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
+plugins=(conda tmux tmuxinator autojump vi-mode osx git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
 
 # User configuration
 
 source $HOME/.zshrc_local
 source $ZSH/oh-my-zsh.sh
+
+# Virtualenv
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Preferred editor for local and remote sessions
 #if [[ -n $SSH_CONNECTION ]]; then

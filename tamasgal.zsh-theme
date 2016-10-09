@@ -2,7 +2,7 @@ NEWLINE=$'\n'
 
 ### Git [±master ▾●]
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$FG[248]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[243]%}@"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✓%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
@@ -15,6 +15,14 @@ tamasgal_git_branch () {
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
   echo "${ref#refs/heads/}"
+}
+
+tamasgal_virtualenv () {
+  if test -z "$VIRTUAL_ENV" ; then
+    echo -n ""
+  else
+    echo " %{$fg[red]%}$(basename $VIRTUAL_ENV)%{$reset_color%}"
+  fi
 }
 
 tamasgal_git_status () {
@@ -62,5 +70,10 @@ tamasgal_git_prompt () {
   echo $_result
 }
 
+precmd() {
+    print -rP $'%{$FG[239]%}%T %{$FG[031]%}%n%{$reset_color%}% @%{$FG[031]%}%m:%{$FG[248]%}%~ $(tamasgal_virtualenv)$(tamasgal_git_prompt)%{$reset_color%}'
+    #print -rP $'%{$FG[031]%}%n%{$reset_color%}% @%{$FG[031]%}%m:%{$FG[248]%}%~ %{$FG[239]%}%T$(tamasgal_git_prompt) %{$reset_color%}'
+#PROMPT=$'%{$FG[031]%}%n%{$reset_color%}% @%{$FG[031]%}%m:%{$FG[248]%}%~${NEWLINE}%{$FG[239]%}%T$(tamasgal_git_prompt) %{$FG[198]%}>%{$reset_color%} '
+}
 
-PROMPT=$'%{$FG[031]%}%n%{$reset_color%}% @%{$FG[031]%}%m:%{$FG[248]%}%~${NEWLINE}%{$FG[239]%}%T$(tamasgal_git_prompt) %{$FG[198]%}>%{$reset_color%} '
+PROMPT=$'%{$FG[198]%}>%{$reset_color%} '
