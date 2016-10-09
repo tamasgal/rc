@@ -71,9 +71,7 @@ tamasgal_git_prompt () {
 }
 
 precmd() {
-    print -rP $'%{$FG[239]%}%T %{$FG[031]%}%n%{$reset_color%}% @%{$FG[031]%}%m:%{$FG[248]%}%~ $(tamasgal_virtualenv)$(tamasgal_git_prompt)%{$reset_color%}'
-    #print -rP $'%{$FG[031]%}%n%{$reset_color%}% @%{$FG[031]%}%m:%{$FG[248]%}%~ %{$FG[239]%}%T$(tamasgal_git_prompt) %{$reset_color%}'
-#PROMPT=$'%{$FG[031]%}%n%{$reset_color%}% @%{$FG[031]%}%m:%{$FG[248]%}%~${NEWLINE}%{$FG[239]%}%T$(tamasgal_git_prompt) %{$FG[198]%}>%{$reset_color%} '
+    print -rP $'%{$FG[031]%}%n%{$reset_color%}% @%{$FG[031]%}%m:%{$FG[248]%}%~ $(tamasgal_virtualenv)$(tamasgal_git_prompt)%{$reset_color%}'
 }
 
-PROMPT=$'%{$FG[198]%}>%{$reset_color%} '
+PROMPT=$'%{$FG[247]%}%D{%H:%M:%S} %{$FG[198]%}>%{$reset_color%} '
