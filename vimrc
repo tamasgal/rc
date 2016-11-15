@@ -114,7 +114,7 @@ call vundle#end()
 filetype plugin indent on
 
 
-let g:rainbow_active = 0
+let g:rainbow_active = 1
 let g:rainbow_conf = {
 \   'guifgs': ['lightblue', 'green', 'red', 'magenta'],
 \   'ctermfgs': ['lightblue', 'green', 'red', 'magenta'],
@@ -151,6 +151,9 @@ map <Leader>_ :sp<CR>
 " Move lines with _ and -
 nnoremap - ddkP
 nnoremap _ ddp
+
+" Easy Paste
+:nnoremap <leader>p :setlocal paste!<cr>
 
 " AutoFormat
 noremap <F3> :Autoformat<CR>
@@ -217,39 +220,45 @@ nnoremap <Leader>u :! py.test -l<CR>
 map <Leader>t :GhcModType<CR>
 map <Leader>c :GhcModCheck<CR>
 
-" Color schemt
-colo hemisu
-"colo sierra
-"colo solarized
+" Colours
+nnoremap <Leader>m :call ShutterToggle()<CR>
+let g:shutter_is_open=1
+
+function! ShutterToggle()
+    if g:shutter_is_open
+        :call ActivateDarkTheme()
+        let g:shutter_is_open=0
+    else
+        :call ActivateLightTheme()
+        let g:shutter_is_open=1
+    endif
+endfunction
+
+function! ActivateDarkTheme()
+    let g:airline_theme="zenburn"
+    colo sierra
+    hi CursorLine cterm=NONE ctermbg=238
+    hi CursorColumn cterm=NONE ctermbg=238
+endfunction
+
+function! ActivateLightTheme()
+    let g:airline_theme="papercolor"
+    colo hemisu
+    hi CursorLine cterm=NONE ctermbg=255
+    hi CursorColumn cterm=NONE ctermbg=255
+endfunction
+
+:call ActivateLightTheme()
 
 " Airline
 set laststatus=2
-"let g:airline_theme="powerlineish"
-let g:airline_theme="papercolor"
-"let g:airline_theme="solarized"
 let g:airline_powerline_fonts = 1
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
-
-" JavaScript
-let g:javascript_conceal_function   = "ƒ"
-let g:javascript_conceal_null       = "ø"
-let g:javascript_conceal_this       = "@"
-let g:javascript_conceal_return     = "⇚"
-let g:javascript_conceal_undefined  = "¿"
-let g:javascript_conceal_NaN        = "ℕ"
-let g:javascript_conceal_prototype  = "¶"
-let g:javascript_conceal_static     = "•"
-let g:javascript_conceal_super      = "Ω"
 
 " Notes
 :let g:notes_directories = ['~/Documents/Notes']
 
 " Highlights
-"hi CursorColumn cterm=NONE ctermbg=223
-hi CursorLine cterm=NONE ctermbg=255
-hi CursorColumn cterm=NONE ctermbg=255
 set cursorcolumn
 set cursorline
-"hi Search cterm=NONE ctermfg=white ctermbg=darkcyan
-
