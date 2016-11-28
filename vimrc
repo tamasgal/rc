@@ -106,6 +106,8 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/limelight.vim'
+Plugin 'junegunn/goyo.vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'davidhalter/jedi-vim'
 "Plugin 'marijnh/tern_for_vim'
@@ -164,6 +166,14 @@ nnoremap <space> :NERDTreeToggle<CR>
 " open with nerdtree if nothing else specified
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Limelight
+nmap <Leader>l :Limelight!!<CR>
+xmap <Leader>l :Limelight!!<CR>
+
+" Goyo
+nmap <Leader>g :Goyo<CR>
+xmap <Leader>g :Goyo<CR>
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
