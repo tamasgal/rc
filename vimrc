@@ -88,6 +88,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-vinegar'
 Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes.git'
 Plugin 'vim-airline/vim-airline'
@@ -98,7 +99,7 @@ Plugin 'luochen1990/rainbow'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vimwiki/vimwiki'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -108,6 +109,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
+Plugin 'mileszs/ack.vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'davidhalter/jedi-vim'
 "Plugin 'marijnh/tern_for_vim'
@@ -161,11 +163,28 @@ nnoremap _ ddp
 noremap <F3> :Autoformat<CR>
 
 " Nerdtree
-map <C-n> :NERDTreeToggle<CR>
-nnoremap <space> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
+"nnoremap <space> :NERDTreeToggle<CR>
 " open with nerdtree if nothing else specified
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 0
+"let g:netrw_altv = 1
+let g:netrw_winsize = 25
+nnoremap <space> :Lexplore<CR>
+
+" ag / ack
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+nmap <leader>a :tab split<CR>:Ack ""<Left>
+nmap <leader>A :tab split<CR>:Ack <C-r><C-w><Left>
 
 " Limelight
 nmap <Leader>l :Limelight!!<CR>
