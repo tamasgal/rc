@@ -43,6 +43,13 @@ set t_ut=                   " fix 256 colors in tmux http://sunaku.github.io/vim
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
+" Git
+let g:snips_author='Tamas Gal'
+let g:snips_email='himself@tamasgal.com'
+let g:snips_github='https://github.com/tamasgal'
+let g:snips_email_km3net='tgal@km3net.de'
+let g:snips_git_km3net='https://git.km3net.de/tgal'
+
 " TypeScript
 autocmd BufNewFile,BufRead *.ts setfiletype typescript syntax=typescript
 autocmd BufNewFile,BufRead *.tsx setfiletype typescript syntax=typescript
@@ -64,6 +71,7 @@ set colorcolumn=80
 " Frequently used stuff
 nnoremap <Leader>w :wq!<CR>
 nnoremap <Leader>q :q!<CR>
+nnoremap ; :
 
 " vimrc
 :nnoremap <leader>ev :split $MYVIMRC<cr>
@@ -101,7 +109,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'vimwiki/vimwiki'
 "Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
@@ -110,9 +118,14 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mileszs/ack.vim'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'davidhalter/jedi-vim'
-"Plugin 'marijnh/tern_for_vim'
+Plugin 'nixon/vim-vmath'
+
+" Snippets and deps
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'tamasgal/vim-snippets'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -186,6 +199,10 @@ cnoreabbrev AG Ack
 nmap <leader>a :tab split<CR>:Ack ""<Left>
 nmap <leader>A :tab split<CR>:Ack <C-r><C-w><Left>
 
+" vmath
+vmap <expr>  ++  VMATH_YankAndAnalyse()
+nmap         ++  vip++
+
 " Limelight
 nmap <Leader>l :Limelight!!<CR>
 xmap <Leader>l :Limelight!!<CR>
@@ -195,6 +212,11 @@ nmap <Leader>g :Goyo<CR>
 xmap <Leader>g :Goyo<CR>
 
 " CtrlP
+set wildignore+=*.a,*.o,*.so
+set wildignore+=*.bmp,*.gif,*.ico,*.pdf,*.jpg,*.png,*.h5
+set wildignore+=*.DS_Store
+set wildignore+=*.swp,*~
+
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
