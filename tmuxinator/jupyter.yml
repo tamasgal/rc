@@ -11,7 +11,7 @@ root: ~/
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
-pre_window: workon km3net
+pre_window: pyenv activate km3net
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -29,4 +29,4 @@ pre_window: workon km3net
 # post: tmux -CC attach -t jupyter
 
 windows:
-  - notebook: jupyter lab
+  - notebook: jupyter notebook
