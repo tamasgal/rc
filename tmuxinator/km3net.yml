@@ -37,9 +37,9 @@ windows:
   - local:
       layout: main-horizontal
       panes:
-        - workon km3net
-        - workon km3net
-        - workon km3net
+        - pyenv activate km3net
+        - pyenv activate km3net
+        - pyenv activate km3net
   - ecapmac:
       layout: main-horizontal
       panes:
@@ -52,16 +52,16 @@ windows:
         - ssh maroff1
         - ssh maroff1
         - ssh maroff1
+  - quoa:
+      layout: main-horizontal
+      panes:
+        - ssh quoa
+        - ssh quoa
+        - ssh quoa
   - km3pipe:
       layout: 7f45,181x48,0,0[181x34,0,0{90x34,0,0,19,90x34,91,0,22},181x13,0,35{90x13,0,35,20,90x13,91,35,21}]
       panes:
-        - workon km3pipe && vim
-        - workon km3pipe
-        - workon km3pipe && ./test_loop.sh
-        - workon km3pipe ipython
-  - rba:
-      layout: main-horizontal
-      panes:
-        - workon rainbowalga2
-        - workon rainbowalga2
-        - workon rainbowalga2
+        - pyenv activate km3pipe && cd ~/Dev/km3pipe && vim
+        - pyenv activate km3pipe && cd ~/Dev/km3pipe
+        - pyenv activate km3pipe && cd ~/Dev/km3pipe && ./test_loop.sh
+        - pyenv activate km3pipe && ipython
