@@ -242,7 +242,7 @@ nnoremap L $
 
 " Quick escape
 :inoremap jk <esc>
-:inoremap <esc> <nop>
+":inoremap <esc> <nop>
 
 " Syntastic
 set statusline+=%#warningmsg#
