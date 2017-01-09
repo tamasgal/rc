@@ -1,19 +1,25 @@
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/Applications/DevDesktop/drush:/usr/local/texlive/2015/bin/x86_64-darwin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/Applications/DevDesktop/drush:/usr/local/texlive/2016/bin/x86_64-darwin"
+
+pushd $(brew --prefix root6) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
 
 # Core and Find Utils on Mac OS X
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+#PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+#MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 #PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 #MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 #
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Dev
-source /usr/local/bin/virtualenvwrapper.sh
+# CONDA
+#export PATH=~/miniconda3/bin:"$PATH"
+
+# VIRTUALENV
+#export WORKON_HOME=$HOME/.virtualenvs
+#export PROJECT_HOME=$HOME/Dev
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # AAnet
-export AADIR=$HOME/Xapps/aanet
-export PYTHONPATH=$PYTHONPATH:$AADIR
-export PATH=$PATH:$AADIR
+#export AADIR=$HOME/Xapps/aanet
+#export PYTHONPATH=$PYTHONPATH:$AADIR
+#export PATH=$PATH:$AADIR
 
 # Mac aliases
 alias ls='ls --color'
@@ -23,3 +29,17 @@ alias ls='ls --color'
 #    tmux attach-session -t "$USER" || tmux new-session -s "$USER"
 #    exit
 #fi
+
+# Docker
+#eval "$(docker-machine env default)"
+
+export MAROFF="ws://maroff1.in2p3.fr:8088/test"
+
+# pyenv
+#export PYENV_ROOT="${HOME}/.pyenv"
+#export PATH="${PYENV_ROOT}/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export _JUPYTER_CONFIG_DIR="${PYENV_ROOT}/versions/$(pyenv version-name)/etc/jupyter"
+export _JUPYTER_DATA_DIR="${PYENV_ROOT}/versions/$(pyenv version-name)/share/jupyter"
+
