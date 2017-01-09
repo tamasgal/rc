@@ -78,7 +78,10 @@ vim_ver="`/usr/bin/vim --version | grep "Vi IMproved" | awk '{print $5}' | sed -
 alias vless="/usr/share/vim/vim$vim_ver/macros/less.sh"
 
 # IPython
-alias kpython="workon km3net && ipython --profile=km3net"
+alias kpython="pyenv activate km3net && ipython --profile=km3net"
+
+# ix paster
+alias ix="curl -n -F 'f:1=<-' http://ix.io "
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
