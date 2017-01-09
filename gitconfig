@@ -11,3 +11,9 @@
 	lol = log --oneline --decorate --graph --all
 [core]
 	editor = vim
+[pack]
+	window = 0
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
