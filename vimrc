@@ -122,6 +122,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'nixon/vim-vmath'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " Snippets and deps
 Plugin 'MarcWeber/vim-addon-mw-utils'
