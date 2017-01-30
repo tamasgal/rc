@@ -177,13 +177,6 @@ nnoremap _ ddp
 " AutoFormat
 noremap <F3> :Autoformat<CR>
 
-" Nerdtree
-"map <C-n> :NERDTreeToggle<CR>
-"nnoremap <space> :NERDTreeToggle<CR>
-" open with nerdtree if nothing else specified
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
