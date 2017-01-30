@@ -120,6 +120,7 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'nixon/vim-vmath'
+Plugin 'airblade/vim-gitgutter'
 
 " Snippets and deps
 Plugin 'MarcWeber/vim-addon-mw-utils'
