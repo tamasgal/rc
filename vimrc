@@ -124,6 +124,7 @@ Plugin 'nixon/vim-vmath'
 " Snippets and deps
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'garbas/vim-snipmate'
 Plugin 'tamasgal/vim-snippets'
 
