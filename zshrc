@@ -59,6 +59,9 @@ plugins=(conda tmux tmuxinator autojump vi-mode osx git git-extras git-flow git-
 source $HOME/.zshrc_local
 source $ZSH/oh-my-zsh.sh
 
+# Misc Python
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
+
 # Virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
