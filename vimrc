@@ -121,11 +121,11 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'nixon/vim-vmath'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'easymotion/vim-easymotion'
 
 " Snippets and deps
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'easymotion/vim-easymotion'
 Plugin 'garbas/vim-snipmate'
 Plugin 'tamasgal/vim-snippets'
 
