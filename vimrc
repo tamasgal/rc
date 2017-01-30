@@ -212,6 +212,17 @@ xmap <Leader>l :Limelight!!<CR>
 nmap <Leader>g :Goyo<CR>
 xmap <Leader>g :Goyo<CR>
 
+function! s:goyo_enter()
+    colorscheme pencil
+endfunction
+
+function! s:goyo_leave()
+    colorscheme hemisu
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 " CtrlP
 set wildignore+=*.a,*.o,*.so
 set wildignore+=*.bmp,*.gif,*.ico,*.pdf,*.jpg,*.png,*.h5
