@@ -123,6 +123,7 @@ Plugin 'nixon/vim-vmath'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'Valloric/YouCompleteMe'
 
 " Snippets and deps
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -240,6 +241,10 @@ let g:pymode_rope_complete_on_dot = 0
 
 " YouCompleteMe
 let g:ycm_path_to_python_interpreter = '/Users/tamasgal/.pyenv/shims/python'
+
+" Snipmate
+imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
