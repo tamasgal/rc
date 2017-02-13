@@ -238,6 +238,9 @@ set nofoldenable
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
 
+" YouCompleteMe
+let g:ycm_path_to_python_interpreter = '/Users/tamasgal/.pyenv/shims/python'
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
