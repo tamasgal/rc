@@ -64,8 +64,9 @@ set smartcase
 set hlsearch
 
 " Highlight lines with more than 80columns
-" highlight OverLength ctermbg=red ctermfg=white guibg=red
+"highlight OverLength ctermbg=blue ctermfg=white guibg=red
 " match OverLength /\%81v.\+/
+highlight ColorColumn ctermbg=blue
 set colorcolumn=80
 
 " Frequently used stuff
@@ -306,13 +307,20 @@ function! ActivateDarkTheme()
     colo sierra
     hi CursorLine cterm=NONE ctermbg=238
     hi CursorColumn cterm=NONE ctermbg=238
+    hi ColorColumn ctermbg=237
 endfunction
 
 function! ActivateLightTheme()
     let g:airline_theme="papercolor"
     colo hemisu
     hi CursorLine cterm=NONE ctermbg=255
+    let &colorcolumn=join(range(81,999),",")
     hi CursorColumn cterm=NONE ctermbg=255
+    hi ColorColumn ctermbg=255
+    " hi Normal guibg=#32322f ctermbg=255
+    hi NonText guibg=#32322f ctermbg=237
+    " hi ColorColumn guibg=#000000 ctermbg=231
+    " let &colorcolumn=join(range(1,80),",")
 endfunction
 
 :call ActivateLightTheme()
@@ -329,3 +337,4 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 " Highlights
 set cursorcolumn
 set cursorline
+
