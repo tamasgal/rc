@@ -241,7 +241,12 @@ let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
 
 " YouCompleteMe
+let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_path_to_python_interpreter = '/Users/tamasgal/.pyenv/shims/python'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf=0
+let g:ycm_collect_identifiers_from_tag_files = 1
+set completeopt=longest,menu
 
 " Snipmate
 imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
