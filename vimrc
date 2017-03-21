@@ -323,7 +323,7 @@ function! ActivateLightTheme()
     hi CursorColumn cterm=NONE ctermbg=255
     hi ColorColumn ctermbg=255
     " hi Normal guibg=#32322f ctermbg=255
-    hi NonText guibg=#32322f ctermbg=237
+    hi NonText guibg=#32322f ctermbg=255
     " hi ColorColumn guibg=#000000 ctermbg=231
     " let &colorcolumn=join(range(1,80),",")
 endfunction
