@@ -93,6 +93,9 @@ alias ix="curl -n -F 'f:1=<-' http://ix.io "
 bindkey -v
 export KEYTIMEOUT=1
 
+# AnyBar
+function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
