@@ -172,8 +172,8 @@ map <Leader>- :vsp<CR>
 map <Leader>_ :sp<CR>
 
 " Move lines with _ and -
-nnoremap - ddkP
-nnoremap _ ddp
+" nnoremap - ddkP
+" nnoremap _ ddp
 
 " Easy Paste
 :nnoremap <leader>p :setlocal paste!<cr>
