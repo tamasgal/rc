@@ -28,11 +28,19 @@ root: ~/
 #post: tmux -CC attach -t km3net
 
 windows:
-  - data:
+  - monitor:
       layout: main-horizontal
       panes:
         - CLBSK:
             - cd ~/KM3NeT_Software
             - ./CLBSwissKnife -m -g
-        - JLigier -d 3
-        - JGetMessage -H localhost -T "MSG"
+        - Ligier:
+            - JLigier -d 3
+        - LigierLog:
+            - JGetMessage -H localhost -T "MSG"
+  - data:
+      layout: main-horizontal
+      panes:
+          - cd ~/DOMscan
+          - cd ~/DOMscan
+          - cd ~/DOMscan
