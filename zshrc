@@ -86,6 +86,9 @@ alias kpython="pyenv activate km3net && ipython --profile=km3net"
 # ix paster
 alias ix="curl -n -F 'f:1=<-' http://ix.io "
 
+# Jupyter
+alias nbview="jupyter nbconvert --to slides --post serve "
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
