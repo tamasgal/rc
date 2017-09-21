@@ -30,3 +30,4 @@ pre_window: pyenv activate km3net
 
 windows:
   - notebook: jupyter notebook
+  - km3srv: km3srv
