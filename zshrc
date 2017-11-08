@@ -52,7 +52,7 @@ ZSH_THEME="tamasgal"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(conda tmux tmuxinator autojump vi-mode osx git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
+plugins=(conda docker tmux tmuxinator autojump vi-mode osx git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
 
 # User configuration
 
@@ -88,6 +88,9 @@ alias ix="curl -n -F 'f:1=<-' http://ix.io "
 
 # Jupyter
 alias nbview="jupyter nbconvert --to slides --post serve "
+
+# Julia
+alias julia_dev="$HOME/Dev/julia/julia"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"

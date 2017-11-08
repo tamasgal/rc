@@ -5,6 +5,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.ca
 # Mac aliases
 alias ls='ls --color'
 alias tokeynote='pbpaste | highlight --syntax=python -O rtf | pbcopy'
+alias vim='vim --servername vim'
 
 export MAROFF="ws://maroff1.in2p3.fr:8088/test"
 

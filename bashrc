@@ -35,7 +35,6 @@ source_dir ~/.bash.d
 source_dir ~/.bash.d/local/after
 
 . $(brew --prefix root)/libexec/thisroot.sh
-export PYTHONPATH=.:${PYTHONPATH}
 export PATH=/usr/local/sbin:$PATH
 
 export PATH="$PATH:/Applications/DevDesktop/drush"

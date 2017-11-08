@@ -97,6 +97,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'chriskempson/base16-vim'
+Plugin 'lervag/vimtex'
 
 " Snippets and deps
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -134,6 +135,7 @@ let g:rainbow_conf = {
 
 " Use tab to jump between tabs
 nnoremap <tab> :tabn<CR>
+nnoremap <S-tab> :tabp<CR>
 "vnoremap <tab> %
 
 " Split naturally
@@ -235,7 +237,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
 let g:syntastic_error_symbol = '✘'
@@ -286,7 +288,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 " Highlights
-set cursorcolumn
+"set cursorcolumn
 set cursorline
 
-hi Search cterm=NONE ctermfg=black ctermbg=blue
+hi Search cterm=NONE ctermfg=black ctermbg=lightblue
