@@ -99,6 +99,14 @@ export KEYTIMEOUT=1
 # AnyBar
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 
+# base16 and tmux
+tmux_light() {
+  tmux source-file ~/.rc/tmux-colors/tmuxcolors-light.conf
+}
+tmux_dark() {
+  tmux source-file ~/.rc/tmux-colors/tmuxcolors-dark.conf
+}
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
