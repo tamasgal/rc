@@ -1,4 +1,3 @@
-echo "===> Loading .zshrc"
 # Path to your oh-my-zsh installation.
 export ZSH=${HOME}/.oh-my-zsh
 
@@ -47,7 +46,7 @@ ZSH_THEME="tamasgal"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(conda docker tmux tmuxinator autojump vi-mode osx git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search)
+plugins=(conda docker tmux tmuxinator autojump vi-mode osx git git-extras git-flow git-remote-branch svn cabal zsh-syntax-highlighting history-substring-search colored-man-pages cp fasd extract)
 
 # User configuration
 
