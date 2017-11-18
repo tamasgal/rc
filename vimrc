@@ -256,6 +256,8 @@ command! MakeTags !/usr/local/bin/ctags -R .
 
 
 " EasyMotion
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
@@ -267,7 +269,10 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
-" Gif config
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+" Search
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
