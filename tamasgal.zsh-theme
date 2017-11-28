@@ -2,14 +2,14 @@ NEWLINE=$'\n'
 
 ### Git [±master ▾●]
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[178]%}@"
+ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}@"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✓%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[yellow]%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}●%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%F{green}✓%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%F{cyan}▴%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%F{magenta}▾%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%F{green}●%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNSTAGED="%F{yellow}●%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{red}●%{$reset_color%}"
 
 tamasgal_git_branch () {
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
@@ -21,7 +21,7 @@ tamasgal_virtualenv () {
   if test -z "$VIRTUAL_ENV" ; then
     echo -n ""
   else
-    echo " %{$FG[110]%}$(basename $VIRTUAL_ENV)%{$reset_color%}"
+    echo " %F{green}$(basename $VIRTUAL_ENV)%{$reset_color%}"
   fi
 }
 
@@ -71,7 +71,7 @@ tamasgal_git_prompt () {
 }
 
 precmd() {
-    print -rP $'%{$BG[198]%} %{$reset_color%} %{$FG[031]%}%n%{$reset_color%}% @%{$FG[031]%}%m:%{$FG[248]%}%~ $(tamasgal_virtualenv)$(tamasgal_git_prompt)%{$reset_color%}'
+    print -rP $'%F{red}░%{$reset_color%} %F{cyan}% %n%{$reset_color%}@%F{cyan}%m:%F{grey} %~ $(tamasgal_virtualenv)$(tamasgal_git_prompt)%{$reset_color%}'
 }
 
-PROMPT=$'%{$BG[198]%} %{$reset_color%} %{$FG[247]%}%D{%H:%M:%S} %{$FG[198]%}>%{$reset_color%} '
+PROMPT=$'%F{red}░%{$reset_color%} %F{grey}%D{%H:%M:%S} %F{red}>%{$reset_color%} '
