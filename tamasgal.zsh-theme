@@ -71,7 +71,7 @@ tamasgal_git_prompt () {
 }
 
 precmd() {
-    print -rP $'%F{red}░%{$reset_color%} %F{cyan}% %n%{$reset_color%}@%F{cyan}%m:%F{grey} %~ $(tamasgal_virtualenv)$(tamasgal_git_prompt)%{$reset_color%}'
+    print -rP $'%F{red}░%{$reset_color%} %F{cyan}% %n%{$reset_color%}@%F{cyan}%m:%F{grey}%~ $(tamasgal_virtualenv)$(tamasgal_git_prompt)%{$reset_color%}'
 }
 
 PROMPT=$'%F{red}░%{$reset_color%} %F{grey}%D{%H:%M:%S} %F{red}>%{$reset_color%} '
