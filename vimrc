@@ -97,6 +97,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'chriskempson/base16-vim'
 Plugin 'lervag/vimtex'
+Plugin 'rizzatti/dash.vim'
 
 " Snippets and deps
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -175,6 +176,9 @@ cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 nmap <leader>a :tab split<CR>:Ack ""<Left>
 nmap <leader>A :tab split<CR>:Ack <C-r><C-w><Left>
+
+" Dash
+:nmap <silent> <leader>h <Plug>DashSearch
 
 " vmath
 vmap <expr>  ++  VMATH_YankAndAnalyse()
