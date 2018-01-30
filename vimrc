@@ -81,22 +81,22 @@ Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'eagletmt/ghcmod-vim'
+" Plugin 'eagletmt/ghcmod-vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'junegunn/limelight.vim'
+" Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'nixon/vim-vmath'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'chriskempson/base16-vim'
 Plugin 'lervag/vimtex'
+Plugin 'brennier/quicktex'
 
 " Snippets and deps
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -167,6 +167,28 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" vimtex
+let g:vimtex_view_method = 'skim'
+
+" quicktex
+let g:quicktex_tex = {
+    \' '   : "\<ESC>:call search('<+.*+>')\<CR>\"_c/+>/e\<CR>",
+    \'m'   : '\( <+++> \) <++>',
+    \'prf' : "\\begin{proof}\<CR><+++>\<CR>\\end{proof}",
+\}
+
+let g:quicktex_math = {
+    \' '    : "\<ESC>:call search('<+.*+>')\<CR>\"_c/+>/e\<CR>",
+    \'fr'   : '\mathcal{R} ',
+    \'eq'   : '= ',
+    \'set'  : '\{ <+++> \} <++>',
+    \'frac' : '\frac{<+++>}{<++>} <++>',
+    \'one'  : '1 ',
+    \'st'   : ': ',
+    \'in'   : '\in ',
+    \'bn'   : '\mathbb{N} ',
+\}
+
 " ag / ack
 let g:ackprg = 'ag --vimgrep --smart-case'
 cnoreabbrev ag Ack
@@ -176,13 +198,9 @@ cnoreabbrev AG Ack
 nmap <leader>a :tab split<CR>:Ack ""<Left>
 nmap <leader>A :tab split<CR>:Ack <C-r><C-w><Left>
 
-" vmath
-vmap <expr>  ++  VMATH_YankAndAnalyse()
-nmap         ++  vip++
-
 " Limelight
-nmap <Leader>l :Limelight!!<CR>
-xmap <Leader>l :Limelight!!<CR>
+" nmap <Leader>l :Limelight!!<CR>
+" xmap <Leader>l :Limelight!!<CR>
 
 " Goyo
 nmap <Leader>g :Goyo<CR>
@@ -235,8 +253,8 @@ map <Leader>s :SyntasticToggleMode<CR>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
 let g:syntastic_error_symbol = '✘'
@@ -315,3 +333,5 @@ endif
 set cursorline
 
 hi Search cterm=NONE ctermfg=black ctermbg=lightblue
+" hi MatchParen cterm=none ctermfg=black ctermbg=lightgreen
+hi MatchParen cterm=bold ctermfg=none ctermbg=none
