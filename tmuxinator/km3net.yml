@@ -37,9 +37,9 @@ windows:
   - local:
       layout: main-horizontal
       panes:
-        - pyenv activate km3net
-        - pyenv activate km3net
-        - pyenv activate km3net
+        - 
+        - 
+        -
   - ecapmac:
       layout: main-horizontal
       panes:
@@ -61,7 +61,7 @@ windows:
   - km3pipe:
       layout: 7f45,181x48,0,0[181x34,0,0{90x34,0,0,19,90x34,91,0,22},181x13,0,35{90x13,0,35,20,90x13,91,35,21}]
       panes:
-        - pyenv activate km3pipe && cd ~/Dev/km3pipe && vim
-        - pyenv activate km3pipe && cd ~/Dev/km3pipe
-        - pyenv activate km3pipe && cd ~/Dev/km3pipe && ./test_loop.sh
-        - pyenv activate km3pipe && ipython
+        - cd ~/Dev/km3pipe && vim
+        - cd ~/Dev/km3pipe
+        - cd ~/Dev/km3pipe && make test-loop
+        - ipython
