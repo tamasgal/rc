@@ -144,6 +144,8 @@ set splitright
 map <Leader>- :vsp<CR>
 map <Leader>_ :sp<CR>
 
+set diffopt+=vertical
+
 " Move lines with _ and -
 " nnoremap - ddkP
 " nnoremap _ ddp
@@ -337,7 +339,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 " Highlights
-"set cursorcolumn
+set cursorcolumn
 set cursorline
 
 hi Search cterm=NONE ctermfg=black ctermbg=lightblue
