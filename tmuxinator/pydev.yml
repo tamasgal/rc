@@ -1,7 +1,7 @@
 # ~/.tmuxinator/km3pipe.yml
 
-name: km3pipe
-root: ~/Dev/km3pipe
+name: pydev
+# root: ~/Dev/km3pipe
 
 # Optional tmux socket
 # socket_name: foo
@@ -11,7 +11,6 @@ root: ~/Dev/km3pipe
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
-pre_window: workon km3pipe
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -34,5 +33,5 @@ windows:
       panes:
         - vim
         - #
-        - py.test -f
+        - make test-loop
         - ipython
