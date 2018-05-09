@@ -77,7 +77,7 @@ Plugin 'JuliaLang/julia-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'flazz/vim-colorschemes.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -252,24 +252,14 @@ nnoremap L $
 :inoremap jk <esc>
 ":inoremap <esc> <nop>
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-map <silent> <Leader>e :Errors<CR>
-map <Leader>s :SyntasticToggleMode<CR>
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = '¬'
-let g:syntastic_loc_list_height=3
+" ALE lint engine
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '¬'
+let g:airline#extensions#ale#enabled = 1
 
 " Unit test (python)
 "map <Leader>r :! py.test -l %<CR>
