@@ -24,6 +24,7 @@ set smartcase
 set scrolloff=2
 set ruler
 set backspace=indent,eol,start
+set textwidth=80
 
 "set cpoptions+=$            " dollar sign while changing
 set pumheight=7            " limit popup menu height
@@ -61,6 +62,9 @@ nnoremap ; :
 " Trailing whitespace
 match ErrorMsg '\s\+$'
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+
+" run make
+nnoremap <Leader>m :!make<CR>
 
 " jump to the last position when reopening a file
 if has("autocmd")
@@ -223,6 +227,10 @@ nnoremap <C-l> <C-w>l
 " Line movement
 nnoremap H 0
 nnoremap L $
+
+" wrapped line movement
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 
 " Quick escape
 :inoremap jk <esc>
