@@ -81,26 +81,26 @@ Plugin 'JuliaLang/julia-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'flazz/vim-colorschemes.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'eagletmt/ghcmod-vim'
+" Plugin 'eagletmt/ghcmod-vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'junegunn/limelight.vim'
+" Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'nixon/vim-vmath'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'chriskempson/base16-vim'
 Plugin 'lervag/vimtex'
+Plugin 'brennier/quicktex'
 Plugin 'rizzatti/dash.vim'
 
 " Snippets and deps
@@ -148,6 +148,8 @@ set splitright
 map <Leader>- :vsp<CR>
 map <Leader>_ :sp<CR>
 
+set diffopt+=vertical
+
 " Move lines with _ and -
 " nnoremap - ddkP
 " nnoremap _ ddp
@@ -172,6 +174,28 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" vimtex
+let g:vimtex_view_method = 'skim'
+
+" quicktex
+let g:quicktex_tex = {
+    \' '   : "\<ESC>:call search('<+.*+>')\<CR>\"_c/+>/e\<CR>",
+    \'m'   : '\( <+++> \) <++>',
+    \'prf' : "\\begin{proof}\<CR><+++>\<CR>\\end{proof}",
+\}
+
+let g:quicktex_math = {
+    \' '    : "\<ESC>:call search('<+.*+>')\<CR>\"_c/+>/e\<CR>",
+    \'fr'   : '\mathcal{R} ',
+    \'eq'   : '= ',
+    \'set'  : '\{ <+++> \} <++>',
+    \'frac' : '\frac{<+++>}{<++>} <++>',
+    \'one'  : '1 ',
+    \'st'   : ': ',
+    \'in'   : '\in ',
+    \'bn'   : '\mathbb{N} ',
+\}
+
 " ag / ack
 let g:ackprg = 'ag --vimgrep --smart-case'
 cnoreabbrev ag Ack
@@ -189,8 +213,8 @@ vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
 " Limelight
-nmap <Leader>l :Limelight!!<CR>
-xmap <Leader>l :Limelight!!<CR>
+" nmap <Leader>l :Limelight!!<CR>
+" xmap <Leader>l :Limelight!!<CR>
 
 " Goyo
 nmap <Leader>g :Goyo<CR>
@@ -236,24 +260,14 @@ nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 :inoremap jk <esc>
 ":inoremap <esc> <nop>
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-map <silent> <Leader>e :Errors<CR>
-map <Leader>s :SyntasticToggleMode<CR>
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = '¬'
-let g:syntastic_loc_list_height=3
+" ALE lint engine
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '¬'
+let g:airline#extensions#ale#enabled = 1
 
 " Unit test (python)
 "map <Leader>r :! py.test -l %<CR>
@@ -323,7 +337,9 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 " Highlights
-"set cursorcolumn
+set cursorcolumn
 set cursorline
 
 hi Search cterm=NONE ctermfg=black ctermbg=lightblue
+" hi MatchParen cterm=none ctermfg=black ctermbg=lightgreen
+hi MatchParen cterm=bold ctermfg=none ctermbg=none
