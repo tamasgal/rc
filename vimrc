@@ -77,6 +77,7 @@ Plugin 'JuliaLang/julia-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
+" Plugin 'tpope/vim-unimpaired'
 Plugin 'w0rp/ale'
 Plugin 'flazz/vim-colorschemes.git'
 Plugin 'vim-airline/vim-airline'
@@ -85,19 +86,15 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'luochen1990/rainbow'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'junegunn/vim-easy-align'
-" Plugin 'junegunn/limelight.vim'
-Plugin 'junegunn/goyo.vim'
+" Plugin 'Chiel92/vim-autoformat'
+" Plugin 'junegunn/vim-easy-align'
 Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'chriskempson/base16-vim'
 Plugin 'lervag/vimtex'
 Plugin 'brennier/quicktex'
-Plugin 'rizzatti/dash.vim'
 
 " Snippets and deps
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -201,20 +198,9 @@ cnoreabbrev AG Ack
 nmap <leader>a :tab split<CR>:Ack ""<Left>
 nmap <leader>A :tab split<CR>:Ack <C-r><C-w><Left>
 
-" Dash
-:nmap <silent> <leader>h <Plug>DashSearch
-
 " vmath
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
-
-" Limelight
-" nmap <Leader>l :Limelight!!<CR>
-" xmap <Leader>l :Limelight!!<CR>
-
-" Goyo
-nmap <Leader>g :Goyo<CR>
-xmap <Leader>g :Goyo<CR>
 
 " CtrlP
 set wildignore+=*.a,*.o,*.so
@@ -257,6 +243,9 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
+let g:ale_linters = {
+\ 'python': ['flake8', 'mypy', 'pycodestyle', 'pylint'] ,
+\ }
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '¬'
 let g:airline#extensions#ale#enabled = 1
