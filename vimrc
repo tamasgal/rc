@@ -290,9 +290,9 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-" Search
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
+" Replace regular search
+" map  / <Plug>(easymotion-sn)
+" omap / <Plug>(easymotion-tn)
 
 " Airline
 set laststatus=2
