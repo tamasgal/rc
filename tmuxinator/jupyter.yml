@@ -29,5 +29,4 @@ root: ~/
 # post: tmux -CC attach -t jupyter
 
 windows:
-  - notebook: jupyter lab
-  - km3srv: km3srv
+  - notebook: jupyter notebook
