@@ -1,11 +1,16 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'benekastah/neomake'
+" Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 
 Plug 'tpope/vim-fugitive'
 
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'tamasgal/vim-snippets'
+
+
+Plug 'lervag/vimtex'
+Plug 'tomtom/tcomment_vim'
 
 Plug 'luochen1990/rainbow'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -32,43 +37,71 @@ set smartcase
 set scrolloff=2
 set ruler
 set backspace=indent,eol,start
+set colorcolumn=80
+
+" Remember cursor position between vim sessions
+autocmd BufReadPost *
+      \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+      \   exe "normal! g'\"" |
+      \ endif
 
 " DeoPlete
 let g:deoplete#enable_at_startup = 1
 
-let g:pymode_lint=0 " using neomake for linting
+let g:pymode_lint=0 " using neomake or ale for linting
 let g:pymode_rope=0 " using deoplete for auto-completion
 let g:pymode_python='python3'
 
-" Neomake (linting)
+" neomake (linting)
 " enable Neomake on open and write but not on exit
-autocmd! BufWritePost,BufReadPost * Neomake
+" autocmd! BufWritePost,BufReadPost * Neomake
 
-" python linting
-autocmd! BufWritePost,BufEnter * Neomake
-autocmd! QuitPre * let g:neomake_verbose = 0
+" autocmd! BufWritePost,BufEnter * Neomake
+" autocmd! QuitPre * let g:neomake_verbose = 0
+"
+" highlight NeoMakeErrorSign ctermfg=196
+" highlight NeoMakeError ctermfg=196
+" highlight NeoMakeWarningSign ctermfg=226
+" highlight NeoMakeWarning ctermfg=226
+" let g:neomake_warning_sign={'text': '•', 'texthl': 'NeomakeWarningSign'}
+"
+" function SetWarningType(entry)
+"     let a:entry.type = 'W'
+" endfunction
+"
+" let g:neomake_tex_enabled_makers = []
+" let g:neomake_python_enabled_makers = ['pycodestyle', 'pyflakes']
+" let g:neomake_python_pycodestyle_maker = {
+"     \ 'args': ['--max-line-length=80', '--ignore=E741' ],
+"     \ 'postprocess': function('SetWarningType')
+"     \ }
+" let g:neomake_cpp_gcc_maker = {
+"     \ 'args': [ '--std=c++14', '-fsyntax-only', '-Wall', '-Wextra', '-pedantic']
+"     \ }
 
-highlight NeoMakeErrorSign ctermfg=196
-highlight NeoMakeError ctermfg=196
-highlight NeoMakeWarningSign ctermfg=226
-highlight NeoMakeWarning ctermfg=226
-let g:neomake_warning_sign={'text': '•', 'texthl': 'NeomakeWarningSign'}
 
-" python linting
-function SetWarningType(entry)
-    let a:entry.type = 'W'
-endfunction
-
-let g:neomake_tex_enabled_makers = []
-let g:neomake_python_enabled_makers = ['pycodestyle', 'pyflakes']
-let g:neomake_python_pycodestyle_maker = {
-    \ 'args': ['--max-line-length=90', '--ignore=E741' ],
-    \ 'postprocess': function('SetWarningType')
-    \ }
-
-let g:neomake_cpp_gcc_maker = {
-    \ 'args': [ '--std=c++14', '-fsyntax-only', '-Wall', '-Wextra', '-pedantic']
-    \ }
+" ale
+let g:ale_lint_on_enter = 1
+" let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+  \ 'python': ['flake8', 'mypy', 'pylint'] ,
+  \ }
+let g:ale_fixers = {
+  \ 'python': ['autopep8', 'yapf'] ,
+  \ }
+let g:ale_python_mypy_options = '--ignore-missing-imports'
+let g:ale_fixers = {
+  \ 'python': ['autopep8', 'yapf'] ,
+  \ }
+" let g:ale_sign_error = '⊛⊛⨀⨂●⦿'
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '•'
+let g:ale_set_highlights = 0
+" highlight clear ALEErrorSign
+" highlight clear ALEWarningSign
+" highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
 
 
 " EasyMotion
@@ -136,3 +169,6 @@ set cursorline
 hi Search cterm=NONE ctermfg=black ctermbg=lightblue
 " hi MatchParen cterm=none ctermfg=black ctermbg=lightgreen
 hi MatchParen cterm=bold ctermfg=none ctermbg=none
+
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
