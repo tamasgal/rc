@@ -13,6 +13,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+
+Plug 'lervag/vimtex'
+
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -21,6 +24,7 @@ call plug#end()
 " Syntax and Semantics
 syntax on
 let mapleader = ","
+let maplocalleader = "\\"
 
 set shiftwidth=4 softtabstop=4
 set expandtab
@@ -70,6 +74,11 @@ let g:neomake_cpp_gcc_maker = {
     \ 'args': [ '--std=c++14', '-fsyntax-only', '-Wall', '-Wextra', '-pedantic']
     \ }
 
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " EasyMotion
 " Turn on case insensitive feature
