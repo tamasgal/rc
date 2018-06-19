@@ -43,7 +43,7 @@ set ruler
 set backspace=indent,eol,start
 set colorcolumn=80
 
-set formatprg=par
+set formatprg=par\ -w79
 
 " Remember cursor position between vim sessions
 autocmd BufReadPost *
@@ -141,6 +141,12 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " jk
 :inoremap jk <esc>
 map <Leader>L <Plug>(easymotion-bd-jk)
+
+" remove trainling whitespace
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+
+" quick formatting of paragraph
+nnoremap <Leader>p gqip
 
 " CtrlP
 set wildignore+=*.a,*.o,*.so
