@@ -39,6 +39,8 @@ set ruler
 set backspace=indent,eol,start
 set colorcolumn=80
 
+set formatprg=par
+
 " Remember cursor position between vim sessions
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line ("'\"") <= line("$") |
