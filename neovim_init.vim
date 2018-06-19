@@ -18,6 +18,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+
+Plug 'lervag/vimtex'
+
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -26,6 +29,7 @@ call plug#end()
 " Syntax and Semantics
 syntax on
 let mapleader = ","
+let maplocalleader = "\\"
 
 set shiftwidth=4 softtabstop=4
 set expandtab
@@ -105,6 +109,11 @@ let g:ale_set_highlights = 0
 " highlight clear ALEWarningSign
 " highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
 
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " EasyMotion
 " Turn on case insensitive feature
