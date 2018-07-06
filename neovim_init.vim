@@ -167,6 +167,9 @@ let g:snips_github='https://github.com/tamasgal'
 let g:snips_email_km3net='tgal@km3net.de'
 let g:snips_git_km3net='https://git.km3net.de/tgal'
 
+" vimtex
+let g:vimtex_view_method = 'skim'
+
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
