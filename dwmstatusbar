@@ -1,0 +1,54 @@
+#!/bin/bash
+
+INTERVAL=1  # refresh interval [s]
+NETWORK_INTERFACES="enp0s31f6"  # separated by spaces
+DL="  |  "  # delimiter
+
+
+print_memfree() {
+    memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))"M"
+    echo -e "MEM: $memfree"
+}
+
+print_date() {
+    date "+%a %m-%d %T"
+}
+
+print_mem_killer() {
+    cpu_killer=$(basename $(ps -eo pmem,pcpu,vsize,pid,cmd | sort -k 1 -nr | head -1|awk '{print $5}'))
+    echo -e $cpu_killer
+}
+
+print_cpu_killer() {
+    cpu_killer=$(basename $(ps -eo pmem,pcpu,vsize,pid,cmd | sort -k 2 -nr | head -1|awk '{print $5}'))
+    echo -e $cpu_killer
+}
+
+
+tx_old=0
+rx_old=0
+# setopt shwordsplit
+for NETWORK_INTERFACE in ${NETWORK_INTERFACES}; do
+    tx_old=$(cat /sys/class/net/${NETWORK_INTERFACE}/statistics/tx_bytes)
+    rx_old=$(cat /sys/class/net/${NETWORK_INTERFACE}/statistics/rx_bytes)
+done
+# unsetopt shwordsplit
+
+while true; do
+    rx_now=0
+    tx_now=0
+    for NETWORK_INTERFACE in ${NETWORK_INTERFACES}; do
+        tx_now=$(($rx_now + $(cat /sys/class/net/${NETWORK_INTERFACE}/statistics/tx_bytes)))
+        rx_now=$(($rx_now + $(cat /sys/class/net/${NETWORK_INTERFACE}/statistics/rx_bytes)))
+    done
+
+    let rx_rate=($rx_now-$rx_old)/1024/$INTERVAL
+    let tx_rate=($tx_now-$tx_old)/1024/$INTERVAL
+
+    xsetroot -name "MEM KILLER: $(print_mem_killer)${DL}CPU KILLER: $(print_cpu_killer)${DL}RX: $rx_rate kb/s${DL}TX: $tx_rate kb/s${DL}$(print_memfree)${DL}$(print_date)"
+    sleep $INTERVAL
+
+    tx_old=$tx_now
+    rx_old=$rx_now
+done
+
