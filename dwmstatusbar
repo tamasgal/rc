@@ -24,6 +24,10 @@ print_cpu_killer() {
     echo -e $cpu_killer
 }
 
+print_volume() {
+    VOL=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
+    echo $VOL
+}
 
 tx_old=0
 rx_old=0
@@ -45,7 +49,7 @@ while true; do
     let rx_rate=($rx_now-$rx_old)/1024/$INTERVAL
     let tx_rate=($tx_now-$tx_old)/1024/$INTERVAL
 
-    xsetroot -name "MEM KILLER: $(print_mem_killer)${DL}CPU KILLER: $(print_cpu_killer)${DL}RX: $rx_rate kb/s${DL}TX: $tx_rate kb/s${DL}$(print_memfree)${DL}$(print_date)"
+    xsetroot -name "MEM† $(print_mem_killer)${DL}CPU† $(print_cpu_killer)${DL}V: $(print_volume)${DL}RX: $rx_rate kb/s${DL}TX: $tx_rate kb/s${DL}$(print_memfree)${DL}$(print_date)"
     sleep $INTERVAL
 
     tx_old=$tx_now
