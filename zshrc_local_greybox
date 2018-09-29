@@ -3,7 +3,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.ca
 #pushd $(brew --prefix root6) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
 
 # Mac aliases
-alias ls='ls --color'
+alias ls='ls -G'
 alias tokeynote='pbpaste | highlight --syntax=python -O rtf | pbcopy'
 alias vim='nvim'
 
