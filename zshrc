@@ -92,6 +92,15 @@ function profile() {
 bindkey -v
 export KEYTIMEOUT=1
 
+# Misc functions
+doi2bib ()
+{
+    echo >> bib.bib;
+    curl -s "http://api.crossref.org/works/$1/transform/application/x-bibtex" >> bib.bib;
+    echo >> bib.bib
+}
+
+
 # AnyBar
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 

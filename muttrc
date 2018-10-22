@@ -1,0 +1,40 @@
+set editor=nvim
+set sort=threads
+set sort_aux=date
+set edit_headers=yes
+set date_format="%y-%m-%d %T"
+set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
+set imap_check_subscribed
+
+set send_charset="utf-8"
+
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
+
+# VIM-like key bindings
+bind pager j next-line
+bind pager k previous-line
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+
+bind index,pager B sidebar-toggle-visible
+
+# Folder hooks
+folder-hook 'account.de.km3net' 'source ~/.mutt/account.km3net.de'
+folder-hook 'account.de.fau' 'source ~/.mutt/account.de.fau'
+
+# Default account
+source ~/.mutt/account.de.km3net
+
+# Macros for switching accounts
+macro index <F2> "<sync-mailbox><enter-command>source ~/.mutt/account.de.km3net<enter><change-folder>!<enter>"
+macro index <F3> "<sync-mailbox><enter-command>source ~/.mutt/account.de.fau<enter><change-folder>!<enter>"
+
+# Fetch mail shortcut
+bind index G imap-fetch-mail
+
+source .mutt/base16.muttrc
