@@ -10,6 +10,7 @@ Plug 'tamasgal/vim-snippets'
 
 
 Plug 'lervag/vimtex'
+Plug 'rhysd/vim-grammarous'
 Plug 'tomtom/tcomment_vim'
 
 Plug 'luochen1990/rainbow'
@@ -146,7 +147,7 @@ map <Leader>L <Plug>(easymotion-bd-jk)
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " quick formatting of paragraph
-nnoremap <Leader>p gqip
+nnoremap <Leader>p mPgqip`P
 
 " CtrlP
 set wildignore+=*.a,*.o,*.so
@@ -168,6 +169,8 @@ let g:snips_email='himself@tamasgal.com'
 let g:snips_github='https://github.com/tamasgal'
 let g:snips_email_km3net='tgal@km3net.de'
 let g:snips_git_km3net='https://git.km3net.de/tgal'
+
+nnoremap <leader>g :Gwrite<bar>Gcommit<cr>
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
