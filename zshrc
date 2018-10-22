@@ -79,6 +79,12 @@ alias nbview="jupyter nbconvert --to slides --post serve "
 # Julia
 alias julia_dev="$HOME/Dev/julia/julia"
 
+# Profile
+function profile() { 
+    python -m cProfile -o ~/tmp/temp.profile $1
+    snakeviz ~/tmp/temp.profile
+}
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
