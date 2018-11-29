@@ -79,12 +79,27 @@ alias nbview="jupyter nbconvert --to slides --post serve "
 # Julia
 alias julia_dev="$HOME/Dev/julia/julia"
 
+# Profile
+function profile() { 
+    python -m cProfile -o ~/tmp/temp.profile $1
+    snakeviz ~/tmp/temp.profile
+}
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # VI mode
 bindkey -v
 export KEYTIMEOUT=1
+
+# Misc functions
+doi2bib ()
+{
+    echo >> bib.bib;
+    curl -s "http://api.crossref.org/works/$1/transform/application/x-bibtex" >> bib.bib;
+    echo >> bib.bib
+}
+
 
 # AnyBar
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }

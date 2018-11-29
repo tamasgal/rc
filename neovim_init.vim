@@ -10,6 +10,9 @@ Plug 'tamasgal/vim-snippets'
 
 
 Plug 'lervag/vimtex'
+Plug 'rhysd/vim-grammarous'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax' 
 Plug 'tomtom/tcomment_vim'
 
 Plug 'luochen1990/rainbow'
@@ -18,6 +21,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'sbdchd/neoformat'
+
+Plug 'itchyny/calendar.vim'
 
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -112,6 +118,15 @@ let g:ale_set_highlights = 0
 " highlight clear ALEWarningSign
 " highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
 
+
+" neoformat
+let g:tex_flavor = "latex"
+let g:neoformat_tex_latexindent = {
+  \ 'exe': 'latexindent',
+  \ 'args': ['-l'],
+  \ 'stdin': 1
+  \ }
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -149,7 +164,7 @@ map <Leader>L <Plug>(easymotion-bd-jk)
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " quick formatting of paragraph
-nnoremap <Leader>p gqip
+nnoremap <Leader>p mPgqip`P
 
 " CtrlP
 set wildignore+=*.a,*.o,*.so
@@ -172,8 +187,16 @@ let g:snips_github='https://github.com/tamasgal'
 let g:snips_email_km3net='tgal@km3net.de'
 let g:snips_git_km3net='https://git.km3net.de/tgal'
 
+nnoremap <leader>g :Gwrite<bar>Gcommit<cr>
+
 " vimtex
 let g:vimtex_view_method = 'zathura'
+
+" vim-pandoc
+let g:pandoc#modules#disabled = ["folding"]
+
+" calendar
+let g:calendar_google_calendar = 1
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
