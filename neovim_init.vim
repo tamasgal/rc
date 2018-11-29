@@ -40,6 +40,11 @@ set scrolloff=2
 set ruler
 set backspace=indent,eol,start
 set colorcolumn=80
+au BufRead /tmp/mutt-* set tw=72
+augroup filetypedetect
+  " Mail
+  autocmd BufRead,BufNewFile *mutt-*              setfiletype mail
+augroup END<Paste>
 
 set formatprg=par\ -w79
 
@@ -168,7 +173,7 @@ let g:snips_email_km3net='tgal@km3net.de'
 let g:snips_git_km3net='https://git.km3net.de/tgal'
 
 " vimtex
-let g:vimtex_view_method = 'skim'
+let g:vimtex_view_method = 'zathura'
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
