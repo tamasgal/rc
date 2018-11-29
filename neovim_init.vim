@@ -209,8 +209,11 @@ let base16colorspace=256
 colorscheme base16-default-dark
 
 " Highlights
-set cursorcolumn
-set cursorline
+" set cursorcolumn
+" set cursorline
+" highlight CursorColumn ctermbg=234 ctermfg=none
+" highlight CursorLine ctermbg=237 ctermfg=none
+highlight clear SignColumn
 
 hi Search cterm=NONE ctermfg=black ctermbg=lightblue
 " hi MatchParen cterm=none ctermfg=black ctermbg=lightgreen
