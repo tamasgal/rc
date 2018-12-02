@@ -1,4 +1,4 @@
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/Applications/DevDesktop/drush:/usr/local/texlive/2018/bin/x86_64-darwin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/Applications/DevDesktop/drush:/usr/local/texlive/2016/bin/x86_64-darwin:/Library/TeX/texbin"
 
 #pushd $(brew --prefix root6) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
 
@@ -19,3 +19,6 @@ eval "$(pyenv virtualenv-init -)"
 
 BASE16_SHELL=$HOME/.rc/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+alias vim=nvim
+alias vimdiff='nvim -d'

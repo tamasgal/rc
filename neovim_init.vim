@@ -10,6 +10,7 @@ Plug 'tamasgal/vim-snippets'
 
 
 Plug 'lervag/vimtex'
+Plug 'rhysd/vim-grammarous'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax' 
 Plug 'tomtom/tcomment_vim'
@@ -44,6 +45,11 @@ set scrolloff=2
 set ruler
 set backspace=indent,eol,start
 set colorcolumn=80
+au BufRead /tmp/mutt-* set tw=72
+augroup filetypedetect
+  " Mail
+  autocmd BufRead,BufNewFile *mutt-*              setfiletype mail
+augroup END<Paste>
 
 set formatprg=par\ -w79
 
@@ -157,7 +163,7 @@ map <Leader>L <Plug>(easymotion-bd-jk)
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " quick formatting of paragraph
-nnoremap <Leader>p gqip
+nnoremap <Leader>p mPgqip`P
 
 " CtrlP
 set wildignore+=*.a,*.o,*.so
@@ -180,8 +186,10 @@ let g:snips_github='https://github.com/tamasgal'
 let g:snips_email_km3net='tgal@km3net.de'
 let g:snips_git_km3net='https://git.km3net.de/tgal'
 
+nnoremap <leader>g :Gwrite<bar>Gcommit<cr>
+
 " vimtex
-let g:vimtex_view_method = 'skim'
+let g:vimtex_view_method = 'zathura'
 
 " vim-pandoc
 let g:pandoc#modules#disabled = ["folding"]
@@ -197,8 +205,11 @@ let base16colorspace=256
 colorscheme base16-default-dark
 
 " Highlights
-set cursorcolumn
-set cursorline
+" set cursorcolumn
+" set cursorline
+" highlight CursorColumn ctermbg=234 ctermfg=none
+" highlight CursorLine ctermbg=237 ctermfg=none
+highlight clear SignColumn
 
 hi Search cterm=NONE ctermfg=black ctermbg=lightblue
 " hi MatchParen cterm=none ctermfg=black ctermbg=lightgreen
