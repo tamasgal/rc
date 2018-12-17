@@ -158,10 +158,15 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! URxvt*iconFile:                   file
 ! URxvt*font:                         xft:FiraCode:size=9
 ! Fonts
-URxvt.font: xft:Fira Code:size=9,style=medium
-URxvt.boldFont: xft:Fira Code:size=9,style=bold
-URxvt.italicFont: xft:Fira Code:size=9,style=bold
-URxvt.boldItalicFont: xft:Fira Code:size=9,style=bold
+! URxvt.font: xft:Hasklig Medium:size=9:antialias=true:hinting=true
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=9:antialias=true:hinting=true
+! URxvt.font: xft:Bitsream Vera Sans:size=10:antialias=true:hinting=true
+! URxvt.font: xft:Source Code Pro:size=9,style=medium
+! URxvt.font: xft:Inconsolata:size=11,style=regular
+! URxvt.font: xft:Fira Mono:size=11,style=medium
+! URxvt.boldFont: xft:Fira Code:size=9,style=bold
+! URxvt.italicFont: xft:Fira Code:size=9,style=bold
+! URxvt.boldItalicFont: xft:Fira Code:size=9,style=bold
 URxvt.letterSpace: -1
 ! URxvt*boldFont:                   fontname
 ! URxvt*italicFont:                 fontname
