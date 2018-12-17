@@ -1,5 +1,4 @@
-# export TERM=xterm-256color
-# export TERM=rxvt-unicode-256color
+export PATH=$HOME/opt/bin:$PATH
 
 setxkbmap -option ctrl:nocaps
 
@@ -10,17 +9,39 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+export PATH="$PATH:/home/tgal/.gem/ruby/2.5.0/bin"
+
 function jpp() {
     _CWD=$(pwd)
     cd $HOME/opt/root/v5-34-38
     source bin/thisroot.sh
-    cd $HOME/Dev/jpp_trunk
+    cd $HOME/Dev/jpp_git
     source setenv.sh
     cd $_CWD
 }
+
+# Singularity and Go
+export GOPATH="${HOME}/go"
+export PATH=${GOPATH}/bin:${PATH}
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+ps cax | grep xautolock > /dev/null
+if [ $? -eq 0 ]; then
+else
+    echo "Starting xautolock"
+    nohup xautolock -time 10 -locker blurlock &
+fi
+
+ps cax | grep dwmstatusbar > /dev/null
+if [ $? -eq 0 ]; then
+else
+    echo "Setting up dwm statusbar"
+    nohup $HOME/opt/bin/dwmstatusbar &
+fi
+
+alias sps="cd /data/sps"
