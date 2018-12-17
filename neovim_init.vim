@@ -22,8 +22,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'sbdchd/neoformat'
-
-Plug 'itchyny/calendar.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -194,9 +193,6 @@ let g:vimtex_view_method = 'zathura'
 
 " vim-pandoc
 let g:pandoc#modules#disabled = ["folding"]
-
-" calendar
-let g:calendar_google_calendar = 1
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
