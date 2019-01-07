@@ -66,7 +66,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #  export EDITOR='mvim'
 #fi
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
