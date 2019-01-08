@@ -126,6 +126,11 @@ let g:neoformat_tex_latexindent = {
   \ 'stdin': 1
   \ }
 
+" xclip - ClipBoard stuff
+:map <F7> :w !xclip<CR><CR>
+:vmap <F7> "*y
+:map <F8> :r!xclip -o<CR>
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
