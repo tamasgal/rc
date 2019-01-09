@@ -127,9 +127,15 @@ let g:neoformat_tex_latexindent = {
   \ }
 
 " xclip - ClipBoard stuff
+" copy to primary
 :map <F7> :w !xclip<CR><CR>
 :vmap <F7> "*y
 :map <F8> :r!xclip -o<CR>
+" copy to clipboard
+" shift F7 and shift F8
+:map <F19> :w !xclip -selection clipboard<CR><CR>
+:vmap <F19> "+y
+:map <F20> :r!xclip -selection clipboard -o<CR>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
