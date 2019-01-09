@@ -137,6 +137,16 @@ let g:neoformat_tex_latexindent = {
 :vmap <F19> "+y
 :map <F20> :r!xclip -selection clipboard -o<CR>
 
+" kill arrow keys, die!!!
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
+nnoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
