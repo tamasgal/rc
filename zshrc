@@ -85,6 +85,11 @@ function profile() {
     snakeviz ~/tmp/temp.profile
 }
 
+# copy terminfo
+function cp_terminfo() {
+    infocmp st-256color|ssh $1 "mkdir -p .terminfo && cat >/tmp/ti && tic /tmp/ti"
+}
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
