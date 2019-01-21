@@ -15,7 +15,7 @@ function jpp() {
     _CWD=$(pwd)
     cd $HOME/opt/root/v5-34-38
     source bin/thisroot.sh
-    cd $HOME/Dev/jpp_git
+    cd $HOME/Dev/jpp
     source setenv.sh
     cd $_CWD
 }
