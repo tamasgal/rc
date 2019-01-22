@@ -66,7 +66,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #  export EDITOR='mvim'
 #fi
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
@@ -83,6 +83,11 @@ alias julia_dev="$HOME/Dev/julia/julia"
 function profile() { 
     python -m cProfile -o ~/tmp/temp.profile $1
     snakeviz ~/tmp/temp.profile
+}
+
+# copy terminfo
+function cp_terminfo() {
+    infocmp st-256color|ssh $1 "mkdir -p .terminfo && cat >/tmp/ti && tic /tmp/ti"
 }
 
 # ssh

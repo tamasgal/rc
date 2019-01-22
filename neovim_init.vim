@@ -22,8 +22,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'sbdchd/neoformat'
-
-Plug 'itchyny/calendar.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -46,6 +45,11 @@ set scrolloff=2
 set ruler
 set backspace=indent,eol,start
 set colorcolumn=80
+au BufRead /tmp/mutt-* set tw=72
+augroup filetypedetect
+  " Mail
+  autocmd BufRead,BufNewFile *mutt-*              setfiletype mail
+augroup END<Paste>
 
 set formatprg=par\ -w79
 
@@ -122,6 +126,27 @@ let g:neoformat_tex_latexindent = {
   \ 'stdin': 1
   \ }
 
+" xclip - ClipBoard stuff
+" copy to primary
+:map <F7> :w !xclip<CR><CR>
+:vmap <F7> "*y
+:map <F8> :r!xclip -o<CR>
+" copy to clipboard
+" shift F7 and shift F8
+:map <F19> :w !xclip -selection clipboard<CR><CR>
+:vmap <F19> "+y
+:map <F20> :r!xclip -selection clipboard -o<CR>
+
+" kill arrow keys, die!!!
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
+nnoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -185,7 +210,7 @@ let g:snips_git_km3net='https://git.km3net.de/tgal'
 nnoremap <leader>g :Gwrite<bar>Gcommit<cr>
 
 " vimtex
-let g:vimtex_view_method = 'skim'
+let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
     \   '-pdf',
@@ -200,9 +225,6 @@ let g:vimtex_compiler_latexmk = {
 " vim-pandoc
 let g:pandoc#modules#disabled = ["folding"]
 
-" calendar
-let g:calendar_google_calendar = 1
-
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -214,8 +236,11 @@ let base16colorspace=256
 colorscheme base16-default-dark
 
 " Highlights
-set cursorcolumn
-set cursorline
+" set cursorcolumn
+" set cursorline
+" highlight CursorColumn ctermbg=234 ctermfg=none
+" highlight CursorLine ctermbg=237 ctermfg=none
+highlight clear SignColumn
 
 hi Search cterm=NONE ctermfg=black ctermbg=lightblue
 " hi MatchParen cterm=none ctermfg=black ctermbg=lightgreen
