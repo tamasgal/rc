@@ -186,6 +186,16 @@ nnoremap <leader>g :Gwrite<bar>Gcommit<cr>
 
 " vimtex
 let g:vimtex_view_method = 'skim'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 
 " vim-pandoc
 let g:pandoc#modules#disabled = ["folding"]
