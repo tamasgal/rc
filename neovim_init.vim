@@ -126,6 +126,27 @@ let g:neoformat_tex_latexindent = {
   \ 'stdin': 1
   \ }
 
+" xclip - ClipBoard stuff
+" copy to primary
+:map <F7> :w !xclip<CR><CR>
+:vmap <F7> "*y
+:map <F8> :r!xclip -o<CR>
+" copy to clipboard
+" shift F7 and shift F8
+:map <F19> :w !xclip -selection clipboard<CR><CR>
+:vmap <F19> "+y
+:map <F20> :r!xclip -selection clipboard -o<CR>
+
+" kill arrow keys, die!!!
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
+nnoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -190,6 +211,16 @@ nnoremap <leader>g :Gwrite<bar>Gcommit<cr>
 
 " vimtex
 let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 
 " vim-pandoc
 let g:pandoc#modules#disabled = ["folding"]
