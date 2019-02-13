@@ -1,3 +1,5 @@
+using OhMyREPL
+
 atreplinit() do repl
     try
         @eval using Revise
