@@ -6,17 +6,31 @@ export ZSH=${HOME}/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="spaceship"
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
+SPACESHIP_HOST_SHOW="always"
 SPACESHIP_HOST_SHOW_FULL="true"
+SPACESHIP_HOST_PREFIX="@"
+SPACESHIP_HOST_SUFFIX=":"
+SPACESHIP_HOST_COLOR="blue"
 SPACESHIP_TIME_SHOW="true"
 SPACESHIP_EXIT_CODE_SHOW="true"
 SPACESHIP_PYENV_SYMBOL="py-"
 SPACESHIP_DOCKER_SYMBOL="do-"
+SPACESHIP_DOCKER_PREFIX=""
 SPACESHIP_GIT_STATUS_DELETED="x"
+SPACESHIP_GIT_PREFIX=""
+SPACESHIP_TIME_PREFIX="░ "
+SPACESHIP_USER_PREFIX="░ "
+SPACESHIP_USER_SUFFIX=""
+SPACESHIP_USER_SHOW="always"
+SPACESHIP_USER_COLOR="blue"
+SPACESHIP_DIR_PREFIX=""
+SPACESHIP_DIR_COLOR="grey"
+SPACESHIP_PROMPT_DEFAULT_PREFIX=""
 SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
   user          # Username section
-  dir           # Current directory section
   host          # Hostname section
+  dir           # Current directory section
   git           # Git section (git_branch + git_status)
   # hg            # Mercurial section (hg_branch  + hg_status)
   package       # Package version
@@ -41,6 +55,7 @@ SPACESHIP_PROMPT_ORDER=(
   # terraform     # Terraform workspace section
   exec_time     # Execution time
   line_sep      # Line break
+  time          # Time stamps section
   battery       # Battery level and status
   vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
