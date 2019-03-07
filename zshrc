@@ -30,15 +30,20 @@ SPACESHIP_GIT_STATUS_STASHED="%F{142}$%F{black}"
 SPACESHIP_GIT_STATUS_AHEAD="%F{081}⇡%F{black}"
 SPACESHIP_GIT_STATUS_BEHIND="%F{081}⇡%F{black}"
 SPACESHIP_GIT_STATUS_DIVERGED="%F{081}⇕%F{black}"
-SPACESHIP_TIME_PREFIX="░ "
-SPACESHIP_USER_PREFIX="░ "
+SPACESHIP_TIME_COLOR="grey"
+SPACESHIP_TIME_PREFIX=""
+SPACESHIP_USER_PREFIX=""
 SPACESHIP_USER_SUFFIX=""
 SPACESHIP_USER_SHOW="always"
 SPACESHIP_USER_COLOR="blue"
 SPACESHIP_DIR_PREFIX=""
 SPACESHIP_DIR_COLOR="grey"
+SPACESHIP_VI_MODE_INSERT="%F{red}░"
+SPACESHIP_VI_MODE_NORMAL="%F{grey}░"
 SPACESHIP_PROMPT_DEFAULT_PREFIX=""
+SPACESHIP_CHAR_SYMBOL="%F{blue}> "
 SPACESHIP_PROMPT_ORDER=(
+  vi_mode       # Vi-mode indicator
   user          # Username section
   host          # Hostname section
   dir           # Current directory section
@@ -66,9 +71,9 @@ SPACESHIP_PROMPT_ORDER=(
   # terraform     # Terraform workspace section
   exec_time     # Execution time
   line_sep      # Line break
+  vi_mode       # Vi-mode indicator
   time          # Time stamps section
   battery       # Battery level and status
-  vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
   exit_code     # Exit code section
   char          # Prompt character
