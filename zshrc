@@ -42,6 +42,7 @@ SPACESHIP_VI_MODE_INSERT="%F{red}░"
 SPACESHIP_VI_MODE_NORMAL="%F{grey}░"
 SPACESHIP_PROMPT_DEFAULT_PREFIX=""
 SPACESHIP_CHAR_SYMBOL="%F{blue}> "
+SPACESHIP_EXIT_CODE_SYMBOL=""
 SPACESHIP_PROMPT_ORDER=(
   vi_mode       # Vi-mode indicator
   user          # Username section
