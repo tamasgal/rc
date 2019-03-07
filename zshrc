@@ -60,8 +60,8 @@ SPACESHIP_PROMPT_ORDER=(
   # php           # PHP section
   # rust          # Rust section
   haskell       # Haskell Stack section
-  julia         # Julia section
-  docker        # Docker section
+  # julia         # Julia section
+  # docker        # Docker section
   # aws           # Amazon Web Services section
   venv          # virtualenv section
   conda         # conda virtualenv section
