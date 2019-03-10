@@ -1,5 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
-" Plug 'benekastah/neomake'
+Plug 'benekastah/neomake'
 Plug 'w0rp/ale'
 
 Plug 'tpope/vim-fugitive'
@@ -17,7 +17,6 @@ Plug 'tomtom/tcomment_vim'
 
 Plug 'luochen1990/rainbow'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
