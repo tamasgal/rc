@@ -50,8 +50,8 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
   # hg            # Mercurial section (hg_branch  + hg_status)
-  package       # Package version
-  node          # Node.js section
+  # package       # Package version
+  # node          # Node.js section
   # ruby          # Ruby section
   # elixir        # Elixir section
   # xcode         # Xcode section
