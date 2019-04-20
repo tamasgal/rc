@@ -28,6 +28,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+let uname = substitute(system('uname'), '\n', '', '')
+" Example values: Linux, Darwin, MINGW64_NT-10.0, MINGW32_NT-6.1
+
 " Syntax and Semantics
 syntax on
 let mapleader = ","
