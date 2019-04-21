@@ -28,6 +28,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+let uname = substitute(system('uname'), '\n', '', '')
+" Example values: Linux, Darwin, MINGW64_NT-10.0, MINGW32_NT-6.1
+
 " Syntax and Semantics
 syntax on
 let mapleader = ","
@@ -209,7 +212,11 @@ let g:snips_git_km3net='https://git.km3net.de/tgal'
 nnoremap <leader>g :Gwrite<bar>Gcommit<cr>
 
 " vimtex
-let g:vimtex_view_method = 'zathura'
+if uname == 'Linux'
+    let g:vimtex_view_method = 'zathura'
+elseif uname == 'Darwin'
+    let g:vimtex_view_method = 'skim'
+endif
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
     \   '-pdf',
