@@ -182,7 +182,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 :inoremap jk <esc>
 map <Leader>L <Plug>(easymotion-bd-jk)
 
-" remove trainling whitespace
+" remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " quick formatting of paragraph
