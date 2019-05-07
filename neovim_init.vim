@@ -156,8 +156,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Switching buffers
+" Dealing with buffers
 nnoremap <leader>bb :buffers<cr>:b<space> 
+nnoremap <leader>bd :bd<cr> 
 " switches to the most recent buffer
 nnoremap <leader><tab> :b#<cr>
 
