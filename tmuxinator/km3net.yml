@@ -59,3 +59,10 @@ windows:
         - cd ~/Dev/km3pipe
         - cd ~/Dev/km3pipe && make test-loop
         - ipython
+  - km3net.jl:
+      layout: 7f45,181x48,0,0[181x34,0,0{90x34,0,0,19,90x34,91,0,22},181x13,0,35{90x13,0,35,20,90x13,91,35,21}]
+      panes:
+        - cd ~/Dev/KM3NeT.jl && vim
+        - cd ~/Dev/KM3NeT.jl
+        - cd ~/Dev/KM3NeT.jl
+        - julia
