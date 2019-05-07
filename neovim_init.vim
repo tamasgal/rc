@@ -229,7 +229,7 @@ let g:vimtex_compiler_latexmk = {
     \}
 
 " vim-pandoc
-let g:pandoc#modules#disabled = ["folding"]
+" let g:pandoc#modules#disabled = ["folding"]
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
