@@ -3,6 +3,7 @@ Plug 'benekastah/neomake'
 Plug 'w0rp/ale'
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
 
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
@@ -154,6 +155,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" Switching buffers
+nnoremap <leader>bb :buffers<cr>:b<space> 
+" switches to the most recent buffer
+nnoremap <leader><tab> :b#<cr>
 
 " EasyMotion
 " Turn on case insensitive feature
