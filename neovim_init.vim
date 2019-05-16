@@ -56,6 +56,8 @@ augroup END<Paste>
 
 set formatprg=par\ -w79
 
+set iskeyword-=:
+
 " Remember cursor position between vim sessions
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line ("'\"") <= line("$") |
@@ -229,6 +231,7 @@ let g:vimtex_compiler_latexmk = {
     \   '-pdf',
     \   '-shell-escape',
     \   '-verbose',
+    \   '-bibtex',
     \   '-file-line-error',
     \   '-synctex=1',
     \   '-interaction=nonstopmode',
