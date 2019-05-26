@@ -56,8 +56,6 @@ augroup END<Paste>
 
 set formatprg=par\ -w79
 
-set iskeyword-=:
-
 " Remember cursor position between vim sessions
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line ("'\"") <= line("$") |
