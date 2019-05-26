@@ -11,6 +11,9 @@ style: """
   right: 18px
   top: 5px
   height: 13
+  span {
+    /* font: 11px "Fira Code" */
+  }
   .wifi
     font: 14px FontAwesome
     top: 1px
@@ -25,7 +28,7 @@ style: """
   """
 timeAndDate: (date, time) ->
   # returns a formatted html string with the date and time
-  return "<span class='white'><span class='icon'>&nbsp&nbsp;</span>#{date}&nbsp<span> ⎢ </span><span class='icon'>&nbsp;</span>#{time}</span></span>";
+  return "<span class='white'>#{date}&nbsp<span> ⎢ </span>#{time}</span></span>";
 
 batteryStatus: (battery, state) ->
   #returns a formatted html string current battery percentage, a representative icon and adds a lighting bolt if the
