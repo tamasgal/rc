@@ -48,7 +48,7 @@ style: """
 
   li.active
     color: #ededed
-    border-bottom: 2px solid #ededed
+    border-bottom: 3px solid red
 """
 
 update: (output, domEl) ->
