@@ -65,12 +65,17 @@ update: (output, domEl) ->
   for i in [0..spaces.length - 1]
     icon = ""
     switch spaces[i]
-        when '1' then icon = "./assets/icons/code.svg"
-        when '2' then icon = "./assets/icons/system-file-manager-symbolic.svg"
-        when '3' then icon = "./assets/icons/firefox-symbolic.svg"
-        when '5' then icon = "./assets/icons/multimedia-audio-player.svg"
-        else icon = "./assets/icons/utilities-terminal-symbolic.svg"
-    htmlString += "<li id=\"desktop#{spaces[i]}\"><img src=\"#{icon}\" /></li>"
+        when '1' then text = "hme"
+        when '2' then text = "web"
+        when '3' then text = "dev"
+        when '4' then text = "doc"
+        when '5' then text = "img"
+        when '6' then text = "mmd"
+        when '7' then text = "cmm"
+        when '8' then text = "phd"
+        when '9' then text = "foo"
+        else text = "narf"
+    htmlString += "<li id=\"desktop#{spaces[i]}\">#{spaces[i]}-#{text}</li>"
 
   if ($(domEl).find('.currentDesktop-container').attr('data-count') != spaces.length.toString())
      $(domEl).find('.currentDesktop-container').attr('data-count', "#{spaces.length}")
