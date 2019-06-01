@@ -230,6 +230,7 @@ let g:vimtex_compiler_latexmk = {
     \   '-lualatex',
     \   '-shell-escape',
     \   '-verbose',
+    \   '-bibtex',
     \   '-file-line-error',
     \   '-synctex=1',
     \   '-interaction=nonstopmode',
