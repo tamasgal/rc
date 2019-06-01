@@ -1,19 +1,25 @@
 [user]
 	name = Tamas Gal
-	email = himself@tamasgal.com
-[push]
-	default = simple
-[filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
+	email = tgal@km3net.de
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
 [alias]
 	lol = log --oneline --decorate --graph --all
-[core]
-	editor = vim
-[pack]
-	window = 0
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+	spull = !git pull && git submodule sync --recursive && git submodule update --init --recursive
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[difftool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false
+[push]
+	followTags = true
