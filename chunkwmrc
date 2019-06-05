@@ -43,14 +43,14 @@ chunkc core::hotload 0
 
 chunkc set custom_bar_enabled            0
 chunkc set custom_bar_all_monitors       0
-chunkc set custom_bar_offset_top         22
+chunkc set custom_bar_offset_top         0
 chunkc set custom_bar_offset_bottom      0
 chunkc set custom_bar_offset_left        0
 chunkc set custom_bar_offset_right       0
 
 chunkc set global_desktop_mode           bsp
-chunkc set global_desktop_offset_top     30
-chunkc set global_desktop_offset_bottom  30
+chunkc set global_desktop_offset_top     5 
+chunkc set global_desktop_offset_bottom  5
 chunkc set global_desktop_offset_left    5
 chunkc set global_desktop_offset_right   5 
 chunkc set global_desktop_offset_gap     5
@@ -137,5 +137,13 @@ chunkc core::load ffm.so
 #
 
 chunkc tiling::rule --owner Finder --name Copy --state float &
+chunkc tiling::rule --owner Finder --name Move --state float &
+chunkc tiling::rule --owner Finder --name Info --state float &
+chunkc tiling::rule --owner Finder --name Connect --state float &
 chunkc tiling::rule --owner \"App Store\" --state float &
-chunkc tiling::rule --owner Emacs --except "^$" --state tile &
+chunkc tiling::rule --owner \"System Preferences\" --state float &
+chunkc tiling::rule --owner \"Activity Monitor\" --state float &
+chunkc tiling::rule --owner \"Calculator\" --state float &
+chunkc tiling::rule --owner \"Dictionary\" --state float &
+chunkc tiling::rule --owner \"The Unarchiver\" --state float &
+chunkc tiling::rule --owner \"Transmission\" --state float &
