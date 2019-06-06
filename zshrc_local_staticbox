@@ -1,4 +1,4 @@
-export PATH=$HOME/opt/bin:$PATH
+export PATH=$HOME/opt/bin:/var/lib/snapd/snap/bin:$PATH
 
 setxkbmap -option ctrl:nocaps
 
@@ -45,3 +45,6 @@ else
 fi
 
 alias sps="cd /data/sps"
+
+export RASPBUZZ_SOUNDS=$HOME/cloud/raspbuzz/small
+export RASPBUZZ_DEV=/dev/sdd2
