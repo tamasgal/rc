@@ -23,6 +23,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'sbdchd/neoformat'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'manabuishii/vim-cwl'
 
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
