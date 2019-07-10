@@ -152,6 +152,9 @@ alias nbview="jupyter nbconvert --to slides --post serve "
 # Julia
 alias julia_dev="$HOME/Dev/julia/julia"
 
+# Kitty icat
+alias icat="kitty +kitten icat"
+
 # Profile
 function profile() { 
     python -m cProfile -o ~/tmp/temp.profile $1
@@ -188,6 +191,11 @@ tmux_light() {
 }
 tmux_dark() {
   tmux source-file ~/.rc/tmux-colors/tmuxcolors-dark.conf
+}
+
+# Copy term info to target host
+function termify() {
+    infocmp $TERM | ssh $1 "mkdir -p .terminfo && cat >/tmp/ti && tic /tmp/ti"
 }
 
 export LC_ALL=en_US.UTF-8
