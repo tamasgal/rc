@@ -11,10 +11,33 @@ fi
 
 export PATH="$PATH:/home/tgal/.gem/ruby/2.5.0/bin"
 
-function jpp() {
+function root5_env() {
     _CWD=$(pwd)
     cd $HOME/opt/root/v5-34-38
     source bin/thisroot.sh
+    cd $_CWD
+}
+
+function root6_env() {
+    _CWD=$(pwd)
+    cd $HOME/opt/root/v6-14-06
+    source bin/thisroot.sh
+    cd $_CWD
+}
+
+function jpp_py2() {
+    pyenv shell 2.7.15
+    root5_env
+    _CWD=$(pwd)
+    cd $HOME/Dev/jpp
+    source setenv.sh
+    cd $_CWD
+}
+
+function jpp_py3() {
+    pyenv shell 3.7.3
+    root6_env
+    _CWD=$(pwd)
     cd $HOME/Dev/jpp
     source setenv.sh
     cd $_CWD
