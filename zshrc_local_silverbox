@@ -1,0 +1,23 @@
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.cabal/bin:/usr/local/MacGPG2/bin:/usr/local/sbin:/Applications/DevDesktop/drush:/usr/local/texlive/2016/bin/x86_64-darwin:/Library/TeX/texbin"
+
+# zlib
+# export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+# export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+# export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
+#
+
+
+# Mac aliases
+alias ls='ls -G'
+alias tokeynote='pbpaste | highlight --syntax=python -O rtf | pbcopy'
+alias vim='nvim'
+
+# pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+BASE16_SHELL=$HOME/.rc/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+alias vim=nvim
+alias vimdiff='nvim -d'
