@@ -106,15 +106,12 @@
 # ]
 
 # open terminal, blazingly fast compared to iTerm/Hyper
-# cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
-cmd - return : osascript ~/.rc/scripts/new_iterm_window.scpt
+# cmd - return : osascript ~/.rc/scripts/new_iterm_window.scpt
+cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # open qutebrowser
 # cmd + shift - return : ~/Scripts/qtb.sh
 cmd + shift - return : osascript ~/.rc/scripts/new_safari_window.scpt
-
-# open mpv
-cmd - m : open -na /Applications/mpv.app $(pbpaste)
 
 # close focused window
 alt - w : chunkc tiling::window --close
