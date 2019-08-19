@@ -7,7 +7,7 @@ DL="  |  "  # delimiter
 
 print_memfree() {
     memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))"M"
-    echo -e "MEM: $memfree"
+    echo -e "MEM $memfree"
 }
 
 print_date() {
@@ -27,6 +27,20 @@ print_cpu_killer() {
 print_volume() {
     VOL=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
     echo $VOL
+}
+
+print_main_fs_usage() {
+    FS_USAGE=$(df |grep /$ | awk '{print $5}')
+    echo -e "/ $FS_USAGE"
+}
+
+print_data_fs_usage() {
+    FS_USAGE=$(df |grep /data$ | awk '{print $5}')
+    echo -e "/data $FS_USAGE"
+}
+
+print_load() {
+    echo -e $(uptime | awk -F: '{print $4}' | tr -d ,)
 }
 
 tx_old=0
@@ -49,7 +63,7 @@ while true; do
     let rx_rate=($rx_now-$rx_old)/1024/$INTERVAL
     let tx_rate=($tx_now-$tx_old)/1024/$INTERVAL
 
-    xsetroot -name "MEM† $(print_mem_killer)${DL}CPU† $(print_cpu_killer)${DL}V: $(print_volume)${DL}RX: $rx_rate kb/s${DL}TX: $tx_rate kb/s${DL}$(print_memfree)${DL}$(print_date)"
+    xsetroot -name "MEM† $(print_mem_killer)${DL}CPU† $(print_cpu_killer)${DL}V $(print_volume)${DL}RX $rx_rate kb/s${DL}TX $tx_rate kb/s${DL}$(print_memfree)${DL}$(print_main_fs_usage)${DL}$(print_data_fs_usage)${DL}$(print_load)${DL}$(print_date)"
     sleep $INTERVAL
 
     tx_old=$tx_now
