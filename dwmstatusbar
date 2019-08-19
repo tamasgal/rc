@@ -39,10 +39,6 @@ print_data_fs_usage() {
     echo -e "/data $FS_USAGE"
 }
 
-print_load() {
-    echo -e $(uptime | awk -F: '{print $4}' | tr -d ,)
-}
-
 tx_old=0
 rx_old=0
 # setopt shwordsplit
@@ -63,7 +59,7 @@ while true; do
     let rx_rate=($rx_now-$rx_old)/1024/$INTERVAL
     let tx_rate=($tx_now-$tx_old)/1024/$INTERVAL
 
-    xsetroot -name "MEM† $(print_mem_killer)${DL}CPU† $(print_cpu_killer)${DL}V $(print_volume)${DL}RX $rx_rate kb/s${DL}TX $tx_rate kb/s${DL}$(print_memfree)${DL}$(print_main_fs_usage)${DL}$(print_data_fs_usage)${DL}$(print_load)${DL}$(print_date)"
+    xsetroot -name "MEM† $(print_mem_killer)${DL}CPU† $(print_cpu_killer)${DL}V $(print_volume)${DL}RX $rx_rate kb/s${DL}TX $tx_rate kb/s${DL}$(print_memfree)${DL}$(print_main_fs_usage)${DL}$(print_data_fs_usage)${DL}$(print_date)"
     sleep $INTERVAL
 
     tx_old=$tx_now
