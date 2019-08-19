@@ -3,13 +3,19 @@ export PATH=$HOME/opt/bin:/var/lib/snapd/snap/bin:$PATH
 setxkbmap -option ctrl:nocaps
 
 alias vim=nvim
+
+function steam-launcher() {
+    export LD_PRELOAD="/usr/lib/libgio-2.0.so.0 /usr/lib/libglib-2.0.so.0"
+    steam
+}
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-export PATH="$PATH:/home/tgal/.gem/ruby/2.5.0/bin"
+export PATH="$PATH:/home/tgal/.gem/ruby/2.6.0/bin"
 
 function root5_env() {
     _CWD=$(pwd)
