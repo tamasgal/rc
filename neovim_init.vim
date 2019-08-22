@@ -53,7 +53,7 @@ au BufRead /tmp/mutt-* set tw=72
 augroup filetypedetect
   " Mail
   autocmd BufRead,BufNewFile *mutt-*              setfiletype mail
-augroup END<Paste>
+augroup END
 
 set formatprg=par\ -w79
 
