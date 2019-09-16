@@ -87,6 +87,9 @@
   :commands (helm-projectile helm-projectile-switch-project)
   :ensure t)
 
+(use-package magit
+  :ensure t)
+
 ;; (use-package jedi
   ;; :ensure t
   ;; :config
