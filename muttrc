@@ -22,19 +22,29 @@ bind attach,index g first-entry
 bind attach,index G last-entry
 
 bind index,pager B sidebar-toggle-visible
+bind index,pager \CR group-reply
 
-# Folder hooks
-folder-hook 'account.de.km3net' 'source ~/.mutt/account.km3net.de'
-folder-hook 'account.de.fau' 'source ~/.mutt/account.de.fau'
+set imap_user = "tamas.gal@fau.de"
+set smtp_url = "smtp://$imap_user@smtp-auth.fau.de:587/"
+set from = $imap_user
+set realname = "Tamas Gal"
+set folder = "imaps://faumail.fau.de:993"
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+mailboxes =INBOX =Sent =Trash =Drafts =Junk
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
 
-# Default account
-source ~/.mutt/account.de.km3net
+set alias_file=~/.mutt/aliases
+set sort_alias=alias
+set reverse_alias=yes
+source $alias_file
 
-# Macros for switching accounts
-macro index <F2> "<sync-mailbox><enter-command>source ~/.mutt/account.de.km3net<enter><change-folder>!<enter>"
-macro index <F3> "<sync-mailbox><enter-command>source ~/.mutt/account.de.fau<enter><change-folder>!<enter>"
+macro index ,g "<delete-pattern>~s \" [|] \" ~f gitlab@git.km3net.de<enter>"
 
-# Fetch mail shortcut
-bind index G imap-fetch-mail
+send-hook . set signature="~/.mutt/fau.sig"
 
-source .mutt/base16.muttrc
+source ~/.mutt/base16.muttrc

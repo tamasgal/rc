@@ -13,4 +13,4 @@ atreplinit() do repl
     end
 end
 
-ENV["PYTHON"] = "/home/tgal/.pyenv/shims/python"
+# ENV["PYTHON"] = "/home/tgal/.pyenv/shims/python"

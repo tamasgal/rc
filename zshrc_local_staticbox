@@ -9,13 +9,19 @@ function steam-launcher() {
     steam
 }
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init -)"
+# fi
 
 export PATH="$PATH:/home/tgal/.gem/ruby/2.6.0/bin"
+
+source /etc/modules/init/zsh
+export MODULEPATH=$HOME/modules/modulefiles
+
+module load python/3.7.5
+module load julia/1.3.0-rc4
 
 function root5_env() {
     _CWD=$(pwd)
@@ -40,7 +46,7 @@ function jpp_py2() {
     cd $_CWD
 }
 
-function jpp_py3() {
+function jpp() {
     pyenv shell 3.7.3
     root6_env
     _CWD=$(pwd)
@@ -48,6 +54,9 @@ function jpp_py3() {
     source setenv.sh
     cd $_CWD
 }
+
+# Julia
+# export PATH=/opt/julia/julia-1.2.0/bin:$PATH
 
 # Singularity and Go
 export GOPATH="${HOME}/go"
@@ -63,7 +72,7 @@ ps cax | grep xautolock > /dev/null
 if [ $? -eq 0 ]; then
 else
     echo "Starting xautolock"
-    nohup xautolock -time 10 -locker blurlock &
+    nohup xautolock -time 60 -locker blurlock &
 fi
 
 ps cax | grep dwmstatusbar > /dev/null

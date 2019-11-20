@@ -23,7 +23,11 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'sbdchd/neoformat'
 Plug 'JuliaEditorSupport/julia-vim'
+" Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
 Plug 'manabuishii/vim-cwl'
+Plug 'diego-treitos/MuttAliasesAutoCompletion'
 
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -42,6 +46,7 @@ set shiftwidth=4 softtabstop=4
 set expandtab
 set number
 set relativenumber
+set nofoldenable
 set showmatch
 set showcmd
 set smartcase
@@ -63,39 +68,21 @@ autocmd BufReadPost *
       \   exe "normal! g'\"" |
       \ endif
 
+" Mutt aliases
+let g:mutt_aliases_path = "~/.mutt/aliases"
+
 " DeoPlete
 let g:deoplete#enable_at_startup = 1
 
 let g:pymode_lint=0 " using neomake or ale for linting
 let g:pymode_rope=0 " using deoplete for auto-completion
-let g:pymode_python='python3'
+let g:pymode_python='python'
 
-" neomake (linting)
-" enable Neomake on open and write but not on exit
-" autocmd! BufWritePost,BufReadPost * Neomake
-
-" autocmd! BufWritePost,BufEnter * Neomake
-" autocmd! QuitPre * let g:neomake_verbose = 0
-"
-" highlight NeoMakeErrorSign ctermfg=196
-" highlight NeoMakeError ctermfg=196
-" highlight NeoMakeWarningSign ctermfg=226
-" highlight NeoMakeWarning ctermfg=226
-" let g:neomake_warning_sign={'text': '•', 'texthl': 'NeomakeWarningSign'}
-"
-" function SetWarningType(entry)
-"     let a:entry.type = 'W'
-" endfunction
-"
-" let g:neomake_tex_enabled_makers = []
-" let g:neomake_python_enabled_makers = ['pycodestyle', 'pyflakes']
-" let g:neomake_python_pycodestyle_maker = {
-"     \ 'args': ['--max-line-length=80', '--ignore=E741' ],
-"     \ 'postprocess': function('SetWarningType')
-"     \ }
-" let g:neomake_cpp_gcc_maker = {
-"     \ 'args': [ '--std=c++14', '-fsyntax-only', '-Wall', '-Wextra', '-pedantic']
-"     \ }
+" completion
+" enable ncm2 for all buffers
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+" IMPORTANT: :help Ncm2PopupOpen for more information
+" set completeopt=noinsert,menuone,noselect
 
 
 " ale
@@ -162,6 +149,10 @@ nnoremap <leader>bb :buffers<cr>:b<space>
 nnoremap <leader>bd :bd<cr> 
 " switches to the most recent buffer
 nnoremap <leader><tab> :b#<cr>
+
+" Navigating tabs
+nnoremap H gT
+nnoremap L gt
 
 " EasyMotion
 " Turn on case insensitive feature
@@ -238,8 +229,35 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 
+" Bibtex
+" autocmd FileType bib nmap <leader>b "zyy:!zathura <C-r>=substitute(substitute(@z,'.*pdf[^{]*{\([^}]*\)}.*','\1',''),'\s','\\ ','g')<CR> &<CR><CR>
+
 " vim-pandoc
 let g:pandoc#modules#disabled = ["folding"]
+
+" julia
+let g:default_julia_version = '1.0'
+
+" language server
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+" \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+" \       using LanguageServer;
+" \       using Pkg;
+" \       import StaticLint;
+" \       import SymbolServer;
+" \       env_path = dirname(Pkg.Types.Context().env.project_file);
+" \       debug = false; 
+" \       
+" \       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, "", Dict());
+" \       server.runlinter = true;
+" \       run(server);
+" \   ']
+" \ }
+"
+" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
