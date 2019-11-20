@@ -45,6 +45,6 @@ source $alias_file
 
 macro index ,g "<delete-pattern>~s \" [|] \" ~f gitlab@git.km3net.de<enter>"
 
-send-hook . set signature="~/.mutt/fau.sig"
+send-hook . set signature="~/.rc/fau.sig"
 
-source ~/.mutt/base16.muttrc
+source ~/.rc/base16.muttrc
