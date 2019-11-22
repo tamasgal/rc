@@ -24,8 +24,7 @@ bind attach,index G last-entry
 bind index,pager B sidebar-toggle-visible
 bind index,pager \CR group-reply
 
-set imap_user = "tamas.gal@fau.de"
-set smtp_url = "smtp://$imap_user@smtp-auth.fau.de:587/"
+set smtp_url = "smtp://$imap_user:$imap_pass@smtp-auth.fau.de:587/"
 set from = $imap_user
 set realname = "Tamas Gal"
 set folder = "imaps://faumail.fau.de:993"
@@ -43,7 +42,7 @@ set sort_alias=alias
 set reverse_alias=yes
 source $alias_file
 
-macro index ,g "<delete-pattern>~s \" [|] \" ~f gitlab@git.km3net.de<enter>"
+macro index ,dg "<delete-pattern>~s \" [|] \" ~f gitlab@git.km3net.de<enter>"
 
 send-hook . set signature="~/.rc/fau.sig"
 
