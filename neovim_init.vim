@@ -29,6 +29,8 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'manabuishii/vim-cwl'
 Plug 'diego-treitos/MuttAliasesAutoCompletion'
 
+Plug 'dhruvasagar/vim-table-mode'
+
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -116,6 +118,13 @@ let g:neoformat_tex_latexindent = {
   \ 'args': ['-l'],
   \ 'stdin': 1
   \ }
+
+" tables
+" markdown style
+let g:table_mode_corner='|'
+" ReST style
+" let g:table_mode_corner_corner='+'
+" let g:table_mode_header_fillchar='='
 
 " xclip - ClipBoard stuff
 " copy to primary
