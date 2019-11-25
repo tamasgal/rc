@@ -43,6 +43,11 @@ set reverse_alias=yes
 source $alias_file
 
 macro index ,dg "<delete-pattern>~s \" [|] \" ~f gitlab@git.km3net.de<enter>"
+macro index ,a "<limit>all<enter>"
+macro index ,n "<limit>~N<enter>"
+macro index ,o "<limit>~O<enter>"
+macro index ,t "<limit>~d <1d<enter>"
+macro index ,y "<limit>~d '<2d >1d'<enter>"
 
 send-hook . set signature="~/.rc/fau.sig"
 
