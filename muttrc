@@ -3,7 +3,7 @@ set sort=threads
 set sort_aux=date
 set edit_headers=yes
 set date_format="%y-%m-%d %T"
-set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
+set index_format="%2C | %Z [%d] %-20.20F (%-4.4c) %s"
 set imap_check_subscribed
 
 set send_charset="utf-8"
@@ -51,4 +51,13 @@ macro index ,y "<limit>~d '<2d >1d'<enter>"
 
 send-hook . set signature="~/.rc/fau.sig"
 
+color index_author brightyellow default '~fKay'
+color index_flags default red '~F'
+color index_subject cyan black '.*'
+color index_subject white black '~s " [|] " ~f gitlab@git.km3net.de'
+color index_date green default
+color index_label default brightgreen
+color index_size yellow default
 source ~/.rc/base16.muttrc
+
+# vim: syntax=neomuttrc

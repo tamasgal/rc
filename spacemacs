@@ -44,8 +44,11 @@ values."
      ;; better-defaults
      emacs-lisp
      git
-     ;; markdown
-     ;; org
+     ;;(latex :variables
+     ;;       latex-build-command "LaTeX")
+     latex
+     markdown
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -316,6 +319,13 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
     (setq-default evil-escape-key-sequence "jk")
     (setq neo-theme 'nerd)
+    (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+    ;;(setq org-ref-open-pdf-function
+    ;;  (lambda (fpath)
+    ;;    (start-process "zathura" "*helm-bibtex-zathura*" "/usr/bin/zathura" fpath)))
+    (setq org-latex-pdf-process 
+     '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
+     ;; '("latexmk -pdf -luatex -interaction=nonstopmode -bibtex -shell-escape -verbose -file-line-error -synctex=1 -f %f"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
