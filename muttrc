@@ -53,8 +53,11 @@ send-hook . set signature="~/.rc/fau.sig"
 
 color index_author brightyellow default '~fKay'
 color index_flags default red '~F'
-color index_subject cyan black '.*'
+color index_flags default red '~T'
+color index_subject default black '.*'
 color index_subject white black '~s " [|] " ~f gitlab@git.km3net.de'
+# messages addressed to me
+color index_subject cyan black '~p'
 color index_date green default
 color index_label default brightgreen
 color index_size yellow default
