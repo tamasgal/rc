@@ -1,0 +1,25 @@
+echo " ==> Loading .zshrc_local"
+export SPS=/sps/km3net/users/$USER
+export BOOTCAMP=/sps/km3net/users/KM3NeT_common/bootcamps/201711
+
+# Cleaning up environmental variables. See ~/.[ld_]paths for original mess
+export PATH=$SPS/opt/bin:$PATH
+alias sps='cd $SPS'
+
+# Optional software
+export LD_LIBRARY_PATH=/sps/km3net/users/tgal/opt/lib:$LD_LIBRARY_PATH
+
+# LLVM
+export PATH=/sps/km3net/users/tgal/apps/llvm-7.0.0/bin:$PATH
+export LLVM_CONFIG=/sps/km3net/users/tgal/apps/llvm-7.0.0/bin/llvm-config
+
+# JPP
+alias jpp='source /sps/km3net/users/tgal/dev/jpp/setenv.sh /sps/km3net/users/tgal/dev/jpp'
+
+alias vim=nvim
+
+# Shell
+BASE16_SHELL=$HOME/.rc/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+alias jup='SHELL=/bin/false jupyter lab --ip=127.0.0.1 --port=42523 --no-browser'
