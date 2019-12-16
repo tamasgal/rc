@@ -151,6 +151,8 @@ alias nbview="jupyter nbconvert --to slides --post serve "
 
 # Julia
 alias julia_dev="$HOME/Dev/julia/julia"
+alias juliap="julia --project=."
+alias juliat="julia --project=. test/runtests.jl"
 
 # nim
 export PATH=$HOME/.nimble/bin:$PATH
