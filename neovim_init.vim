@@ -99,9 +99,6 @@ let g:ale_fixers = {
   \ 'python': ['autopep8', 'yapf'] ,
   \ }
 let g:ale_python_mypy_options = '--ignore-missing-imports'
-let g:ale_fixers = {
-  \ 'python': ['autopep8', 'yapf'] ,
-  \ }
 " let g:ale_sign_error = '⊛⊛⨀⨂●⦿'
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '•'
