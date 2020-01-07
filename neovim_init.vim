@@ -281,6 +281,9 @@ endfunction
 
 nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
 
+nnoremap <silent> <Leader>sd :set spell spelllang=de_de<CR>
+nnoremap <silent> <Leader>se :set spell spelllang=en_us<CR>
+
 
 set t_Co=256
 let base16colorspace=256
