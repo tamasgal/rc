@@ -157,6 +157,9 @@ alias juliat="julia --project=. test/runtests.jl"
 # nim
 export PATH=$HOME/.nimble/bin:$PATH
 
+# doom emacs
+export PATH=$PATH:~/.emacs.d/bin
+
 # Kitty icat
 alias icat="kitty +kitten icat"
 
