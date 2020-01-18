@@ -95,10 +95,10 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {
   \ 'python': ['flake8', 'mypy', 'pylint'] ,
   \ }
+let g:ale_python_mypy_options = '--ignore-missing-imports'
 let g:ale_fixers = {
   \ 'python': ['autopep8', 'yapf'] ,
   \ }
-let g:ale_python_mypy_options = '--ignore-missing-imports'
 " let g:ale_sign_error = '⊛⊛⨀⨂●⦿'
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '•'
