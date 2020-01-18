@@ -52,6 +52,7 @@ macro index ,y "<limit>~d '<2d >1d'<enter>"
 send-hook . set signature="~/.rc/fau.sig"
 
 color index_author brightyellow default '~fKay'
+color index_author brightblue default '~fMaarten'
 color index_flags default red '~F'
 color index_flags default red '~T'
 color index_subject default black '.*'
