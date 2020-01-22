@@ -245,3 +245,5 @@ unsetopt AUTO_CD
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
+
+eval "$(direnv hook zsh)"
