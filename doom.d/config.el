@@ -32,6 +32,7 @@
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
 
+;;(setq python-shell-completion-native-enable nil)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
