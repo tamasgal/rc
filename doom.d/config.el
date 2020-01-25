@@ -51,3 +51,12 @@
 ;; they are implemented.
 
 (setq projectile-project-search-path '("~/Dev"))
+
+(after! org
+  (map! :map org-mode-map
+        :n "J" #'org-metadown
+        :n "K" #'org-metaup
+        :n "H" #'org-metaleft
+        :n "L" #'org-metaright
+        )
+  )
