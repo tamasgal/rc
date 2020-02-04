@@ -26,7 +26,6 @@
 (setq doom-theme 'doom-one-light)
 
 ;; If you intend to use org, it is recommended you change this!
-(setq org-directory "~/org/")
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
@@ -59,4 +58,9 @@
         :n "H" #'org-metaleft
         :n "L" #'org-metaright
         )
+  (setq org-directory "~/org/"
+        org-tags-column -80
+        org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
+        org-todo-keyword-faces
+        '(("TODO" :foreground "#00ff00" :weight normal :underline t))
   )
