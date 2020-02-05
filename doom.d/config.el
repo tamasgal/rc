@@ -64,3 +64,6 @@
         org-todo-keyword-faces
         '(("TODO" :foreground "#00ff00" :weight normal :underline t))
   ))
+
+(setq evil-snipe-scope 'buffer)
+(setq avy-all-windows t)
