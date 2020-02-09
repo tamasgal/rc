@@ -49,7 +49,7 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-(setq projectile-project-search-path '("~/Dev"))
+(setq projectile-project-search-path '("~/Dev" "~/Dropbox"))
 
 (after! org
   (map! :map org-mode-map
@@ -63,4 +63,7 @@
         org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
         org-todo-keyword-faces
         '(("TODO" :foreground "#00ff00" :weight normal :underline t))
-  ))
+        org-re-reveal-script-files '("js/reveal.js")
+        org-latex-packages-alist '(("margin=2cm" "geometry" nil))
+        )
+  )
