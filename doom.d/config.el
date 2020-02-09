@@ -67,3 +67,6 @@
         org-latex-packages-alist '(("margin=2cm" "geometry" nil))
         )
   )
+
+(setq evil-snipe-scope 'buffer)
+(setq avy-all-windows t)
