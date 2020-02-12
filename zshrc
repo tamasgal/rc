@@ -139,10 +139,11 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #  export EDITOR='mvim'
 #fi
 
-export EDITOR="emacs"
+export ALTERNATE_EDITOR=""
+export EDITOR="emacsclient -t"                  # $EDITOR opens in terminal
+export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI mode
 export USE_EDITOR=$EDITOR
-export VISUAL=$EDITOR
-alias vim=emacs
+alias vim=$EDITOR
 
 # ix paster
 alias ix="curl -n -F 'f:1=<-' http://ix.io "
