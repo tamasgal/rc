@@ -78,9 +78,19 @@
         )
   (setq org-directory "~/org/"
         org-tags-column -80
-        org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
+        org-priority-faces '((?A  :foreground "#e45649")
+                             (?B :foreground "#da8548")
+                             (?C :foreground "#0098dd"))
+        org-bullets-bullet-list '("❖")
+        org-todo-keywords '((sequence "TODO(t)" "PROG(p)" "WAIT(w)" "|" "DONE(d)" "CANC(c)"))
         org-todo-keyword-faces
-        '(("TODO" :foreground "#00ff00" :weight normal :underline t))
+        '(
+          ("TODO" :foreground "#ff0000" :weight normal :underline f)
+          ("PROG" :foreground "#666600" :weight normal :underline f)
+          ("WAIT" :foreground "#0000ff" :weight normal :underline f)
+          ("DONE" :foreground "#00ff00" :weight normal :underline f)
+          ("CANC" :foreground "#666666" :weight normal :underline f)
+         )
         org-re-reveal-script-files '("js/reveal.js")
         org-latex-packages-alist '(("margin=2cm" "geometry" nil))
         )
