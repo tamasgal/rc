@@ -86,3 +86,5 @@ alias sps="cd /data/sps"
 
 export RASPBUZZ_SOUNDS=$HOME/cloud/raspbuzz/small
 export RASPBUZZ_DEV=/dev/sdd2
+
+source virtualenvwrapper.sh
