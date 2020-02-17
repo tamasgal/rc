@@ -110,3 +110,27 @@
       user-full-name "Tamas Gal"
       mu4e-show-images t
       )
+
+;; Cleanup unused key mapping
+(map! :after evil
+      :map evil-window-map
+      "S" nil
+      "C-b" nil
+      "C-c" nil
+      "C-S-h" nil
+      "C-S-j" nil
+      "C-S-k" nil
+      "C-S-l" nil
+      "C-n" nil
+      "C-o" nil
+      "C-p" nil
+      "C-r" nil
+      "C-S-r" nil
+      "C-s" nil
+      "C-S-s" nil
+      "C-t" nil
+      "C-v" nil
+      "C-w" nil
+      "C-S-W" nil
+      "C-_" nil
+      "C-f" nil)
