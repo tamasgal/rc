@@ -67,7 +67,8 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-(setq projectile-project-search-path '("~/Dev" "~/Dropbox"))
+(setq projectile-project-search-path '("~/Dev" "~/Dropbox")
+      projectile-enable-caching nil)
 
 (after! org
   (map! :map org-mode-map
@@ -98,3 +99,14 @@
 
 (setq evil-snipe-scope 'buffer)
 (setq avy-all-windows t)
+
+(setq mu4e-maildir "~/Test"
+      mu4e-sent-folder "/Sent"
+      mu4e-drafts-folder "/Drafts"
+      mu4e-trash-folder "/Trash"
+      mu4e-spam-folder "/Junk"
+      mu4e-get-mail-command "offlineimap"
+      user-mail-address "tamas.gal@fau.de"
+      user-full-name "Tamas Gal"
+      mu4e-show-images t
+      )
