@@ -140,8 +140,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #fi
 
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t"                  # $EDITOR opens in terminal
-export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI mode
+export EDITOR="emacsclient"                  # $EDITOR opens in terminal
+export VISUAL="emacsclient"         # $VISUAL opens in GUI mode
 export USE_EDITOR=$EDITOR
 alias vim=$EDITOR
 
