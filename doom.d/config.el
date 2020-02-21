@@ -19,6 +19,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "Fira Code" :size 11))
+(setq doom-big-font (font-spec :family "Fira Code" :size 26))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -77,9 +78,10 @@
         :n "H" #'org-metaleft
         :n "L" #'org-metaright
         )
-  (setq org-directory "~/org/"
+  (setq org-directory "~/Dropbox/org/"
+        org-agenda-files '("~/Dropbox/org")
         org-tags-column -80
-        org-priority-faces '((?A  :foreground "#e45649")
+        org-priority-faces '((?A :foreground "#e45649")
                              (?B :foreground "#da8548")
                              (?C :foreground "#0098dd"))
         org-bullets-bullet-list '("❖")
