@@ -33,7 +33,7 @@
   (load-theme 'doom-one t)
 
   ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
+  ;; (doom-themes-visual-bell-config)
 
   ;; Enable custom neotree theme (all-the-icons must be installed!)
   (doom-themes-neotree-config)
@@ -70,6 +70,15 @@
 
 (setq projectile-project-search-path '("~/Dev" "~/Dropbox")
       projectile-enable-caching nil)
+
+(map! (:when (featurep! :lang latex)    ; local conditional
+        (:map LaTeX-mode-map
+          :localleader                  ; Use local leader
+          :desc "View" "v" #'TeX-view ; Add which-key description
+          :desc "Preview pane" "p" #'latex-preview-pane-mode
+          :desc "Update preview" "u" #'latex-preview-pane-update
+          ))
+      )
 
 (after! org
   (map! :map org-mode-map
