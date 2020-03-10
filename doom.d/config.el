@@ -134,7 +134,6 @@
       "C-S-l" nil
       "C-n" nil
       "C-o" nil
-      "C-p" nil
       "C-r" nil
       "C-S-r" nil
       "C-s" nil
