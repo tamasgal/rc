@@ -20,6 +20,8 @@
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "Fira Code" :size 11))
 (setq doom-big-font (font-spec :family "Fira Code" :size 26))
+;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
+;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -89,11 +91,13 @@
         )
   (setq org-directory "~/Dropbox/org/"
         org-agenda-files '("~/Dropbox/org")
+        org-archive-location (concat org-directory "archive/%s::")
         org-tags-column -80
         org-priority-faces '((?A :foreground "#e45649")
                              (?B :foreground "#da8548")
                              (?C :foreground "#0098dd"))
         org-bullets-bullet-list '("❖")
+        org-ellipsis " ▼ "
         org-todo-keywords '((sequence "TODO(t)" "PROG(p)" "WAIT(w)" "|" "DONE(d)" "CANC(c)"))
         org-todo-keyword-faces
         '(
@@ -111,15 +115,18 @@
 (setq evil-snipe-scope 'buffer)
 (setq avy-all-windows t)
 
-(setq mu4e-maildir "~/Test"
-      mu4e-sent-folder "/Sent"
-      mu4e-drafts-folder "/Drafts"
-      mu4e-trash-folder "/Trash"
-      mu4e-spam-folder "/Junk"
-      mu4e-get-mail-command "offlineimap"
+(setq mu4e-maildir "~/.mail"
+      ;; mu4e-sent-folder "/Sent"
+      ;; mu4e-drafts-folder "/Drafts"
+      ;; mu4e-trash-folder "/Trash"
+      ;; mu4e-spam-folder "/Junk"
+      mu4e-get-mail-command "true"
       user-mail-address "tamas.gal@fau.de"
       user-full-name "Tamas Gal"
       mu4e-show-images t
+      mu4e-change-filenames-when-moving t
+      smtpmail-queue-mail nil  ;; start in normal mode
+      smtpmail-queue-dir   "~/.mail/queue/cur"
       )
 
 ;; Cleanup unused key mapping
