@@ -17,3 +17,6 @@ BASE16_SHELL=$HOME/.rc/base16-shell/
 
 alias vim=nvim
 alias vimdiff='nvim -d'
+
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+source virtualenvwrapper.sh
