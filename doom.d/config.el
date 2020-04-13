@@ -160,4 +160,5 @@
       "C-f" nil)
 
 
-(setq lsp-julia-default-environment "~/.julia/environments/v1.2")
+; (setq lsp-julia-package-dir nil)
+(setq lsp-julia-default-environment "~/.julia/environments/v1.3")
