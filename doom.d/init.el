@@ -39,11 +39,11 @@
        ;;neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
        (popup            ; tame sudden yet inevitable temporary windows
-        +all             ; catch all popups that start with an asterix
+        ;;+all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
        ;; (pretty-code       ; replace bits of code with pretty symbols
        ;;  +fira)
-       tabs              ; an tab bar for Emacs
+       ;; tabs              ; an tab bar for Emacs
        treemacs          ; a project drawer, like neotree but cooler
        ;; unicode           ; extended unicode support for various languages
        ;; vc-gutter         ; vcs diff in the fringe
@@ -109,7 +109,7 @@
        :lang
        ;;agda              ; types of types of types of types...
        ;;assembly          ; assembly for fun or debugging
-       ;;cc                ; C/C++/Obj-C madness
+       cc                ; C/C++/Obj-C madness
        ;;clojure           ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
@@ -123,13 +123,14 @@
        ;;ess               ; emacs speaks statistics
        ;;faust             ; dsp, but you get to keep your soul
        ;;fsharp           ; ML stands for Microsoft's Language
-       ;;go                ; the hipster dialect
+       go                ; the hipster dialect
        ;; (haskell +dante)  ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
-       ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
-       julia             ; a better, faster MATLAB
+       javascript        ; all(hope(abandon(ye(who(enter(here))))))
+       (julia             ; a better, faster MATLAB
+        +lsp)
        ;;kotlin            ; a better, slicker Java(Script)
        (latex +latexmk)             ; writing papers in Emacs has never been so fun
        ;;lean

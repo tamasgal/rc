@@ -32,7 +32,11 @@ alias vim='nvim'
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
+source /usr/local/bin/virtualenvwrapper.sh
+
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
+export PATH=/Users/tamasgal/opt/python-language-server/output/bin/Release/osx-x64/publish:$PATH
 
 BASE16_SHELL=$HOME/.rc/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

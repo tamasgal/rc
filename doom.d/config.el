@@ -18,7 +18,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code" :size 11))
+(setq doom-font (font-spec :family "Fira Code" :size 13))
 (setq doom-big-font (font-spec :family "Fira Code" :size 26))
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
@@ -38,7 +38,7 @@
   ;; (doom-themes-visual-bell-config)
 
   ;; Enable custom neotree theme (all-the-icons must be installed!)
-  (doom-themes-neotree-config)
+  ;; (doom-themes-neotree-config)
   ;; or for treemacs users
   (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
   (doom-themes-treemacs-config)
@@ -69,6 +69,9 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+(after! persp-mode
+  (setq +workspaces-switch-project-function 'magit-status))
 
 (setq projectile-project-search-path '("~/Dev" "~/Dropbox")
       projectile-enable-caching nil)
@@ -155,3 +158,6 @@
       "C-S-W" nil
       "C-_" nil
       "C-f" nil)
+
+
+(setq lsp-julia-default-environment "~/.julia/environments/v1.2")
