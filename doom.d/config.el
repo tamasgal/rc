@@ -154,3 +154,6 @@
       "C-S-W" nil
       "C-_" nil
       "C-f" nil)
+
+
+(setq lsp-julia-default-environment "~/.julia/environments/v1.2")

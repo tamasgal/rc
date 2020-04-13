@@ -51,6 +51,8 @@
 ;; our package manager can't deal with; see raxod502/straight.el#279)
 ;(package! builtin-package :recipe (:branch "develop"))
 
+(package! lsp-julia :recipe (:host github :repo "non-jedi/lsp-julia"))
+
 (use-package! org-re-reveal
     :after ox
     :init
