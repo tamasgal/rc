@@ -38,7 +38,7 @@
   ;; (doom-themes-visual-bell-config)
 
   ;; Enable custom neotree theme (all-the-icons must be installed!)
-  (doom-themes-neotree-config)
+  ;; (doom-themes-neotree-config)
   ;; or for treemacs users
   (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
   (doom-themes-treemacs-config)
@@ -69,6 +69,9 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+(after! persp-mode
+  (setq +workspaces-switch-project-function 'magit-status))
 
 (setq projectile-project-search-path '("~/Dev" "~/Dropbox")
       projectile-enable-caching nil)
