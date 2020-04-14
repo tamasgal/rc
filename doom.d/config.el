@@ -114,6 +114,10 @@
         org-latex-packages-alist '(("margin=2cm" "geometry" nil))
         )
   )
+(after! org-archive
+  (advice-add #'org-archive-subtree-default :after #'org-save-all-org-buffers)
+  (advice-add #'org-archive-subtree :after #'org-save-all-org-buffers)
+  )
 
 (setq evil-snipe-scope 'buffer)
 (setq avy-all-windows t)
@@ -156,4 +160,5 @@
       "C-f" nil)
 
 
-(setq lsp-julia-default-environment "~/.julia/environments/v1.2")
+; (setq lsp-julia-package-dir nil)
+(setq lsp-julia-default-environment "~/.julia/environments/v1.3")
