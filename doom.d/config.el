@@ -71,7 +71,8 @@
 ;; they are implemented.
 
 (after! persp-mode
-  (setq +workspaces-switch-project-function 'magit-status))
+  (setq +workspaces-switch-project-function nil))
+  ;;(setq +workspaces-switch-project-function 'magit-status))
 
 (setq projectile-project-search-path '("~/Dev" "~/Dropbox")
       projectile-enable-caching nil)
@@ -160,5 +161,5 @@
       "C-f" nil)
 
 
-; (setq lsp-julia-package-dir nil)
+;; (setq lsp-julia-package-dir nil)
 (setq lsp-julia-default-environment "~/.julia/environments/v1.3")
