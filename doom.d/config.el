@@ -70,9 +70,7 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-(after! persp-mode
-  (setq +workspaces-switch-project-function nil))
-  ;;(setq +workspaces-switch-project-function 'magit-status))
+(setq +workspaces-switch-project-function #'ignore)
 
 (setq projectile-project-search-path '("~/Dev" "~/Dropbox")
       projectile-enable-caching nil)
@@ -136,6 +134,10 @@
       smtpmail-queue-mail nil  ;; start in normal mode
       smtpmail-queue-dir   "~/.mail/queue/cur"
       )
+
+(setq company-idle-delay nil)
+(map!
+      :i "C-," #'+company/complete)
 
 ;; Cleanup unused key mapping
 (map! :after evil
