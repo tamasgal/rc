@@ -46,6 +46,10 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
+
+;; Setting the GC threshold to 32MB (Doom default is 16MB) to avoid hangs
+(setq gcmh-high-cons-threshold 33554432)
+
 ;; If you intend to use org, it is recommended you change this!
 
 ;; If you want to change the style of line numbers, change this to `relative' or
@@ -165,3 +169,4 @@
 
 ;; (setq lsp-julia-package-dir nil)
 (setq lsp-julia-default-environment "~/.julia/environments/v1.3")
+
