@@ -166,6 +166,8 @@
       "C-_" nil
       "C-f" nil)
 
+(advice-add #'evil-ex-search-next :after #'evil-scroll-line-to-center)
+
 
 ;; (setq lsp-julia-package-dir nil)
 (setq lsp-julia-default-environment "~/.julia/environments/v1.3")
