@@ -1,7 +1,6 @@
 try
     using OhMyREPL
 catch
-    println("No OhMyREPL installed.")
 end
 
 atreplinit() do repl
