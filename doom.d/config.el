@@ -74,7 +74,7 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-(setq +workspaces-switch-project-function #'ignore)
+;; (setq +workspaces-switch-project-function #'ignore)
 
 (setq projectile-project-search-path '("~/Dev" "~/Dropbox")
       projectile-enable-caching nil)
