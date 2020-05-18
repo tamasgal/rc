@@ -44,3 +44,5 @@ BASE16_SHELL=$HOME/.rc/base16-shell/
 
 alias vim=nvim
 alias vimdiff='nvim -d'
+alias emacs=ec
+alias emacsclient=ec
