@@ -97,7 +97,7 @@
        (lookup           ; helps you navigate your code and documentation
         ;; +docsets        ; ...or in Dash docsets locally
         )
-       lsp
+       ;; lsp
        ;;macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
@@ -132,8 +132,8 @@
        ;;idris             ;
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
-       (julia             ; a better, faster MATLAB
-        +lsp)
+       (julia)             ; a better, faster MATLAB
+        ;; +lsp)
        ;;kotlin            ; a better, slicker Java(Script)
        (latex +latexmk)             ; writing papers in Emacs has never been so fun
        ;;lean

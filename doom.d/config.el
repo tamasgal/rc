@@ -143,32 +143,8 @@
 (map!
       :i "C-," #'+company/complete)
 
-;; Cleanup unused key mapping
-(map! :after evil
-      :map evil-window-map
-      "S" nil
-      "C-b" nil
-      "C-c" nil
-      "C-S-h" nil
-      "C-S-j" nil
-      "C-S-k" nil
-      "C-S-l" nil
-      "C-n" nil
-      "C-o" nil
-      "C-r" nil
-      "C-S-r" nil
-      "C-s" nil
-      "C-S-s" nil
-      "C-t" nil
-      "C-v" nil
-      "C-w" nil
-      "C-S-W" nil
-      "C-_" nil
-      "C-f" nil)
-
 (advice-add #'evil-ex-search-next :after #'evil-scroll-line-to-center)
 
 
 ;; (setq lsp-julia-package-dir nil)
-(setq lsp-julia-default-environment "~/.julia/environments/v1.3")
-
+(setq lsp-julia-default-environment "~/.julia/environments/v1.4")
