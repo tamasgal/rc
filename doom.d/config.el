@@ -18,8 +18,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code" :size 13))
-(setq doom-big-font (font-spec :family "Fira Code" :size 26))
+(setq doom-font (font-spec :family "JuliaMono" :weight 'light :size 12))
+(setq doom-big-font (font-spec :family "JuliaMono" :weight 'light :size 26))
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
@@ -144,6 +144,20 @@
       :i "C-," #'+company/complete)
 
 (advice-add #'evil-ex-search-next :after #'evil-scroll-line-to-center)
+
+;; Custom keybindings
+;; (map! :leader
+;;       (:prefix-map ("a" . "arbitrary")
+;;        (:prefix ("f" . "journal")
+;;         :desc "New journal entry" "j" #'org-journal-new-entry
+;;         :desc "Search journal entry" "s" #'org-journal-search)))
+(map! :leader
+      (:prefix-map ("a" . "arbitrary")
+       :desc "Fill paragraph" "f" #'fill-paragraph
+       ))
+(map! :leader
+      :desc "Auto fill mode"
+      "t a" #'auto-fill-mode)
 
 
 ;; (setq lsp-julia-package-dir nil)
