@@ -123,7 +123,7 @@ SPACESHIP_PROMPT_ORDER=(
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions docker tmux tmuxinator autojump vi-mode osx git git-extras git-flow git-remote-branch svn cabal history-substring-search colored-man-pages cp fasd extract)
+plugins=(zsh-autosuggestions docker tmux tmuxinator vi-mode osx git git-extras git-flow svn cabal history-substring-search colored-man-pages cp fasd extract)
 
 # User configuration
 
@@ -158,8 +158,8 @@ alias nbview="jupyter nbconvert --to slides --post serve "
 
 # Julia
 alias julia_dev="$HOME/Dev/julia/julia"
-alias juliap="JULIA_PROJECT=$(pwd) julia"
-alias juliat="JULIA_PROJECT=$(pwd) julia test/runtests.jl"
+alias juliap="julia --project=."
+alias juliat="julia --project=. test/runtests.jl"
 
 # nim
 export PATH=$HOME/.nimble/bin:$PATH

@@ -6,20 +6,6 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.ca
 # export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 #
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/tamasgal/.miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/tamasgal/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/tamasgal/.miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/tamasgal/.miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # Mac aliases
 alias ls='ls -G'
@@ -32,12 +18,8 @@ alias vim='nvim'
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
-
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
 export PATH=$HOME/opt/bin:$PATH
-export PATH=/Users/tamasgal/opt/python-language-server/output/bin/Release/osx-x64/publish:$PATH
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 BASE16_SHELL=$HOME/.rc/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
