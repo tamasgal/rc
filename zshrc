@@ -146,8 +146,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient"                  # $EDITOR opens in terminal
 export VISUAL="emacsclient"         # $VISUAL opens in GUI mode
-export USE_EDITOR=$EDITOR
-alias vim=$EDITOR
+export USE_EDITOR="$EDITOR"
+alias vim="$EDITOR"
+alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 
 # ix paster
 alias ix="curl -n -F 'f:1=<-' http://ix.io "
@@ -209,7 +210,7 @@ tmux_dark() {
 
 # Copy term info to target host
 function termify() {
-    infocmp $TERM | ssh $1 "mkdir -p .terminfo && cat >/tmp/ti && tic /tmp/ti"
+    infocmp $TERM | ssh $1 "mkdir -p .terminfo && mkdir -p tmp && cat > tmp/ti && tic tmp/ti"
 }
 
 export LC_ALL=en_US.UTF-8
