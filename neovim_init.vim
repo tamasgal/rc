@@ -19,9 +19,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'luochen1990/rainbow'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'sbdchd/neoformat'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'zchee/deoplete-jedi'
+" Plug 'sbdchd/neoformat'
 Plug 'JuliaEditorSupport/julia-vim'
 " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 " Plug 'ncm2/ncm2'
@@ -74,11 +74,11 @@ autocmd BufReadPost *
 let g:mutt_aliases_path = "~/.mutt/aliases"
 
 " DeoPlete
-let g:deoplete#enable_at_startup = 1
-
-let g:pymode_lint=0 " using neomake or ale for linting
-let g:pymode_rope=0 " using deoplete for auto-completion
-let g:pymode_python='python'
+" let g:deoplete#enable_at_startup = 1
+"
+" let g:pymode_lint=0 " using neomake or ale for linting
+" let g:pymode_rope=0 " using deoplete for auto-completion
+" let g:pymode_python='python'
 
 " completion
 " enable ncm2 for all buffers
@@ -88,24 +88,24 @@ let g:pymode_python='python'
 
 
 " ale
-let g:ale_lint_on_enter = 1
-" let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
-let g:ale_linters = {
-  \ 'python': ['flake8', 'mypy', 'pylint'] ,
-  \ }
-let g:ale_python_mypy_options = '--ignore-missing-imports'
-let g:ale_fixers = {
-  \ 'python': ['autopep8', 'yapf'] ,
-  \ }
-" let g:ale_sign_error = '⊛⊛⨀⨂●⦿'
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '•'
-let g:ale_set_highlights = 0
-" highlight clear ALEErrorSign
-" highlight clear ALEWarningSign
-" highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
+" let g:ale_lint_on_enter = 1
+" " let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_save = 1
+" let g:ale_fix_on_save = 1
+" let g:ale_linters = {
+"   \ 'python': ['flake8', 'mypy', 'pylint'] ,
+"   \ }
+" let g:ale_python_mypy_options = '--ignore-missing-imports'
+" let g:ale_fixers = {
+"   \ 'python': ['autopep8', 'yapf'] ,
+"   \ }
+" " let g:ale_sign_error = '⊛⊛⨀⨂●⦿'
+" let g:ale_sign_error = '●'
+" let g:ale_sign_warning = '•'
+" let g:ale_set_highlights = 0
+" " highlight clear ALEErrorSign
+" " highlight clear ALEWarningSign
+" " highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
 
 
 " neoformat
