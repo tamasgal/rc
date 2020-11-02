@@ -5,9 +5,9 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 
-Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
-Plug 'tamasgal/vim-snippets'
+" Plug 'ervandew/supertab'
+" Plug 'SirVer/ultisnips'
+" Plug 'tamasgal/vim-snippets'
 
 
 Plug 'lervag/vimtex'
@@ -204,8 +204,8 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 " Snipmate
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
 
 " Git
 let g:snips_author='Tamas Gal'
