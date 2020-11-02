@@ -1,0 +1,22 @@
+module() { eval `/usr/bin/tclsh8.6 /usr/lib/x86_64-linux-gnu/modulecmd.tcl zsh $*`; }
+export MODULEPATH=$HOME/modules/modulefiles
+
+
+export PATH=$HOME/opt/bin:$HOME/.local/bin:$PATH
+
+setxkbmap -option ctrl:nocaps
+
+alias vim=nvim
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+ps cax | grep dwmstatusbar > /dev/null
+if [ $? -eq 0 ]; then
+else
+    echo "Setting up dwm statusbar"
+    nohup $HOME/opt/bin/dwmstatusbar &
+fi
