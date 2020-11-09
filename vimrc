@@ -82,7 +82,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
 " Plugin 'tpope/vim-unimpaired'
-Plugin 'w0rp/ale'
+" Plugin 'w0rp/ale'
 Plugin 'flazz/vim-colorschemes.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -95,16 +95,16 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'chriskempson/base16-vim'
 Plugin 'lervag/vimtex'
 Plugin 'brennier/quicktex'
 
 " Snippets and deps
-Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'tamasgal/vim-snippets'
+" Plugin 'garbas/vim-snipmate'
+" Plugin 'tamasgal/vim-snippets'
 
 call vundle#end()
 
@@ -217,16 +217,16 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 " YouCompleteMe
-let g:ycm_seed_identifiers_with_syntax=1
+" let g:ycm_seed_identifiers_with_syntax=1
 " let g:ycm_path_to_python_interpreter = '/Users/tamasgal/.pyenv/shims/python'
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0
-let g:ycm_collect_identifiers_from_tag_files = 1
-set completeopt=longest,menu
+" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_confirm_extra_conf=0
+" let g:ycm_collect_identifiers_from_tag_files = 1
+" set completeopt=longest,menu
 
 " Snipmate
-imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
+" imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+" smap <C-J> <Plug>snipMateNextOrTrigger
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -247,17 +247,17 @@ nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 ":inoremap <esc> <nop>
 
 " ALE lint engine
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\}
-let g:ale_linters = {
-\ 'python': ['flake8', 'mypy', 'pycodestyle', 'pylint'] ,
-\ }
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '¬'
-let g:airline#extensions#ale#enabled = 1
-let g:ale_lint_on_text_changed = 'never'
+" let g:ale_fix_on_save = 1
+" let g:ale_fixers = {
+" \   'javascript': ['eslint'],
+" \}
+" let g:ale_linters = {
+" \ 'python': ['flake8', 'mypy', 'pycodestyle', 'pylint'] ,
+" \ }
+" let g:ale_sign_error = '✘'
+" let g:ale_sign_warning = '¬'
+" let g:airline#extensions#ale#enabled = 1
+" let g:ale_lint_on_text_changed = 'never'
 
 " Unit test (python)
 "map <Leader>r :! py.test -l %<CR>
