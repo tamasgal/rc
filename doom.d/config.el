@@ -18,8 +18,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "JuliaMono" :weight 'light :size 12))
-(setq doom-big-font (font-spec :family "JuliaMono" :weight 'light :size 26))
+(setq doom-font (font-spec :family "Iosevka" :weight 'light :size 12))
+(setq doom-big-font (font-spec :family "Iosevka" :weight 'light :size 26))
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 (setq doom-variable-pitch-font (font-spec :family "Cantarell" :size 19))
 
@@ -89,14 +89,14 @@
       )
 
 ;; from https://www.ianjones.us/variable-spaced-fonts
-(use-package mixed-pitch
-  :hook
-  ;; If you want it in all text modes:
-  (text-mode . mixed-pitch-mode)
-  :config
-  (setq mixed-pitch-set-heigth t)
-  (set-face-attribute 'variable-pitch nil :height 180)
-  ) ;; or org-mode
+; (use-package mixed-pitch
+;   :hook
+;   ;; If you want it in all text modes:
+;   (text-mode . mixed-pitch-mode)
+;   :config
+;   (setq mixed-pitch-set-heigth t)
+;   (set-face-attribute 'variable-pitch nil :height 180)
+;   ) ;; or org-mode
 
 
 (after! org
