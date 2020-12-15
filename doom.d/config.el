@@ -79,14 +79,18 @@
 (setq projectile-project-search-path '("~/Dev" "~/Dropbox")
       projectile-enable-caching nil)
 
-(map! (:when (featurep! :lang latex)    ; local conditional
-        (:map LaTeX-mode-map
-          :localleader                  ; Use local leader
-          :desc "View" "v" #'TeX-view ; Add which-key description
-          :desc "Preview pane" "p" #'latex-preview-pane-mode
-          :desc "Update preview" "u" #'latex-preview-pane-update
-          ))
+(setq TeX-command-default "LatexMk")
+(map! :map latex-mode-map
+      :localleader                  ; Use local leader
+      :desc "View" "v" #'TeX-view ; Add which-key description
+      :desc "Preview pane" "p" #'latex-preview-pane-mode
+      :desc "Update preview" "u" #'latex-preview-pane-update
+      :desc "Compile" "c" #'TeX-command-master
+      :desc "Run all" "a" #'TeX-command-run-all
+      :desc "Environment" "n e" #'LaTeX-environment
+      :desc "Section" "n s" #'LaTeX-section
       )
+(add-hook 'LaTeX-mode-hook #'mixed-pitch-mode)
 
 ;; from https://www.ianjones.us/variable-spaced-fonts
 ; (use-package mixed-pitch
@@ -180,6 +184,14 @@
 (map! :leader
       :desc "Auto fill mode"
       "t a" #'auto-fill-mode)
+
+;; Open all matches from 'SPC s p' with 'C-c C-o'
+;; from https://github.com/hlissner/doom-emacs/issues/2648
+(after! counsel
+  (ivy-add-actions
+   #'counsel-rg
+   '(("a" (lambda (_path) (mapc #'counsel-git-grep-action ivy--all-candidates))
+      "Open all matches"))))
 
 
 ;; (setq lsp-julia-package-dir nil)

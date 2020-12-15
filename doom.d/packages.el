@@ -56,4 +56,4 @@
     :init
     (setq org-re-reveal-root "https://revealjs.com"))
 
-; (package! mixed-pitch)
+(package! mixed-pitch)
