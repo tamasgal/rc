@@ -167,6 +167,9 @@ export PATH=$HOME/.nimble/bin:$PATH
 # doom emacs
 export PATH=$PATH:~/.emacs.d/bin
 
+# lean/elan
+export PATH=$PATH:$HOME/.elan/bin
+
 # Kitty icat
 alias icat="kitty +kitten icat"
 
