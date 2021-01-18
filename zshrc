@@ -62,9 +62,9 @@ SPACESHIP_PROMPT_ORDER=(
   # swift         # Swift section
   # golang        # Go section
   # php           # PHP section
-  # rust          # Rust section
+  rust          # Rust section
   haskell       # Haskell Stack section
-  # julia         # Julia section
+  julia         # Julia section
   # docker        # Docker section
   # aws           # Amazon Web Services section
   venv          # virtualenv section
