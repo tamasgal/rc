@@ -29,12 +29,14 @@
        :ui
        ;;deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
-       ;; doom-dashboard    ; a nifty splash screen for Emacs
-       ;; doom-quit         ; DOOM quit-message prompts when you quit Emacs
+       doom-dashboard    ; a nifty splash screen for Emacs
+       doom-quit         ; DOOM quit-message prompts when you quit Emacs
        fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
        ;;indent-guides     ; highlighted indent columns
+       ;;ligatures         ; ligatures and symbols to make your code pretty again
+       ;;minimap           ; show a map of the code on the side
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ;; nav-flash         ; blink the current line after jumping
        ;;neotree           ; a project drawer, like NERDTree for vim
@@ -98,7 +100,6 @@
         ;; +docsets        ; ...or in Dash docsets locally
         )
        ;; lsp
-       ;;macos             ; MacOS-specific commands
        (magit +forge)             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
        pass              ; password manager for nerds
@@ -108,6 +109,9 @@
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
+
+       :os
+       (:if IS-MAC macos)  ; improve compatibility with macOS
 
        :lang
        ;;agda              ; types of types of types of types...
@@ -119,6 +123,7 @@
        ;;crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
+       ;;(dart +flutter)   ; paint ui and not much else
        ;;elixir            ; erlang done right
        ;;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
@@ -158,6 +163,7 @@
        (python)            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
+       ;;raku              ; the artist formerly known as perl6
        ;;rest              ; Emacs as a REST client
        rst               ; ReST in peace
        ;;ruby              ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
@@ -169,6 +175,7 @@
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        ;;web               ; the tubes
+       yaml                ; the tubes
 
        :email
        mu4e              ; +gmail)
