@@ -144,10 +144,10 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #fi
 
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient"                  # $EDITOR opens in terminal
+export EDITOR="emacsclient -nw"                  # $EDITOR opens in terminal
 export VISUAL="emacsclient"         # $VISUAL opens in GUI mode
 export USE_EDITOR="$EDITOR"
-alias vim="$EDITOR"
+export JULIA_EDITOR="$EDITOR"
 alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 
 # ix paster
