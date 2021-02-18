@@ -16,6 +16,11 @@ export LLVM_CONFIG=/sps/km3net/users/tgal/apps/llvm-7.0.0/bin/llvm-config
 # JPP
 alias jpp='source /sps/km3net/users/tgal/dev/jpp/setenv.sh /sps/km3net/users/tgal/dev/jpp'
 
+module load python/3.7.5
+module load julia/1.5.3
+module load tools/neovim
+module load tools/tig
+module load tools/the_silver_searcher
 alias vim=nvim
 
 # Shell
