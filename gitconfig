@@ -1,6 +1,7 @@
 [user]
 	name = Tamas Gal
 	email = tgal@km3net.de
+	signingkey = 6978419067092B3F390A40CF353EFBB539EA88B1
 [status]
 	submoduleSummary = true
 [diff]
@@ -35,3 +36,9 @@
         interactive = auto
         ui = true
         pager = true
+[core]
+	excludesfile = ~/.gitignore
+[github]
+	user = tamasgal
+[pull]
+	rebase = false
