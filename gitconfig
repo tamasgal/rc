@@ -1,6 +1,6 @@
 [user]
 	name = Tamas Gal
-	email = tgal@km3net.de
+	email = himself@tamasgal.com
 	signingkey = 6978419067092B3F390A40CF353EFBB539EA88B1
 [status]
 	submoduleSummary = true
@@ -42,3 +42,5 @@
 	user = tamasgal
 [pull]
 	rebase = false
+[commit]
+	gpgsign = true
