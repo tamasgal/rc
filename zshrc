@@ -199,6 +199,8 @@ doi2bib ()
     echo >> bib.bib
 }
 
+# GPG
+export GPG_TTY=$(tty)
 
 # AnyBar
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
