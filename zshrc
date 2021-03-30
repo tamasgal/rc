@@ -123,7 +123,7 @@ SPACESHIP_PROMPT_ORDER=(
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions docker tmux tmuxinator vi-mode osx git git-extras git-flow svn cabal history-substring-search colored-man-pages cp fasd extract)
+plugins=(zsh-autosuggestions docker tmux tmuxinator vi-mode osx git git-extras git-flow svn cabal history-substring-search colored-man-pages cp fasd extract pass)
 
 # User configuration
 
