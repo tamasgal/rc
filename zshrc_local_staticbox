@@ -22,6 +22,7 @@ export MODULEPATH=$HOME/modules/modulefiles
 
 # module load python/3.7.5
 module load julia/1.6.0-beta1
+module load singularity/3.7.1
 export JULIA_NUM_THREADS=8
 
 # Singularity and Go
