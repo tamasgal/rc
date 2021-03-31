@@ -6,6 +6,7 @@
 	submoduleSummary = true
 [diff]
 	submodule = log
+	colorMoved = zebra
 [alias]
 	lol = log --oneline --decorate --graph --all
 	spull = !git pull && git submodule sync --recursive && git submodule update --init --recursive
