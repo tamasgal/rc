@@ -123,7 +123,7 @@ SPACESHIP_PROMPT_ORDER=(
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions docker tmux tmuxinator vi-mode osx git git-extras git-flow svn cabal history-substring-search colored-man-pages cp fasd extract pass)
+plugins=(docker tmux vi-mode osx git git-extras git-flow svn history-substring-search colored-man-pages cp fasd extract pass)
 
 # User configuration
 
@@ -245,7 +245,7 @@ bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 bindkey -s "^[OX" "="
 
-source $ZSH/plugins/history-substring-search/history-substring-search.zsh
+# source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
 remember() { echo "$@" >> remember.log && $@ }
 
@@ -254,5 +254,5 @@ remember() { echo "$@" >> remember.log && $@ }
 # Disable auto cd
 unsetopt AUTO_CD
 
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
+# bindkey "^[[A" history-substring-search-up
+# bindkey "^[[B" history-substring-search-down
