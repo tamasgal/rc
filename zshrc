@@ -123,7 +123,7 @@ SPACESHIP_PROMPT_ORDER=(
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker docker-compose docker-machine tmux vi-mode osx git git-extras git-flow svn history-substring-search colored-man-pages cp fasd extract pass)
+plugins=(poetry docker docker-compose docker-machine tmux vi-mode osx git git-extras git-flow svn history-substring-search colored-man-pages cp fasd extract pass)
 
 # User configuration
 
@@ -166,6 +166,9 @@ export PATH=$HOME/.nimble/bin:$PATH
 
 # doom emacs
 export PATH=$PATH:~/.emacs.d/bin
+
+# poetry
+export PATH="$HOME/.local/bin:$PATH"
 
 # lean/elan
 export PATH=$PATH:$HOME/.elan/bin
