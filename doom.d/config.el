@@ -195,4 +195,7 @@
 
 
 ;; (setq lsp-julia-package-dir nil)
-(setq lsp-julia-default-environment "~/.julia/environments/v1.4")
+;; (setq lsp-julia-default-environment "~/.julia/environments/v1.4")
+
+;; Org Roam
+(setq org-roam-directory "~/Dropbox/org/roam")

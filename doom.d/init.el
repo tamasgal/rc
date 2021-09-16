@@ -99,7 +99,7 @@
        (lookup           ; helps you navigate your code and documentation
         ;; +docsets        ; ...or in Dash docsets locally
         )
-       ;; lsp
+       lsp
        (magit +forge)             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
        pass              ; password manager for nerds
@@ -155,12 +155,13 @@
         +jupyter        ; ipython/jupyter support for babel
         +pandoc          ; export-with-pandoc support
         ;;+pomodoro        ; be fruitful with the tomato technique
-        +present)        ; using org-mode for presentations
+        +present        ; using org-mode for presentations
+        +roam2)
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       (python)            ; beautiful is better than ugly
+       (python +conda +lsp)            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
