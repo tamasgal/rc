@@ -42,6 +42,6 @@
 [github]
 	user = tamasgal
 [pull]
-	rebase = false
+	rebase = true
 [commit]
 	gpgsign = true
