@@ -202,9 +202,6 @@ doi2bib ()
     echo >> bib.bib
 }
 
-# GPG
-export GPG_TTY=$(tty)
-
 # AnyBar
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 
@@ -220,6 +217,9 @@ tmux_dark() {
 function termify() {
     infocmp $TERM | ssh $1 "mkdir -p .terminfo && mkdir -p tmp && cat > tmp/ti && tic tmp/ti"
 }
+
+# GPG
+export GPG_TTY=$(tty)
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
