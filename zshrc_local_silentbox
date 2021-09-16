@@ -1,6 +1,7 @@
 eval $(thefuck --alias)
 
 export PATH=/Applications/Julia-1.6.app/Contents/Resources/julia/bin:$PATH
+export PATH=$HOME/opt/bin:$PATH
 
 BASE16_SHELL=$HOME/.rc/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
@@ -26,6 +27,4 @@ unset __conda_setup
 # if command -v pyenv 1>/dev/null 2>&1; then
 #   eval "$(pyenv init -)"
 # fi
-
-# Otherwise it will not use the Keychain and prompt in the terminal for PW
-export GPG_TTY=
+export PATH="/opt/homebrew/opt/llvm@11/bin:$PATH"
