@@ -123,7 +123,7 @@ SPACESHIP_PROMPT_ORDER=(
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions docker tmux tmuxinator vi-mode osx git git-extras git-flow svn cabal history-substring-search colored-man-pages cp fasd extract pass)
+plugins=(poetry docker docker-compose docker-machine tmux vi-mode osx git git-extras git-flow svn history-substring-search colored-man-pages cp fasd extract pass)
 
 # User configuration
 
@@ -167,6 +167,9 @@ export PATH=$HOME/.nimble/bin:$PATH
 # doom emacs
 export PATH=$PATH:~/.emacs.d/bin
 
+# poetry
+export PATH="$HOME/.local/bin:$PATH"
+
 # lean/elan
 export PATH=$PATH:$HOME/.elan/bin
 
@@ -199,9 +202,6 @@ doi2bib ()
     echo >> bib.bib
 }
 
-# GPG
-export GPG_TTY=$(tty)
-
 # AnyBar
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 
@@ -217,6 +217,9 @@ tmux_dark() {
 function termify() {
     infocmp $TERM | ssh $1 "mkdir -p .terminfo && mkdir -p tmp && cat > tmp/ti && tic tmp/ti"
 }
+
+# GPG
+export GPG_TTY=$(tty)
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -245,7 +248,7 @@ bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 bindkey -s "^[OX" "="
 
-source $ZSH/plugins/history-substring-search/history-substring-search.zsh
+# source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
 remember() { echo "$@" >> remember.log && $@ }
 
@@ -254,5 +257,5 @@ remember() { echo "$@" >> remember.log && $@ }
 # Disable auto cd
 unsetopt AUTO_CD
 
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
+# bindkey "^[[A" history-substring-search-up
+# bindkey "^[[B" history-substring-search-down
