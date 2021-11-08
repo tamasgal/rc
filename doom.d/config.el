@@ -90,6 +90,7 @@
       :desc "Environment" "n e" #'LaTeX-environment
       :desc "Section" "n s" #'LaTeX-section
       )
+(setq +latex-viewers '(skim))
 (add-hook 'LaTeX-mode-hook #'mixed-pitch-mode)
 
 ;; from https://www.ianjones.us/variable-spaced-fonts
