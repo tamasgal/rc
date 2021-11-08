@@ -143,8 +143,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #  export EDITOR='mvim'
 #fi
 
+alias em="emacsclient -t -a ''"
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -nw"                  # $EDITOR opens in terminal
+export EDITOR="emacsclient -t -a''"                  # $EDITOR opens in terminal
 export VISUAL="emacsclient"         # $VISUAL opens in GUI mode
 export USE_EDITOR="$EDITOR"
 export JULIA_EDITOR="$EDITOR"
