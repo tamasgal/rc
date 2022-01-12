@@ -1,4 +1,5 @@
 try
     @eval using Revise
-catch
+catch e
+    @warn "Error initializing Revise" exception=(e, catch_backtrace())
 end
