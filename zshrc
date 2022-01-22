@@ -260,3 +260,16 @@ unsetopt AUTO_CD
 
 # bindkey "^[[A" history-substring-search-up
 # bindkey "^[[B" history-substring-search-down
+
+function commit_yesterday() {
+    yesterday=$(date -v-1d)
+    env GIT_AUTHOR_DATE=$yesterday GIT_COMMITTER_DATE=$yesterday git commit $*
+}
+
+function dcommit() {
+    # To do a commit 3 hours in the past
+    # e.g. dcommit 'date -v-3H' -m ...
+    commit_date=$( eval $1); shift
+    env GIT_AUTHOR_DATE=$commit_date GIT_COMMITTER_DATE=$commit_date git commit $*
+    fi
+}
