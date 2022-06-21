@@ -143,9 +143,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #  export EDITOR='mvim'
 #fi
 
-alias em="emacsclient -t -a ''"
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t -a''"                  # $EDITOR opens in terminal
+export EDITOR=""emacsclient -nw""   # $EDITOR opens in terminal
 export VISUAL="emacsclient"         # $VISUAL opens in GUI mode
 export USE_EDITOR="$EDITOR"
 export JULIA_EDITOR="$EDITOR"
@@ -264,12 +263,4 @@ unsetopt AUTO_CD
 function commit_yesterday() {
     yesterday=$(date -v-1d)
     env GIT_AUTHOR_DATE=$yesterday GIT_COMMITTER_DATE=$yesterday git commit $*
-}
-
-function dcommit() {
-    # To do a commit 3 hours in the past
-    # e.g. dcommit 'date -v-3H' -m ...
-    commit_date=$( eval $1); shift
-    env GIT_AUTHOR_DATE=$commit_date GIT_COMMITTER_DATE=$commit_date git commit $*
-    fi
 }
