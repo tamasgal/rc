@@ -59,3 +59,5 @@
 (package! mixed-pitch)
 
 (package! nextflow-mode :recipe (:host github :repo "emiller88/nextflow-mode"))
+
+(package! snakemake-mode)
