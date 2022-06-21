@@ -185,6 +185,9 @@
 (map! :leader
       :desc "Auto fill mode"
       "t a" #'auto-fill-mode)
+(map! :leader
+      :desc "Contents of file"
+      "i c" #'insert-file)
 
 ;; Open all matches from 'SPC s p' with 'C-c C-o'
 ;; from https://github.com/hlissner/doom-emacs/issues/2648
