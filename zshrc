@@ -1,3 +1,5 @@
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 if [ -z "$PS1" ]; then
     return
 fi
@@ -148,6 +150,8 @@ export EDITOR="emacsclient -nw"   # $EDITOR opens in terminal
 export VISUAL="emacsclient"         # $VISUAL opens in GUI mode
 export USE_EDITOR="$EDITOR"
 export JULIA_EDITOR="$EDITOR"
+alias em=$EDITOR
+alias vim=$EDITOR
 alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 
 # ix paster
