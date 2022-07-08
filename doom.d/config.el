@@ -78,6 +78,11 @@
 
 (setq projectile-project-search-path '("~/Dev" "~/Dropbox")
       projectile-enable-caching nil)
+(projectile-add-known-project "/ssh:cc0:command-centre")
+(projectile-add-known-project "/ssh:staticbox:Dev/snakes")
+(mapc (lambda (item)
+       (add-to-list 'projectile-globally-ignored-directories item))
+        '("*venv" "*.snakemake"))
 
 (setq TeX-command-default "LatexMk")
 (map! :map latex-mode-map
