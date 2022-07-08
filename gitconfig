@@ -10,6 +10,7 @@
 [alias]
 	lol = log --oneline --decorate --graph --all
 	spull = !git pull && git submodule sync --recursive && git submodule update --init --recursive
+	pr = "!f() { if [ $# -lt 1 ]; then\n  echo \"Usage: git pr <id> [<remote>] # assuming <remote>[=origin] is on GitHub\";\n  else git checkout -q \"$(git rev-parse --verify HEAD)\" &&\n  git fetch -fv \"${2:-origin}\" pull/\"$1\"/head:pr/\"$1\" &&\n  git checkout pr/\"$1\";\n  fi; }; f"
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff
 [merge "jupyternotebook"]
@@ -25,11 +26,6 @@
 	prompt = false
 [push]
 	followTags = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [color]
         diff = auto
         status = auto
@@ -49,3 +45,10 @@
 	prune = true
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[lfs]
+	fetchexclude = *
