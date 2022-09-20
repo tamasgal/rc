@@ -25,13 +25,13 @@
        (ivy                ; a search engine for love and life
         +fuzzy
         )
+       ;;vertico           ; the search engine of the future
 
        :ui
        ;;deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
-       doom-quit         ; DOOM quit-message prompts when you quit Emacs
-       fill-column       ; a `fill-column' indicator
+       ;;doom-quit         ; DOOM quit-message prompts when you quit Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
        ;;indent-guides     ; highlighted indent columns
@@ -49,7 +49,7 @@
        ;; tabs              ; an tab bar for Emacs
        ;; treemacs          ; a project drawer, like neotree but cooler
        ;; unicode           ; extended unicode support for various languages
-       vc-gutter         ; vcs diff in the fringe
+       (vc-gutter +pretty)         ; vcs diff in the fringe
        ;; vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        ;; window-select     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
@@ -135,12 +135,11 @@
        ;; (haskell +dante)  ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
-       (java +meghanada) ; the poster child for carpal tunnel syndrome
+       ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
-       (julia)             ; a better, faster MATLAB
-        ;; +lsp)
+       (julia +lsp)             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
-       (latex +latexmk)             ; writing papers in Emacs has never been so fun
+       (latex +latexmk +lsp)             ; writing papers in Emacs has never been so fun
        ;;lean
        ;;factor
        ;;ledger            ; an accounting system in Emacs
@@ -172,11 +171,13 @@
        ;;scala             ; java, but good
        ;;scheme            ; a fully conniving family of lisps
        sh                ; she sells {ba,z,fi}sh shells on the C xor
+       ;;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        ;;web               ; the tubes
-       yaml                ; the tubes
+       yaml              ; JSON, but readable
+       ;;zig               ; C, but simpler
 
        :email
        mu4e              ; +gmail)
@@ -191,5 +192,4 @@
 
        :config
        ;;literate
-       ;; (default +bindings +smartparens))
-       (default +bindings))
+       (default +bindings +smartparens))

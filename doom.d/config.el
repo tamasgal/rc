@@ -32,7 +32,7 @@
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-peacock t)
+  (load-theme 'doom-one-light t)
 
   ;; Enable flashing mode-line on errors
   ;; (doom-themes-visual-bell-config)
@@ -203,8 +203,15 @@
       "Open all matches"))))
 
 
+;; lsp-julia
 ;; (setq lsp-julia-package-dir nil)
-;; (setq lsp-julia-default-environment "~/.julia/environments/v1.4")
+;;(setq lsp-julia-default-environment "~/.julia/environments/v1.8")
+
+;; eglot-jl
+(setq eglot-jl-language-server-project "~/.julia/environments/v1.8")
+;; use default eglot base
+;;(after! eglot-jl
+;;  (setq eglot-jl-language-server-project eglot-jl-base))
 
 ;; Org Roam
 (setq org-roam-directory "~/Dropbox/org/roam")
