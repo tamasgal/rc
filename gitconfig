@@ -26,6 +26,7 @@
 	prompt = false
 [push]
 	followTags = true
+	autoSetupRemote = true
 [color]
         diff = auto
         status = auto
