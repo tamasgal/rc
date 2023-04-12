@@ -149,9 +149,8 @@ export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -nw"   # $EDITOR opens in terminal
 export VISUAL="emacsclient"         # $VISUAL opens in GUI mode
 export USE_EDITOR="$EDITOR"
-export JULIA_EDITOR="$EDITOR"
+export JULIA_EDITOR="vim"
 alias em=$EDITOR
-alias vim=$EDITOR
 alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 
 # ix paster
@@ -167,6 +166,9 @@ alias juliat="julia --project=. test/runtests.jl"
 
 # nim
 export PATH=$HOME/.nimble/bin:$PATH
+
+# rust/cargo
+export PATH=$HOME/.cargo/bin:$PATH
 
 # doom emacs
 export PATH=$PATH:~/.emacs.d/bin
@@ -268,3 +270,12 @@ function commit_yesterday() {
     yesterday=$(date -v-1d)
     env GIT_AUTHOR_DATE=$yesterday GIT_COMMITTER_DATE=$yesterday git commit $*
 }
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/tamasgal/.julia/juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

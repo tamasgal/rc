@@ -2,6 +2,7 @@ eval $(thefuck --alias)
 
 export PATH=$HOME/opt/bin:$PATH
 export PATH=$HOME/.gem/ruby/2.6.0/bin/:$PATH
+export HDF5_DIR="/opt/homebrew/opt/hdf5"
 
 #BASE16_SHELL=$HOME/.rc/base16-shell/
 #[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
