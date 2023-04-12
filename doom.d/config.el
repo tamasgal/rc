@@ -32,7 +32,7 @@
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-one-light t)
+  (load-theme 'doom-one t)
 
   ;; Enable flashing mode-line on errors
   ;; (doom-themes-visual-bell-config)
@@ -76,7 +76,7 @@
 
 ;; (setq +workspaces-switch-project-function #'ignore)
 
-(setq projectile-project-search-path '("~/Dev" "~/Dropbox")
+(setq projectile-project-search-path '("~/Dev" "~/Dropbox" "~/Dropbox/analysis")
       projectile-enable-caching nil)
 (projectile-add-known-project "/ssh:cc0:command-centre")
 (projectile-add-known-project "/ssh:staticbox:Dev/snakes")
@@ -157,6 +157,12 @@
 (setq evil-snipe-scope 'buffer)
 (setq avy-all-windows t)
 
+(add-to-list 'load-path "/opt/homebrew/Cellar/mu/1.8.14/share/emacs/site-lisp/mu/mu4e")
+(require 'mu4e) 
+(require 'org-mu4e) 
+(require 'mu4e-contrib) 
+(require 'smtpmail)
+(setq mu4e-headers-buffer-name "*mu4e-headers*")
 (setq mu4e-maildir "~/.mail"
       ;; mu4e-sent-folder "/Sent"
       ;; mu4e-drafts-folder "/Drafts"
@@ -169,7 +175,90 @@
       mu4e-change-filenames-when-moving t
       smtpmail-queue-mail nil  ;; start in normal mode
       smtpmail-queue-dir   "~/.mail/queue/cur"
+      
       )
+;; this command is called to sync imap servers:
+(setq mu4e-get-mail-command (concat (executable-find "mbsync") " -a"))
+;; how often to call it in seconds:
+(setq mu4e-update-interval 300)
+
+;; save attachment to desktop by default
+;; or another choice of yours:
+(setq mu4e-attachment-dir "~/Downloads")
+
+;; rename files when moving - needed for mbsync:
+(setq mu4e-change-filenames-when-moving t)
+;; gpg encryptiom & decryption:
+;; this can be left alone
+(require 'epa-file)
+(epa-file-enable)
+(setq epa-pinentry-mode 'loopback)
+(auth-source-forget-all-cached)
+
+;; don't keep message compose buffers around after sending:
+(setq message-kill-buffer-on-exit t)
+
+;; send function:
+(setq send-mail-function 'sendmail-send-it
+      message-send-mail-function 'sendmail-send-it)
+
+;; send program:
+;; this is exeranal. remember we installed it before.
+(setq sendmail-program (executable-find "msmtp"))
+
+;; select the right sender email from the context.
+(setq message-sendmail-envelope-from 'header)
+
+;; chose from account before sending
+;; this is a custom function that works for me.
+;; well I stole it somewhere long ago.
+;; I suggest using it to make matters easy
+;; of course adjust the email adresses and account descriptions
+(defun timu/set-msmtp-account ()
+  (if (message-mail-p)
+      (save-excursion
+        (let*
+            ((from (save-restriction
+                     (message-narrow-to-headers)
+                     (message-fetch-field "from")))
+             (account
+              (cond
+               ((string-match "tamas.gal@fau.de" from) "fau")
+               ((string-match "tgal@km3net.de" from) "km3net"))))
+          (setq message-sendmail-extra-arguments (list '"-a" account))))))
+
+(add-hook 'message-send-mail-hook 'timu/set-msmtp-account)
+
+;; mu4e cc & bcc
+;; this is custom as well
+(add-hook 'mu4e-compose-mode-hook
+          (defun timu/add-cc-and-bcc ()
+            "My Function to automatically add Cc & Bcc: headers.
+    This is in the mu4e compose mode."
+            (save-excursion (message-add-header "Cc:\n"))
+            (save-excursion (message-add-header "Bcc:\n"))))
+
+;; mu4e address completion
+(add-hook 'mu4e-compose-mode-hook 'company-mode)
+
+;; store link to message if in header view, not to header query:
+(setq org-mu4e-link-query-in-headers-mode nil)
+;; don't have to confirm when quitting:
+(setq mu4e-confirm-quit nil)
+;; number of visible headers in horizontal split view:
+(setq mu4e-headers-visible-lines 20)
+;; don't show threading by default:
+;;(setq mu4e-headers-show-threads nil)
+;; hide annoying "mu4e Retrieving mail..." msg in mini buffer:
+(setq mu4e-hide-index-messages t)
+;; customize the reply-quote-string:
+(setq message-citation-line-format "%N @ %Y-%m-%d %H:%M :\n")
+;; M-x find-function RET message-citation-line-format for docs:
+(setq message-citation-line-function 'message-insert-formatted-citation-line)
+;; by default do not show related emails:
+(setq mu4e-headers-include-related nil)
+
+
 
 (setq company-idle-delay nil)
 (map!
@@ -229,3 +318,12 @@
 
 ;; (after! magit
 ;;   (magit-add-section-hook 'magit-insert-ignored-files))
+
+;; accept completion from copilot and fallback to company
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))

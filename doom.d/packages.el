@@ -51,13 +51,16 @@
 ;; our package manager can't deal with; see raxod502/straight.el#279)
 ;(package! builtin-package :recipe (:branch "develop"))
 
-(use-package! org-re-reveal
-    :after ox
-    :init
-    (setq org-re-reveal-root "https://revealjs.com"))
+;(use-package! org-re-reveal
+;    :after ox
+;    :init
+;    (setq org-re-reveal-root "https://revealjs.com"))
 
 (package! mixed-pitch)
 
-(package! nextflow-mode :recipe (:host github :repo "emiller88/nextflow-mode"))
+;(package! nextflow-mode :recipe (:host github :repo "emiller88/nextflow-mode"))
 
 (package! snakemake-mode)
+
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
