@@ -85,16 +85,17 @@
         '("*venv" "*.snakemake"))
 
 (setq TeX-command-default "LatexMk")
-(map! :map latex-mode-map
-      :localleader                  ; Use local leader
-      :desc "View" "v" #'TeX-view ; Add which-key description
-      :desc "Preview pane" "p" #'latex-preview-pane-mode
-      :desc "Update preview" "u" #'latex-preview-pane-update
-      :desc "Compile" "c" #'TeX-command-master
-      :desc "Run all" "a" #'TeX-command-run-all
-      :desc "Environment" "n e" #'LaTeX-environment
-      :desc "Section" "n s" #'LaTeX-section
-      )
+(after! tex
+  (map! :localleader                  ; Use local leader
+        :map latex-mode-map
+        ;; :desc "View" "v" #'TeX-view ; Add which-key description
+        ;; :desc "Preview-pane" "p" #'latex-preview-pane-mode
+        ;; :desc "Update preview" "u" #'latex-preview-pane-update
+        ;; :desc "Compile" "c" #'TeX-command-master
+        ;; :desc "Run all" "a" #'TeX-command-run-all
+        :desc "Make" "x" #'compile
+        :desc "Environment" "n e" #'LaTeX-environment
+        :desc "Section" "n s" #'LaTeX-section))
 (setq +latex-viewers '(skim))
 (add-hook 'LaTeX-mode-hook #'mixed-pitch-mode)
 
@@ -275,6 +276,7 @@
 (map! :leader
       (:prefix-map ("a" . "arbitrary")
        :desc "Fill paragraph" "f" #'fill-paragraph
+       :desc "Make" "m" #'compile
        ))
 (map! :leader
       :desc "Auto fill mode"
@@ -318,12 +320,3 @@
 
 ;; (after! magit
 ;;   (magit-add-section-hook 'magit-insert-ignored-files))
-
-;; accept completion from copilot and fallback to company
-(use-package! copilot
-  :hook (prog-mode . copilot-mode)
-  :bind (:map copilot-completion-map
-              ("<tab>" . 'copilot-accept-completion)
-              ("TAB" . 'copilot-accept-completion)
-              ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)))
