@@ -76,7 +76,7 @@
 
 ;; (setq +workspaces-switch-project-function #'ignore)
 
-(setq projectile-project-search-path '("~/Dev" "~/Dropbox" "~/Dropbox/analysis")
+(setq projectile-project-search-path '("~/Dev" "~/NextCloud/analysis" "/Volumes/Hispeed/Analysis" "~/NextCloud/org")
       projectile-enable-caching nil)
 (projectile-add-known-project "/ssh:cc0:command-centre")
 (projectile-add-known-project "/ssh:staticbox:Dev/snakes")
@@ -117,8 +117,8 @@
         :n "H" #'org-metaleft
         :n "L" #'org-metaright
         )
-  (setq org-directory "~/Dropbox/org/"
-        org-agenda-files '("~/Dropbox/org")
+  (setq org-directory "~/NextCloud/org/"
+        org-agenda-files '("~/NextCloud/org")
         org-archive-location (concat org-directory "archive/%s::")
         org-tags-column -80
         org-priority-faces '((?A :foreground "#e45649")
@@ -296,16 +296,16 @@
 
 ;; lsp-julia
 ;; (setq lsp-julia-package-dir nil)
-;;(setq lsp-julia-default-environment "~/.julia/environments/v1.8")
+(setq lsp-julia-default-environment "~/.julia/environments/v1.9")
 
 ;; eglot-jl
-(setq eglot-jl-language-server-project "~/.julia/environments/v1.8")
+;;(setq eglot-jl-language-server-project "~/.julia/environments/v1.9")
 ;; use default eglot base
-;;(after! eglot-jl
-;;  (setq eglot-jl-language-server-project eglot-jl-base))
+(after! eglot-jl
+  (setq eglot-jl-language-server-project eglot-jl-base))
 
 ;; Org Roam
-(setq org-roam-directory "~/Dropbox/org/roam")
+(setq org-roam-directory "~/NextCloud/org/roam")
 
 ;; Magit
 ;; (defun magit-ignored-files ()
