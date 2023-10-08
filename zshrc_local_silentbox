@@ -1,10 +1,18 @@
 eval $(thefuck --alias)
 
-export PATH=$HOME/opt/bin:$PATH
+export PATH=$HOME/opt/bin:$HOME/.local/denv/bin:$PATH
 export PATH=$HOME/.gem/ruby/2.6.0/bin/:$PATH
-export HDF5_DIR="/opt/homebrew/opt/hdf5"
+#export HDF5_DIR="/opt/homebrew/opt/hdf5"
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+export WINEPREFIX=/Volumes/Hispeed/Games
+if [ "$(arch)" = "arm64" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 #BASE16_SHELL=$HOME/.rc/base16-shell/
 #[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 . ~/opt/spack/share/spack/setup-env.sh
+. ~/opt/spack/share/spack/spack-completion.bash
