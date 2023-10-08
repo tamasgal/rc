@@ -1,5 +1,5 @@
 ENV["PYTHON"] = "/opt/homebrew/bin/python3"
-ENV["JULIA_EDITOR"] = "emacsclient -nw -t"
+ENV["JULIA_EDITOR"] = "vim"
 
 if isfile("Project.toml") && isfile("Manifest.toml")
     using Pkg
@@ -10,6 +10,13 @@ try
     using Revise
 catch e
     @warn "Error initializing Revise" exception=(e, catch_backtrace())
+end
+
+try
+    using OhMyREPL
+    colorscheme!("OneDark")
+catch e
+    @warn "Error initializing OhMyREPL" exception=(e, catch_backtrace())
 end
 
 if Base.isinteractive() &&
