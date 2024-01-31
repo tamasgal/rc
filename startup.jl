@@ -1,10 +1,10 @@
 ENV["PYTHON"] = "/opt/homebrew/bin/python3"
 ENV["JULIA_EDITOR"] = "vim"
 
-if isfile("Project.toml") && isfile("Manifest.toml")
-    using Pkg
-    Pkg.activate(".")
-end
+# if isfile("Project.toml") && isfile("Manifest.toml")
+#     using Pkg
+#     Pkg.activate(".")
+# end
 
 try
     using Revise
