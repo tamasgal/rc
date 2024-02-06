@@ -1,5 +1,7 @@
 eval $(thefuck --alias)
 
+alias vim=nvim
+
 export PATH=$HOME/opt/bin:$HOME/.local/denv/bin:$PATH
 export PATH=$HOME/.gem/ruby/2.6.0/bin/:$PATH
 #export HDF5_DIR="/opt/homebrew/opt/hdf5"
@@ -11,8 +13,13 @@ else
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+# Jpp
+export PATH=$PATH:$HOME/Dev/jpp/build-basic/stage/bin
+
 #BASE16_SHELL=$HOME/.rc/base16-shell/
 #[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 . ~/opt/spack/share/spack/setup-env.sh
 . ~/opt/spack/share/spack/spack-completion.bash
+
+pushd /opt/homebrew >/dev/null; . bin/thisroot.sh; popd >/dev/null
