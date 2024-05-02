@@ -209,17 +209,6 @@ doi2bib ()
     echo >> bib.bib
 }
 
-# AnyBar
-function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
-
-# base16 and tmux
-tmux_light() {
-  tmux source-file ~/.rc/tmux-colors/tmuxcolors-light.conf
-}
-tmux_dark() {
-  tmux source-file ~/.rc/tmux-colors/tmuxcolors-dark.conf
-}
-
 # Copy term info to target host
 function termify() {
     infocmp $TERM | ssh $1 "mkdir -p .terminfo && mkdir -p tmp && cat > tmp/ti && tic tmp/ti"
@@ -280,3 +269,4 @@ path=('/Users/tamasgal/.julia/juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
