@@ -17,12 +17,12 @@ sudo yabai --load-sa
 # global settings
 yabai -m config                                 \
     mouse_follows_focus          off            \
-    focus_follows_mouse          on            \
+    focus_follows_mouse          off            \
     window_origin_display        default        \
     window_placement             second_child   \
     window_topmost               off        \
     window_zoom_persist          on             \
-    window_shadow                off             \
+    window_shadow                float             \
     window_animation_duration    0.0            \
     window_animation_frame_rate  120            \
     window_opacity               off            \
@@ -33,24 +33,28 @@ yabai -m config                                 \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 off            \
-    top_padding                  5             \
-    bottom_padding               5             \
-    left_padding                 5             \
-    right_padding                5             \
-    window_gap                   5             \
+    top_padding                  3             \
+    bottom_padding               3             \
+    left_padding                 3             \
+    right_padding                3             \
+    window_gap                   3             \
     layout                       bsp            \
     mouse_modifier               fn             \
     mouse_action1                move           \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
-yabai -m rule --add app="^System Settings$" layer=above manage=off
-yabai -m rule --add app="^Calculator$" layer=above manage=off
-yabai -m rule --add app="^Finder$" layer=above manage=off
-yabai -m rule --add app="^Karabiner-Elements$" layer=above manage=off
-yabai -m rule --add app="^MenuMeters$" layer=above manage=off
+yabai -m rule --add app="^System Settings$" sub-layer=above manage=off
+yabai -m rule --add app="^Calculator$" sub-layer=above manage=off
+yabai -m rule --add app="^Finder$" sub-layer=above manage=off
+yabai -m rule --add app="^Karabiner-Elements$" sub-layer=above manage=off
+yabai -m rule --add app="^MenuMeters$" sub-layer=above manage=off
+yabai -m rule --add app="^Step Two$" sub-layer=above manage=off
+yabai -m rule --add app="^Messages$" sub-layer=above manage=off
+yabai -m rule --add app="^Calendar$" sub-layer=above manage=off
+yabai -m rule --add app="^Signal$" sub-layer=above manage=off
 
 yabai -m config external_bar all:25:0
-borders active_color=0xffebd234 inactive_color=0xff000000 width=5.0
+borders active_color=0xffebd234 inactive_color=0xff555555 width=6.0
 
 echo "yabai configuration loaded.."
