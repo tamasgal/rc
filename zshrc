@@ -16,6 +16,9 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Mac fixes
+export FPATH=$FPATH:$(brew --prefix)/share/zsh/site-functions
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -91,6 +94,9 @@ alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 alias juliap="julia --project=."
 alias juliat="julia --project=. test/runtests.jl"
 export PATH=$PATH:~/.emacs.d/bin
+alias tl='tmux list-sessions'
+alias ta='tmux attach -t'
+alias ts='tmux new-session -s'
 
 # Misc functions
 doi2bib ()
