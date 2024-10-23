@@ -1,3 +1,5 @@
+eval "$(micromamba shell hook --shell zsh)"
+
 # >>> juliaup initialize >>>
 
 # !! Contents within this block are managed by juliaup !!
@@ -9,4 +11,4 @@ export PATH
 #
 export HPSS_LOCAL_STORE=/Volumes/Ultraspeed/HPSS_Lyon
 export PATH=$PATH:$HOME/Dev/jpp/build-basic/stage/bin
-pushd /opt/homebrew >/dev/null; . bin/thisroot.sh; popd >/dev/null
+#pushd /opt/homebrew >/dev/null; . bin/thisroot.sh; popd >/dev/null
