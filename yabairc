@@ -53,6 +53,16 @@ yabai -m rule --add app="^Step Two$" sub-layer=above manage=off
 yabai -m rule --add app="^Messages$" sub-layer=above manage=off
 yabai -m rule --add app="^Calendar$" sub-layer=above manage=off
 yabai -m rule --add app="^Signal$" sub-layer=above manage=off
+yabai -m rule --add app="^VLC$" sub-layer=above manage=off
+yabai -m rule --add app="^QuickTime Player$" sub-layer=above manage=off
+yabai -m rule --add app="^Fusion$" sub-layer=above manage=off
+yabai -m rule --add app='^Autodesk.*$' sub-layer=above manage=off
+#yabai -m rule --add app='^julia$' title='^RainbowAlga$' sub-layer=above manage=off
+yabai -m rule --add app='^Hearthstone$' sub-layer=above manage=off
+yabai -m rule --add app='^KStars$' sub-layer=above manage=off
+yabai -m rule --add app='^Ekos$' sub-layer=above manage=off
+yabai -m rule --add app='^PHD2$' sub-layer=above manage=off
+yabai -m rule --add app='^NotThereYet$' sub-layer=above manage=off
 
 yabai -m config external_bar all:25:0
 borders active_color=0xffebd234 inactive_color=0xff555555 width=6.0
