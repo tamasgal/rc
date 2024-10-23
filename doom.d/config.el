@@ -28,6 +28,7 @@
 ;; (setq doom-variable-pitch-font (font-spec :family "Cantarell" :size 19))
 (setq
  default-font "Iosevka Nerd Font Mono"
+ ;default-font "Iosevka Term Extended"
  default-font-size 13.0
  default-nice-size 9.0
  doom-font-increment 1
@@ -96,6 +97,9 @@
       projectile-enable-caching nil)
 (projectile-add-known-project "~/NextCloud/PhD")
 (projectile-add-known-project "/ssh:cc0:command-centre")
+(projectile-add-known-project "/ssh:woodycap:/home/wecapstor3/capn/mpo1217/FibonacciFitSea")
+(projectile-add-known-project "/ssh:woodycap:/home/wecapstor3/capn/mpo1217/FibonacciFitRBR")
+(projectile-add-known-project "/ssh:woodycap:/home/wecapstor2/capn/mpo1217/analysis/pmt-rates-evolution")
 (projectile-add-known-project "/ssh:staticbox:Dev/snakes")
 (mapc (lambda (item)
        (add-to-list 'projectile-globally-ignored-directories item))
@@ -115,6 +119,7 @@
         :desc "Section" "n s" #'LaTeX-section))
 (setq +latex-viewers '(skim))
 (add-hook 'LaTeX-mode-hook #'mixed-pitch-mode)
+(setq TeX-output-dir "output/")
 
 ;; from https://www.ianjones.us/variable-spaced-fonts
 ; (use-package mixed-pitch
@@ -220,6 +225,7 @@
 (after! eglot-jl
   (setq eglot-jl-julia-command "/Users/tamasgal/.julia/juliaup/bin/julia")
   (setq eglot-jl-language-server-project eglot-jl-base))
+(setq eglot-ignored-server-capabilites '(:inlayHintProvider))
 
 ;; Org Roam
 (setq org-roam-directory "~/NextCloud/org/roam")
