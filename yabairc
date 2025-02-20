@@ -63,6 +63,7 @@ yabai -m rule --add app='^KStars$' sub-layer=above manage=off
 yabai -m rule --add app='^Ekos$' sub-layer=above manage=off
 yabai -m rule --add app='^PHD2$' sub-layer=above manage=off
 yabai -m rule --add app='^NotThereYet$' sub-layer=above manage=off
+yabai -m rule --add app='^Notes$' sub-layer=above manage=off
 
 yabai -m config external_bar all:25:0
 borders active_color=0xffebd234 inactive_color=0xff555555 width=6.0
