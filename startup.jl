@@ -7,6 +7,7 @@ ENV["JULIA_EDITOR"] = "nvim"
 # end
 
 if isinteractive()
+
     try
         using Revise
     catch e
@@ -19,6 +20,12 @@ if isinteractive()
     catch e
         @warn "Error initializing OhMyREPL" exception=(e, catch_backtrace())
     end
+
+    using REPL
+    atreplinit(repl -> begin
+        # quickfix for path completion issue (don't add closing quotes)
+        @eval REPL.REPLCompletions close_path_completion(d, ps, s, p) = false
+    end)
 
     import BasicAutoloads
     BasicAutoloads.register_autoloads([
