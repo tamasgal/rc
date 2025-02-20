@@ -119,7 +119,7 @@
         :desc "Section" "n s" #'LaTeX-section))
 (setq +latex-viewers '(skim))
 (add-hook 'LaTeX-mode-hook #'mixed-pitch-mode)
-(setq TeX-output-dir "output/")
+(setq TeX-output-dir "build/")
 
 ;; from https://www.ianjones.us/variable-spaced-fonts
 ; (use-package mixed-pitch
@@ -250,3 +250,16 @@
 (setq elfeed-feeds (quote
                     (("http://arxiv.org/rss/cs" arxiv cs)
                      ("http://arxiv.org/rss/hep-ex" arxiv hep))))
+
+
+(use-package jinx
+  :ensure t
+  :hook ((LaTeX-mode . jinx-mode)
+         (latex-mode . jinx-mode)
+         (org-mode . jinx-mode)
+         (text-mode . jinx-mode)))
+;; this turns of the flyspell-mode when an org document is opened
+(remove-hook 'org-mode-hook #'flyspell-mode)
+(remove-hook 'org-mode-hook #'flycheck-mode)
+(remove-hook 'latex-mode-hook #'flyspell-mode)
+(remove-hook 'latex-mode-hook #'flycheck-mode)
