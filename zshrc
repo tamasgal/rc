@@ -111,6 +111,7 @@ alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 alias juliap="julia --project=."
 alias juliat="julia --project=. test/runtests.jl"
 export PATH=$PATH:~/.config/emacs/bin
+export PATH=$PATH:~/.local/bin
 alias tl='tmux list-sessions'
 alias ta='tmux attach -t'
 alias ts='tmux new-session -s'
