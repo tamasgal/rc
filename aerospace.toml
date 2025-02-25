@@ -257,6 +257,18 @@ tell application "/Applications/Google Chrome.app"
     activate
 end tell'
 ''', 'mode main']
+b = ['''exec-and-forget osascript -e '
+tell application "/Applications/BambuStudio.app"
+    make new window
+    activate
+end tell'
+''', 'mode main']
+f = ['''exec-and-forget osascript -e '
+tell application "/Applications/FreeCAD.app"
+    make new window
+    activate
+end tell'
+''', 'mode main']
 s = ['''exec-and-forget osascript -e '
 tell application "/Applications/Safari.app"
     make new document
