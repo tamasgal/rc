@@ -292,6 +292,11 @@ check-further-callbacks = false
 run = 'layout floating'
 
 [[on-window-detected]]
+if.window-title-regex-substring = 'Live'
+check-further-callbacks = false
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'QuickTime'
 check-further-callbacks = false
 run = 'layout floating'
