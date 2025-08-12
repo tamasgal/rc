@@ -31,6 +31,9 @@ eval "$(zoxide init --cmd cd zsh)"
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
+alias ipythonp='. venv/bin/activate && ipython'
+alias pythonp='. venv/bin/activate && python'
+alias venv='python3 -m venv venv && . venv/bin/activate'
 
 # Preferences
 export JULIA_EDITOR="vim"
@@ -72,6 +75,27 @@ fpath=(/Users/tamasgal/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+c99cheatsheet() {
+    cat <<'EOF'
+<assert.h>   assert()
+<errno.h>    errno, EINVAL, ENOMEM, ...
+<stddef.h>   NULL, size_t, ptrdiff_t, offsetof()
+<stdlib.h>   malloc(), calloc(), realloc(), free(), atoi(), atof(), strtol(), strtod(), rand(), srand(), exit(), atexit(), system(), qsort(), bsearch(), abs(), labs()
+<stdbool.h>  bool, true, false
+<stdint.h>   int8_t...int64_t, uint8_t...uint64_t, INT32_MAX, UINT64_C()
+<stdio.h>    fopen(), fclose(), fread(), fwrite(), printf(), fprintf(), sprintf(), snprintf(), scanf(), fscanf(), sscanf(), fseek(), ftell(), rewind(), perror()
+<ctype.h>    isalpha(), isdigit(), isalnum(), isspace(), tolower(), toupper()
+<string.h>   memcpy(), memmove(), strcpy(), strncpy(), strcat(), strncat(), strcmp(), strncmp(), memcmp(), strchr(), strstr(), memchr(), strlen(), memset()
+<math.h>     sin(), cos(), tan(), exp(), log(), log10(), pow(), sqrt(), fabs(), floor(), ceil(), fmod()
+<float.h>    FLT_MAX, DBL_MIN, LDBL_EPSILON
+<limits.h>   INT_MAX, LONG_MIN, CHAR_BIT
+<time.h>     time_t, struct tm, time(), difftime(), mktime(), localtime(), gmtime(), strftime(), clock()
+<stdarg.h>   va_list, va_start(), va_arg(), va_end()
+<setjmp.h>   setjmp(), longjmp()
+<signal.h>   signal(), raise()
+EOF
+}
 
 # .zshrc
 autoload -U promptinit; promptinit
