@@ -17,6 +17,8 @@ eval "$(micromamba shell hook --shell zsh)"
 
 PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 
+. ~/.zshrc_secret
+
 # >>> juliaup initialize >>>
 
 # !! Contents within this block are managed by juliaup !!
