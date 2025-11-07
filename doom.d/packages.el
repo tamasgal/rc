@@ -57,14 +57,5 @@
 ;    (setq org-re-reveal-root "https://revealjs.com"))
 
 (package! mixed-pitch)
-
-;(package! nextflow-mode :recipe (:host github :repo "emiller88/nextflow-mode"))
-
 (package! snakemake-mode)
-
-(package! typst-ts-mode :recipe
-  (:host codeberg
-   :repo "meow_king/typst-ts-mode"
-   :files (:defaults "*.el")))
-
 (package! jinx)

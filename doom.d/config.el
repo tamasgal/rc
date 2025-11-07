@@ -141,6 +141,9 @@
         )
   (setq org-directory "~/NextCloud/org/"
         org-agenda-files '("~/NextCloud/org")
+        org-roam-directory "~/NextCloud/org/roam"
+        org-attach-id-dir "~/NextCloud/org/org-attachments"
+
         org-archive-location (concat org-directory "archive/%s::")
         org-tags-column -80
         org-journal-dir "~/NextCloud/org/journal/"
@@ -226,9 +229,6 @@
   (setq eglot-jl-julia-command "/Users/tamasgal/.julia/juliaup/bin/julia")
   (setq eglot-jl-language-server-project eglot-jl-base))
 (setq eglot-ignored-server-capabilites '(:inlayHintProvider))
-
-;; Org Roam
-(setq org-roam-directory "~/NextCloud/org/roam")
 
 ;; Magit
 ;; (defun magit-ignored-files ()
