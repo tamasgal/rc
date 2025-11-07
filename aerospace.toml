@@ -292,6 +292,21 @@ check-further-callbacks = false
 run = 'layout floating'
 
 [[on-window-detected]]
+if.window-title-regex-substring = 'Meshtastic'
+check-further-callbacks = false
+run = 'layout floating'
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'DOSBox-X'
+check-further-callbacks = false
+run = 'layout floating'
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'UnROOTViewer'
+check-further-callbacks = false
+run = 'layout floating'
+
+[[on-window-detected]]
 if.window-title-regex-substring = 'Live'
 check-further-callbacks = false
 run = 'layout floating'
