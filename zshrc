@@ -21,8 +21,8 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-fpath+=($HOME/.zsh/pure)
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
+# fpath+=($HOME/.zsh/pure)
+# fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
@@ -97,6 +97,22 @@ c99cheatsheet() {
 EOF
 }
 
+
 # .zshrc
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure
+fpath+=( $HOME/.agkozak-zsh-prompt )  # The directory where the prompt's
+                                        # files are kept
+autoload promptinit; promptinit
+AGKOZAK_PROMPT_CHAR=( ❯ ❯ : )
+AGKOZAK_COLORS_PROMPT_CHAR='magenta'
+AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' 'S')
+AGKOZAK_LEFT_PROMPT_ONLY=1
+prompt agkozak-zsh-prompt
+bindkey -v
+
+export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
+
+export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
+export SPACK_USER_CACHE_PATH=/Users/tamasgal/cache
+export SPACK_DISABLE_LOCAL_CONFIG=True
