@@ -70,6 +70,14 @@ if [[ -f "$HOME/.zshrc_local" ]] then
   source $HOME/.zshrc_local
 fi
 
+# History search with arroy keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/tamasgal/.docker/completions $fpath)
 autoload -Uz compinit
