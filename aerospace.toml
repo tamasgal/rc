@@ -292,6 +292,11 @@ check-further-callbacks = false
 run = 'layout floating'
 
 [[on-window-detected]]
+if.window-title-regex-substring = 'Hammerspoon'
+check-further-callbacks = false
+run = 'layout floating'
+
+[[on-window-detected]]
 if.window-title-regex-substring = 'Meshtastic'
 check-further-callbacks = false
 run = 'layout floating'
