@@ -106,7 +106,7 @@
         '("*venv" "*.snakemake"))
 
 (setq TeX-command-default "LatexMk")
-(after! tex
+(with-eval-after-load 'tex
   (map! :localleader                  ; Use local leader
         :map latex-mode-map
         ;; :desc "View" "v" #'TeX-view ; Add which-key description
@@ -132,7 +132,7 @@
 ;   ) ;; or org-mode
 
 
-(after! org
+(with-eval-after-load 'org
   (map! :map org-mode-map
         :n "J" #'org-metadown
         :n "K" #'org-metaup
@@ -176,7 +176,7 @@
     )
   )
 
-(after! org-archive
+(with-eval-after-load 'org-archive
   (advice-add #'org-archive-subtree-default :after #'org-save-all-org-buffers)
   (advice-add #'org-archive-subtree :after #'org-save-all-org-buffers)
   )
@@ -211,7 +211,7 @@
 
 ;; Open all matches from 'SPC s p' with 'C-c C-o'
 ;; from https://github.com/hlissner/doom-emacs/issues/2648
-(after! counsel
+(with-eval-after-load 'counsel
   (ivy-add-actions
    #'counsel-rg
    '(("a" (lambda (_path) (mapc #'counsel-git-grep-action ivy--all-candidates))
@@ -225,10 +225,10 @@
 ;; eglot-jl
 ;;(setq eglot-jl-language-server-project "~/.julia/environments/v1.9")
 ;; use default eglot base
-(after! eglot-jl
+(with-eval-after-load 'eglot-jl
   (setq eglot-jl-julia-command "/Users/tamasgal/.julia/juliaup/bin/julia")
   (setq eglot-jl-language-server-project eglot-jl-base))
-(setq eglot-ignored-server-capabilites '(:inlayHintProvider))
+;;(setq eglot-ignored-server-capabilites '(:inlayHintProvider))
 
 ;; Magit
 ;; (defun magit-ignored-files ()
@@ -244,12 +244,12 @@
 ;; (after! magit
 ;;   (magit-add-section-hook 'magit-insert-ignored-files))
 
-(after! elfeed
-  (setq elfeed-search-filter "@1-month-ago +unread"))
-(setq elfeed-goodies/entry-pane-size 0.5)
-(setq elfeed-feeds (quote
-                    (("http://arxiv.org/rss/cs" arxiv cs)
-                     ("http://arxiv.org/rss/hep-ex" arxiv hep))))
+;;(after! elfeed
+;;  (setq elfeed-search-filter "@1-month-ago +unread"))
+;;(setq elfeed-goodies/entry-pane-size 0.5)
+;;(setq elfeed-feeds (quote
+;;                    (("http://arxiv.org/rss/cs" arxiv cs)
+;;                     ("http://arxiv.org/rss/hep-ex" arxiv hep))))
 
 
 (use-package jinx
