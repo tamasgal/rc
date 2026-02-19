@@ -34,6 +34,7 @@ alias c='clear'
 alias ipythonp='. venv/bin/activate && ipython'
 alias pythonp='. venv/bin/activate && python'
 alias venv='python3 -m venv venv && . venv/bin/activate'
+alias pass-ecap='PASSWORD_STORE_DIR=~/.password-store-ecap pass'
 
 # Preferences
 export JULIA_EDITOR="vim"
