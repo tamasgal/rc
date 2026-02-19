@@ -1,4 +1,6 @@
-PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+export PATH=$PATH:/Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/bin
+export KM3AUX_CALIB_PATH=$HOME/Dev/KM3Aux.jl/aux_data
 
 . ~/.zshrc_secret
 
@@ -15,5 +17,8 @@ export HPSS_LOCAL_STORE=/Volumes/Ultraspeed/HPSS_Lyon
 export PATH=$PATH:$HOME/Dev/jpp/build-basic/stage/bin
 #pushd /opt/homebrew >/dev/null; . bin/thisroot.sh; popd >/dev/null
 
-#. ~/spack/share/spack/setup-env.sh
+. ~/spack/share/spack/setup-env.sh
 export PATH=$PATH:/Users/tamasgal/Dev/jpp/build-dev/stage/bin
+
+alias jpp="source $HOME/Dev/jpp/install-release/setenv.sh"
+alias aanet="source $HOME/Dev/aanet/install-release/setenv.sh"
