@@ -43,6 +43,7 @@ alias juliap="julia --project=."
 alias juliat="julia --project=. test/runtests.jl"
 export PATH=$PATH:~/.config/emacs/bin
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.julia/bin
 alias tl='tmux list-sessions'
 alias ta='tmux attach -t'
 alias ts='tmux new-session -s'
@@ -65,6 +66,10 @@ export GPG_TTY=$(tty)
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# GRID
+export VOMS_USERCONF=/etc/vomses
+export X509_CERT_DIR=/etc/grid-security/certificates
 
 # Local adjustments
 if [[ -f "$HOME/.zshrc_local" ]] then
@@ -119,9 +124,3 @@ AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' 'S')
 AGKOZAK_LEFT_PROMPT_ONLY=1
 prompt agkozak-zsh-prompt
 bindkey -v
-
-export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
-
-export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
-export SPACK_USER_CACHE_PATH=/Users/tamasgal/cache
-export SPACK_DISABLE_LOCAL_CONFIG=True
