@@ -4,6 +4,44 @@ export KM3AUX_CALIB_PATH=$HOME/Dev/KM3Aux.jl/aux_data
 
 . ~/.zshrc_secret
 
+iget() {
+  docker run --rm \
+    --platform=linux/amd64 \
+    -v "$HOME/.irods:/root/.irods" \
+    -v "$PWD:/download" \
+    -w /download \
+    git.km3net.de:4567/archive/docker-images/common/irods:latest \
+    iget "$@" /download
+}
+
+ils() {
+  docker run --rm \
+    --platform=linux/amd64 \
+    -v "$HOME/.irods:/root/.irods" \
+    git.km3net.de:4567/archive/docker-images/common/irods:latest \
+    ils "$@"
+}
+
+
+export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
+
+export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
+export SPACK_USER_CACHE_PATH=/Users/tamasgal/cache
+export SPACK_DISABLE_LOCAL_CONFIG=True
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/opt/homebrew/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/Users/tamasgal/.local/share/mamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
 # >>> juliaup initialize >>>
 
 # !! Contents within this block are managed by juliaup !!
@@ -22,3 +60,5 @@ export PATH=$PATH:/Users/tamasgal/Dev/jpp/build-dev/stage/bin
 
 alias jpp="source $HOME/Dev/jpp/install-release/setenv.sh"
 alias aanet="source $HOME/Dev/aanet/install-release/setenv.sh"
+
+export WINEPREFIX=~/Games/battle-net
