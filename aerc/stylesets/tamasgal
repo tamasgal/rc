@@ -1,2 +1,5 @@
 msglist_*.From,~Kay.fg = "#d78700"
 msglist_*.From,~Maarten.fg = "#00d9ff"
+msglist_*.Subject,~FIRING.fg = "#d70000"
+msglist_*.Subject,~FIRING.bold = true
+msglist_*.Subject,~RESOLVED.fg = "#5faf00"
