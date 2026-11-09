@@ -1,5 +1,22 @@
+tab.bg = "#ffd000"
+tab.fg = black
+tab.selected.reverse = true
+
+msglist_*.selected.bg = "#444444"
+#msglist_*.selected.fg = black
+
+dirlist_*.selected.bg = yellow
+dirlist_*.selected.fg = black
+#dirlist_unread.bg = yellow
+#dirlist_unread.fg = black
+dirlist_unread.bold = true
+#dirlist_recent.bg = yellow
+#dirlist_recent.fg = black
+dirlist_recent.bold = true
+
 msglist_*.From,~Kay.fg = "#d78700"
 msglist_*.From,~Maarten.fg = "#00d9ff"
 msglist_*.Subject,~FIRING.fg = "#d70000"
 msglist_*.Subject,~FIRING.bold = true
 msglist_*.Subject,~RESOLVED.fg = "#5faf00"
+msglist_*.Subject,~syslog.fg = "#4795c0"
