@@ -1,0 +1,209 @@
+# Place a copy of this config at ~/.tomwm.toml
+# After that, you can edit ~/.tomwm.toml to your liking
+
+# Commands that run after tomwm has started
+after-startup-command = []
+
+# Start tomwm at login
+start-at-login = true
+
+# Automatically reload the config when the config file is saved.
+# After setting this to true, reload once manually to start the auto-reloading
+auto-reload-config = false
+
+# The tags every monitor can show. Windows carry a set of these.
+# Selecting tags shows every window carrying at least one of them.
+#
+# Rename these freely: the bindings below address tags by position ('--index 3'), not by name, so
+# nothing else has to change. Up to 32 tags are supported; the bindings below only cover the first
+# nine, so bind more keys yourself if you add more.
+tags = ['1-base', '2-web', '3-dev', '4-rse', '5-cad', '6-mmd', '7-com', '8-ai', '9-foo']
+
+# Layout a monitor starts in. Possible values: tile|monocle|floating
+default-layout = 'tile'
+
+# How many windows the master area holds
+nmaster = 1
+
+# Fraction of the screen width taken by the master area. Between 0.05 and 0.95
+mfact = 0.5
+
+# Gaps between windows (inner-*) and between the screen edge and the windows (outer-*)
+# Possible values:
+# - Constant:     gaps.outer.top = 8
+# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+gaps.inner.horizontal = 0
+gaps.inner.vertical   = 0
+gaps.outer.left       = 0
+gaps.outer.bottom     = 0
+gaps.outer.top        = 0
+gaps.outer.right      = 0
+
+# Mouse follows focus when the focused monitor changes
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+focus-follows-mouse.enabled = false
+
+# You can effectively turn off the macOS "Hide application" (cmd-h) feature by toggling this flag
+automatically-unhide-macos-hidden-apps = false
+
+# A callback that runs every time the binding mode changes
+on-mode-changed = []
+
+# Possible values: (qwerty|dvorak|colemak)
+key-mapping.preset = 'qwerty'
+
+# 'main' binding mode declaration. It must always be present.
+[mode.main.binding]
+
+    # All possible keys:
+    # - Letters.        a, b, c, ..., z
+    # - Numbers.        0, 1, 2, ..., 9
+    # - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+    # - F-keys.         f1, f2, ..., f20
+    # - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon,
+    #                   backtick, leftSquareBracket, rightSquareBracket, space, enter, esc,
+    #                   backspace, tab, pageUp, pageDown, home, end, forwardDelete,
+    #                   sectionSign (ISO keyboards only, european keyboards only)
+    # - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+    #                   keypadMinus, keypadMultiply, keypadPlus
+    # - Arrows.         left, down, up, right
+    #
+    # All possible modifiers: cmd, alt, ctrl, shift
+
+    # ============================================================ Spawning
+
+    # A new terminal window. iTerm2 if it is installed, Terminal otherwise.
+    alt-shift-enter = '''exec-and-forget
+if [ -d /Applications/iTerm.app ] || [ -d "$HOME/Applications/iTerm.app" ]; then
+    osascript -e 'tell application "iTerm" to create window with default profile'
+else
+    osascript -e 'tell application "Terminal" to do script ""' -e 'tell application "Terminal" to activate'
+fi'''
+
+    # A new Safari window
+    alt-shift-s = '''exec-and-forget
+osascript -e 'tell application "Safari" to make new document' -e 'tell application "Safari" to activate' '''
+
+    # A new Chrome window
+    alt-shift-c = '''exec-and-forget
+osascript -e 'tell application "Google Chrome" to make new window' -e 'tell application "Google Chrome" to activate' '''
+
+    # A new Finder window
+    alt-shift-f = '''exec-and-forget
+osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate' '''
+
+    # The Mail app
+    alt-shift-m = 'exec-and-forget open -a Mail'
+
+    # A new iTerm2 window running aerc. Terminal if iTerm2 is not installed.
+    alt-shift-a = '''exec-and-forget
+if [ -d /Applications/iTerm.app ] || [ -d "$HOME/Applications/iTerm.app" ]; then
+    osascript -e 'tell application "iTerm"' -e 'set w to (create window with default profile)' -e 'tell current session of w to write text "aerc"' -e 'end tell'
+else
+    osascript -e 'tell application "Terminal" to do script "aerc"' -e 'tell application "Terminal" to activate'
+fi'''
+
+    # The Notes app
+    alt-shift-n = 'exec-and-forget open -a Notes'
+
+    # The Calendar app
+    alt-shift-e = 'exec-and-forget open -a Calendar'
+
+    # Rocket.Chat, by bundle id: the dotted name does not resolve with 'open -a'
+    alt-shift-r = 'exec-and-forget open -b chat.rocket'
+
+    # The Claude app
+    alt-shift-l = 'exec-and-forget open -a Claude'
+
+    # ============================================================ Windows
+
+    # Walk the stack (dwm focusstack)
+    alt-j = 'focus next'
+    alt-k = 'focus prev'
+
+    # Move the focused window down or up the stack, without changing the focus
+    alt-shift-j = 'move next'
+    alt-shift-k = 'move prev'
+
+    # Promote the focused window to the master area (dwm zoom).
+    # On the master it swaps with the next window, so the binding is its own undo.
+    alt-enter = 'zoom'
+
+    # Grow and shrink the master area
+    alt-h = 'mfact -0.05'
+    alt-l = 'mfact +0.05'
+    alt-i = 'nmaster +1'
+    alt-d = 'nmaster -1'
+
+    # alt-shift-c = 'close'  # CMD+W is already there on macOS ;)
+
+    # ============================================================ Layouts
+
+    alt-t = 'layout tile'
+    alt-f = 'layout floating'
+    alt-m = 'layout monocle'
+    alt-space = 'layout --toggle'
+
+    # Float or unfloat the focused window. Dialogs always float and refuse this.
+    alt-shift-space = 'floating'
+
+    # ============================================================ Tags
+
+    # Tags are addressed by position, so renaming one in the 'tags' list above changes nothing here.
+    # alt-<n> toggles a tag into the view rather than switching to it, and alt-ctrl-<n> switches.
+    # Swap the two if you want the vanilla dwm arrangement.
+    alt-1 = 'view --toggle --index 1'
+    alt-2 = 'view --toggle --index 2'
+    alt-3 = 'view --toggle --index 3'
+    alt-4 = 'view --toggle --index 4'
+    alt-5 = 'view --toggle --index 5'
+    alt-6 = 'view --toggle --index 6'
+    alt-7 = 'view --toggle --index 7'
+    alt-8 = 'view --toggle --index 8'
+    alt-9 = 'view --toggle --index 9'
+
+    alt-ctrl-1 = 'view --index 1'
+    alt-ctrl-2 = 'view --index 2'
+    alt-ctrl-3 = 'view --index 3'
+    alt-ctrl-4 = 'view --index 4'
+    alt-ctrl-5 = 'view --index 5'
+    alt-ctrl-6 = 'view --index 6'
+    alt-ctrl-7 = 'view --index 7'
+    alt-ctrl-8 = 'view --index 8'
+    alt-ctrl-9 = 'view --index 9'
+
+    alt-equal = 'view --index 1'
+
+    # Move the focused window to a tag
+    alt-shift-1 = 'tag --index 1'
+    alt-shift-2 = 'tag --index 2'
+    alt-shift-3 = 'tag --index 3'
+    alt-shift-4 = 'tag --index 4'
+    alt-shift-5 = 'tag --index 5'
+    alt-shift-6 = 'tag --index 6'
+    alt-shift-7 = 'tag --index 7'
+    alt-shift-8 = 'tag --index 8'
+    alt-shift-9 = 'tag --index 9'
+
+    # Add or remove a tag on the focused window
+    alt-ctrl-shift-1 = 'tag --toggle --index 1'
+    alt-ctrl-shift-2 = 'tag --toggle --index 2'
+    alt-ctrl-shift-3 = 'tag --toggle --index 3'
+    alt-ctrl-shift-4 = 'tag --toggle --index 4'
+    alt-ctrl-shift-5 = 'tag --toggle --index 5'
+    alt-ctrl-shift-6 = 'tag --toggle --index 6'
+    alt-ctrl-shift-7 = 'tag --toggle --index 7'
+    alt-ctrl-shift-8 = 'tag --toggle --index 8'
+    alt-ctrl-shift-9 = 'tag --toggle --index 9'
+
+    alt-0 = 'view --all'
+    alt-shift-0 = 'tag --all'
+    alt-tab = 'view --back-and-forth'
+
+    # ============================================================ Monitors
+
+    alt-comma = 'focus-monitor prev'
+    alt-period = 'focus-monitor next'
+    alt-shift-comma = 'move-to-monitor prev'
+    alt-shift-period = 'move-to-monitor next'
