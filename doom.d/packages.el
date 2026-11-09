@@ -59,3 +59,4 @@
 (package! mixed-pitch)
 (package! snakemake-mode)
 (package! jinx)
+(package! quarto-mode)

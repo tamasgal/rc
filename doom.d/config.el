@@ -197,11 +197,33 @@
 ;;        (:prefix ("f" . "journal")
 ;;         :desc "New journal entry" "j" #'org-journal-new-entry
 ;;         :desc "Search journal entry" "s" #'org-journal-search)))
+;; Project build/run/test via the top-level Makefile. These are the global
+;; defaults; override them per-project in a .dir-locals.el (they are marked as
+;; safe local variables, so no confirmation prompt). Commands run from the
+;; project root in a *compilation* buffer (errors clickable, `g r' recompiles).
+(defvar +make-build-cmd "make"      "Build command for `+make/build'.")
+(defvar +make-run-cmd   "make run"  "Build-and-run command for `+make/run'.")
+(defvar +make-test-cmd  "make test" "Test command for `+make/test'.")
+(dolist (v '(+make-build-cmd +make-run-cmd +make-test-cmd))
+  (put v 'safe-local-variable #'stringp))
+
+(defun +make--compile (cmd)
+  "Run CMD via `compile' from the project root."
+  (let ((default-directory (or (and (fboundp 'projectile-project-root)
+                                    (projectile-project-root))
+                               default-directory)))
+    (compile cmd)))
+
+(defun +make/build () "Build the project." (interactive) (+make--compile +make-build-cmd))
+(defun +make/run   () "Build and run the project." (interactive) (+make--compile +make-run-cmd))
+(defun +make/test  () "Run the project tests." (interactive) (+make--compile +make-test-cmd))
+
 (map! :leader
       (:prefix-map ("a" . "arbitrary")
        :desc "Fill paragraph" "f" #'fill-paragraph
-       :desc "Make" "m" #'compile
-       ))
+       :desc "Build"          "m" #'+make/build
+       :desc "Run"            "r" #'+make/run
+       :desc "Test"           "t" #'+make/test))
 (map! :leader
       :desc "Auto fill mode"
       "t a" #'auto-fill-mode)
@@ -228,7 +250,7 @@
 (with-eval-after-load 'eglot-jl
   (setq eglot-jl-julia-command "/Users/tamasgal/.julia/juliaup/bin/julia")
   (setq eglot-jl-language-server-project eglot-jl-base))
-;;(setq eglot-ignored-server-capabilites '(:inlayHintProvider))
+(setq eglot-ignored-server-capabilites '(:inlayHintProvider))
 
 ;; Magit
 ;; (defun magit-ignored-files ()
