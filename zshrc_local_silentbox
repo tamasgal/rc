@@ -1,6 +1,9 @@
-export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$HOME/opt/zig:$PATH"
 export PATH=$PATH:/Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/bin
 export KM3AUX_CALIB_PATH=$HOME/Dev/KM3Aux.jl/aux_data
+export RUCIO_CONFIG=$HOME/.rc/rucio.cfg
+export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 . ~/.zshrc_secret
 
@@ -62,3 +65,4 @@ alias jpp="source $HOME/Dev/jpp/install-release/setenv.sh"
 alias aanet="source $HOME/Dev/aanet/install-release/setenv.sh"
 
 export WINEPREFIX=~/Games/battle-net
+export PATH=/opt/homebrew/opt/mysql-client/bin:$PATH

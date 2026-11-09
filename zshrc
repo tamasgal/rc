@@ -35,6 +35,8 @@ alias ipythonp='. venv/bin/activate && ipython'
 alias pythonp='. venv/bin/activate && python'
 alias venv='python3 -m venv venv && . venv/bin/activate'
 alias pass-ecap='PASSWORD_STORE_DIR=~/.password-store-ecap pass'
+alias gti=git
+alias tw=taskwarrior-tui
 
 # Preferences
 export JULIA_EDITOR="vim"
@@ -124,3 +126,14 @@ AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' 'S')
 AGKOZAK_LEFT_PROMPT_ONLY=1
 prompt agkozak-zsh-prompt
 bindkey -v
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/tamasgal/.juliaup/bin' $path)
+export PATH
+# Tab completion for juliaup and julia channel selection
+[ -f "/Users/tamasgal/.julia/juliaup/completions/zsh.zsh" ] && source "/Users/tamasgal/.julia/juliaup/completions/zsh.zsh"
+
+# <<< juliaup initialize <<<
